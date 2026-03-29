@@ -6,9 +6,9 @@ This project studies the mapping from paired CT cubes to dose cubes on a `32×32
 
 The goal is to learn a mapping
 
-\[
+$$
 \text{CT cube} \rightarrow \text{dose cube}
-\]
+$$
 
 and to understand how far conditional flow models can approach strong regression baselines.
 
