@@ -1,0 +1,14 @@
+Current best regression:
+64/32, 3D U-Net, base_ch=24
+Test MSE = 0.000319
+Test MAE = 0.010948
+
+Current best flow:
+64/32, conditional 3D U-Net flow, base_ch=24, batch_size=2, lr=3e-4, 50 epochs
+Test MSE = 0.000600
+Test MAE = 0.015693
+
+Main conclusion:
+Regression is still the stronger baseline.
+Flow is feasible and improves a lot with a more stable training setup.
+The remaining gap is more likely related to optimization stability than to Euler sampling resolution.
