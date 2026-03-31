@@ -33,6 +33,7 @@ More details are documented in [`data/README.md`](data/README.md).
 ```text
 ct2dose-project/
 ├── README.md
+├── meeting_summary_apr7.md
 ├── .gitignore
 ├── notebooks/
 │   ├── 2d/
