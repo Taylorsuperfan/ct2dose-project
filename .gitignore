@@ -1,0 +1,51 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Large model/checkpoint files
+*.pt
+*.pth
+*.ckpt
+
+# NumPy / data dumps
+*.npy
+*.npz
+*.pkl
+*.pickle
+
+# Raw data directories
+data/raw/
+data/intermediate/
+
+# Outputs
+outputs/checkpoints/
+outputs/tmp/
+outputs/cache/
+
+# Keep placeholder files if needed
+!outputs/.gitkeep
+!data/splits/
+!data/splits/*.json
+
+# Keep figures tracked
+!docs/figures/
+!docs/figures/*.png
