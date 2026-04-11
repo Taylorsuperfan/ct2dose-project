@@ -15,9 +15,7 @@ The project currently includes:
 
 The goal is to learn a mapping
 
-$$
-\text{CT cube} \rightarrow \text{dose cube}
-$$
+`CT cube → dose cube`
 
 and to understand how well flow-based models can reconstruct the beam-shaped dose structure.
 
