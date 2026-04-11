@@ -1,0 +1,13 @@
+{
+  "start_epoch": 30,
+  "target_epoch": 50,
+  "continuation_lr": 0.0003,
+  "best_epoch_after_continuation": 49,
+  "best_val_loss_after_continuation": 1.7157049018351246e-05,
+  "final_train_loss_after_continuation": 3.781664631924286e-05,
+  "final_val_loss_after_continuation": 2.3082465453626356e-05,
+  "final_val_mse_after_continuation": 1.959155906297383e-05,
+  "final_val_mae_after_continuation": 0.0029125171219930054,
+  "continuation_best_checkpoint": "/content/drive/MyDrive/rectified_flow_ct2dose/outputs/checkpoints/conditional_unet3d_flow_phase3_train2000_val500_ep50_best.pt",
+  "continuation_latest_checkpoint": "/content/drive/MyDrive/rectified_flow_ct2dose/outputs/checkpoints/conditional_unet3d_flow_phase3_train2000_val500_ep50_latest.pt"
+}

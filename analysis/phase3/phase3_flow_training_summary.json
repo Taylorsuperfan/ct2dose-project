@@ -1,0 +1,19 @@
+{
+  "train_cases": 6,
+  "val_cases": 2,
+  "holdout_test_cases": 2,
+  "train_samples": 2000,
+  "val_samples": 500,
+  "base_ch": 24,
+  "batch_size": 2,
+  "lr": 0.0003,
+  "epochs": 30,
+  "best_epoch": 26,
+  "best_val_loss": 2.3445045058906544e-05,
+  "final_train_loss": 5.22677746566842e-05,
+  "final_val_loss": 3.3849413906864357e-05,
+  "final_val_mse": 4.028314108290942e-05,
+  "final_val_mae": 0.004768337748013437,
+  "best_checkpoint": "/content/drive/MyDrive/rectified_flow_ct2dose/outputs/checkpoints/conditional_unet3d_flow_phase3_train2000_val500_best.pt",
+  "latest_checkpoint": "/content/drive/MyDrive/rectified_flow_ct2dose/outputs/checkpoints/conditional_unet3d_flow_phase3_train2000_val500_latest.pt"
+}
