@@ -22,83 +22,85 @@ The hold-out test set has not been used yet.
 
 ---
 
-## 2. Main question of the current stage
+## 2. Main goal of the current stage
 
-The goal of the current stage is to check whether the 3D flow model:
+The goal of the current stage is to determine whether the 3D flow model:
 - trains stably on a larger setup
 - still improves beyond 30 epochs
+- can be improved further through controlled hyperparameter tuning
 - reconstructs the beam-shaped dose structure well on validation data
-- already shows acceptable error levels on typical and difficult cases
+- achieves acceptable error levels on typical and difficult cases
 
 ---
 
-## 3. Phase-3 result after continuation to 50 epochs
+## 3. Best current model
 
-### Configuration
-- conditional 3D U-Net flow
+### Best tuned configuration
+- `lr = 5e-4`
 - `base_ch = 24`
 - `batch_size = 2`
-- `lr = 3e-4`
-- continued from 30 to 50 epochs
+- continuation to `50` epochs
 
 ### Best result
-- best epoch: `49`
-- best validation loss: `1.7157e-05`
+- best epoch: `43`
+- best validation loss: `1.5e-05`
 
-### Final epoch result
-- final train loss: `3.7817e-05`
-- final validation loss: `2.3082e-05`
-- final validation MSE: `1.9592e-05`
-- final validation MAE: `0.002913`
+### Final evaluation result
+- final validation MSE: `1.7e-05`
+- final validation MAE: `0.002662`
 
 ---
 
-## 4. Main interpretation of the continuation result
+## 4. Main interpretation of training behavior
 
-The continuation from 30 to 50 epochs produced meaningful additional progress.
+The larger 2000/500 setup is stable overall.
 
-Compared with the earlier 30-epoch result:
-- the best validation loss improved clearly
-- the validation MSE improved strongly
-- the validation MAE also improved substantially
+The continuation from 30 to 50 epochs gives meaningful additional improvement, which shows that the earlier 30-epoch setup had not yet saturated.
 
-This suggests that the model had not yet saturated at 30 epochs, and training beyond 30 epochs is still beneficial on the current 2000/500 setup.
+The first controlled tuning round also shows that the original configuration is not the best one. In particular, a slightly larger learning rate improves the result further.
 
 ---
 
-## 5. Validation error analysis
+## 5. Validation error analysis for the best tuned model
 
-### Validation-wide summary
-- best validation samples are now around `3.46% – 3.61%` global relative error
-- the current errors are therefore clearly improved compared with the earlier 30-epoch result
+### Best case
+- sample index: `246`
+- global relative error: `2.91%`
 
 ### Typical case
-- sample index: `436`
-- along-beam mean percentage error: `2.67%`
-- perpendicular mean percentage error: `3.76%`
+- sample index: `264`
+- global relative error: `5.48%`
+- along-beam mean percentage error: `2.71%`
+- perpendicular mean percentage error: `2.67%`
 
 ### Worst case
 - sample index: `50`
-- global relative error: `16.64%`
-- along-beam mean percentage error: `3.90%`
-- perpendicular mean percentage error: `12.13%`
+- global relative error: `11.86%`
+- along-beam mean percentage error: `3.06%`
+- perpendicular mean percentage error: `7.45%`
+
+### Averaged validation profiles
+- average along-beam mean percentage error: `3.73%`
+- average perpendicular mean percentage error: `1.13%`
 
 ---
 
 ## 6. Current conclusion
 
-The current 3D flow model now shows a strong and stable development-stage result:
+The tuned 3D flow model now gives the strongest development-stage result obtained so far:
 
-- it trains stably on the larger 2000/500 setup
-- it still improves beyond 30 epochs
+- training is stable on the larger 2000/500 setup
+- continuation beyond 30 epochs is beneficial
+- controlled tuning improves the result further
 - the main beam-shaped dose structure is reconstructed very well
-- along-beam behavior is learned particularly well
-- the main remaining difficulty is in harder cross-sectional structure, especially in the perpendicular direction
+- both typical and difficult cases improve compared with the earlier result
+- the main remaining difficulty is in harder perpendicular cross-sectional structure
 
-At the same time, the error is still not consistently below 1%.  
+At the same time, the error is still not consistently below 1% for the full problem.
+
 So the current conclusion is:
 
-the model learns the dose distribution very well overall, but the remaining errors are still in the few-percent range for typical cases and higher for difficult cases.
+the tuned model learns the dose distribution very well overall, but the remaining errors are still in the few-percent range for typical cases and higher for difficult cases.
 
 ---
 
@@ -112,7 +114,7 @@ Therefore, the current conclusion should still be understood as a development-st
 
 ## 8. Main discussion question
 
-The main question for the next stage is what should be prioritized after this improved 50-epoch development result:
+The main question for the next stage is what should be prioritized after this tuned development-stage result:
 
 1. keep the hold-out test fully untouched for now,
 2. move to final hold-out evaluation in a later formal stage,

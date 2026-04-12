@@ -26,106 +26,134 @@ The hold-out test set was not used in the current phase.
 
 ---
 
-## 3. Model configuration
+## 3. Baseline phase-3 result
 
-The current larger-scale development run uses:
+The original larger-scale development run used:
 - conditional 3D U-Net flow
 - `base_ch = 24`
 - `batch_size = 2`
 - `lr = 3e-4`
 
-The original phase-3 result was first trained for 30 epochs, and then continued in a controlled way to 50 epochs without changing the split or model definition.
+This baseline already showed that:
+- training on the 2000/500 setup is stable
+- continuation beyond 30 epochs is beneficial
+- the beam-shaped dose structure can be learned well on validation data
 
 ---
 
-## 4. Main training result after continuation to 50 epochs
+## 4. Controlled tuning
 
-### Best validation checkpoint
-- best epoch: `49`
-- best validation loss: `1.7157e-05`
+A first controlled tuning round was performed while keeping:
+- the dataset split fixed
+- the evaluation protocol fixed
+- the model family fixed
 
-### Final epoch
-- final train loss: `3.7817e-05`
-- final validation loss: `2.3082e-05`
-- final validation MSE: `1.9592e-05`
-- final validation MAE: `0.002913`
+The main hyperparameters explored were:
+- learning rate
+- base channel size
+
+The strongest tuned configuration was:
+- `lr = 5e-4`
+- `base_ch = 24`
+- `batch_size = 2`
+
+This tuned run was then continued to 50 epochs.
 
 ---
 
-## 5. Interpretation of training behavior
+## 5. Best current model result
+
+### Best tuned configuration
+- `lr = 5e-4`
+- `base_ch = 24`
+- `batch_size = 2`
+- continuation to `50` epochs
+
+### Best result
+- best epoch: `43`
+- best validation loss: `1.5e-05`
+
+### Final evaluation result
+- final validation MSE: `1.7e-05`
+- final validation MAE: `0.002662`
+
+---
+
+## 6. Interpretation of training behavior
 
 The larger-scale train/validation curves show that:
 - training is stable overall
-- validation improves strongly compared with the beginning of training
 - no strong persistent overfitting signal is visible
-- the continuation from 30 to 50 epochs still gives meaningful improvement
+- the 30-epoch setup had not yet saturated
+- continuation to 50 epochs improves the result further
+- controlled tuning improves the result beyond the original phase-3 baseline
 
-This shows that the 30-epoch setup had not yet saturated, and that extending the training to 50 epochs is beneficial on the current 2000/500 development setup.
+Therefore, the model performance is not only sensitive to training duration, but also to the optimization setup.
 
 ---
 
-## 6. Additional validation error analysis
+## 7. Validation-wide error analysis for the best tuned model
 
-Following the professor’s suggestion, the validation result was further analyzed using:
-- a loss curve rescaled to `0 ... 5e-4`
-- profile plots with percentage error
-- cross-sectional plots with matched color scales for ground truth and prediction
-- a more sensitive difference scale
-- explicit comparison between a typical validation example and a worst-case example
+Using the best tuned checkpoint, the validation-wide analysis gives:
 
-### Validation-wide summary
-- the best validation samples are now around `3.46% – 3.61%` global relative error
-- the overall validation picture is clearly improved relative to the earlier 30-epoch result
+### Best case
+- sample index: `246`
+- global relative error: `2.91%`
 
 ### Typical case
-- sample index: `436`
-- along-beam mean percentage error: `2.67%`
-- perpendicular mean percentage error: `3.76%`
+- sample index: `264`
+- global relative error: `5.48%`
+- along-beam mean percentage error: `2.71%`
+- perpendicular mean percentage error: `2.67%`
 
 ### Worst case
 - sample index: `50`
-- global relative error: `16.64%`
-- along-beam mean percentage error: `3.90%`
-- perpendicular mean percentage error: `12.13%`
+- global relative error: `11.86%`
+- along-beam mean percentage error: `3.06%`
+- perpendicular mean percentage error: `7.45%`
+
+### Averaged validation profiles
+- average along-beam mean percentage error: `3.73%`
+- average perpendicular mean percentage error: `1.13%`
 
 ---
 
-## 7. Interpretation of validation behavior
+## 8. Interpretation of validation behavior
 
-The current model reconstructs the main beam-shaped dose structure very well overall.
+The tuned model reconstructs the main beam-shaped dose structure very well overall.
 
 In particular:
-- the along-beam decay pattern is learned very accurately
 - the beam entrance region is localized correctly
-- the perpendicular structure is also learned well for typical examples
+- the along-beam decay pattern is learned very accurately
+- typical cases now show relatively small percentage errors in both directions
+- difficult cases are also improved clearly compared with the earlier untuned result
 
-The remaining difficulty is most visible in harder validation cases, especially in the perpendicular direction and in more difficult cross-sectional structure.
+The main remaining limitation is most visible in harder perpendicular cross-sectional structure.
 
-Therefore, the current result is stronger than a pilot-scale feasibility result.
+Therefore, the tuned result is stronger than the earlier untuned phase-3 result and should now be regarded as the strongest development-stage result obtained so far.
 
-At the same time, the errors are still not consistently below 1%.  
-The current model performs very well overall, but the remaining errors are still in the few-percent range for typical cases and higher for difficult cases.
+At the same time, the error is still not consistently below 1% for the full problem.
 
 ---
 
-## 8. Current conclusion
+## 9. Current conclusion
 
 The current phase-3 result supports the following conclusion:
 
-- the current 3D flow model is stable on the larger 2000/500 development setup
-- no strong persistent overfitting signal is visible so far
-- training beyond 30 epochs is clearly beneficial
-- the best validation checkpoint reconstructs the main beam-related dose structure well
-- the along-beam behavior is learned especially well
+- the 3D flow model is stable on the larger 2000/500 development setup
+- continuation beyond 30 epochs is clearly beneficial
+- controlled tuning further improves the result
+- the best tuned checkpoint reconstructs the main beam-related dose structure very well
+- both typical and difficult cases improve
 - the main remaining limitation is hardest in the more difficult perpendicular cross-sectional structure
 
-Therefore, the current result is now a strong development-stage result rather than only a pilot proof of concept.
+Thus, the current result should be understood as a strong development-stage result rather than only a pilot proof of concept.
 
 It is still not the final formal evaluation, because the hold-out test set has not yet been used.
 
 ---
 
-## 9. Suggested next discussion direction
+## 10. Suggested next discussion direction
 
 The next project decision can be discussed along one of the following directions:
 1. keep this as the current development-stage result and preserve the hold-out test set for a later formal stage

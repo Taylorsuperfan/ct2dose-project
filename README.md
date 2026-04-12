@@ -7,13 +7,13 @@ The project currently includes:
 
 - **Phase 1**: pilot experiments in 2D and 3D
 - **Phase 2**: analysis and interpretation of pilot results
-- **Phase 3**: a larger-scale train/validation development run for the 3D flow model, including continuation beyond 30 epochs and additional validation error analysis
+- **Phase 3**: a larger-scale train/validation development run for the 3D flow model, including continuation beyond 30 epochs, controlled hyperparameter tuning, and validation error analysis
 
 ---
 
 ## Project goal
 
-The goal is to learn a mapping
+The goal is to learn a mapping from **CT cubes** to **dose cubes**:
 
 `CT cube → dose cube`
 
@@ -72,54 +72,56 @@ More details are documented in `data/README.md`.
 
 ---
 
-## Current best phase-3 flow result
+## Current best phase-3 result
 
-### Configuration
-- conditional 3D U-Net flow
+### Best tuned configuration
+- `lr = 5e-4`
 - `base_ch = 24`
 - `batch_size = 2`
-- `lr = 3e-4`
-- continued from 30 to 50 epochs
+- continuation to `50` epochs
 
 ### Best validation result
-- **best epoch:** `49`
-- **best validation loss:** `1.7157e-05`
+- **best epoch:** `43`
+- **best validation loss:** `1.5e-05`
 
-### Final epoch result
-- **final train loss:** `3.7817e-05`
-- **final validation loss:** `2.3082e-05`
-- **final validation MSE:** `1.9592e-05`
-- **final validation MAE:** `0.002913`
+### Final evaluation result
+- **final validation MSE:** `1.7e-05`
+- **final validation MAE:** `0.002662`
 
 ---
 
 ## Main observations
 
 ### Training behavior
-- train and validation losses decrease strongly overall
-- no strong persistent overfitting signal is visible on the current `2000 / 500` setup
-- continuation from 30 to 50 epochs gives meaningful additional improvement
+- training is stable overall on the current `2000 / 500` setup
+- no strong persistent overfitting signal is visible
+- continuation beyond 30 epochs gives meaningful additional improvement
+- controlled tuning improves the result further
 
 ### Validation reconstruction
-Using the improved 50-epoch checkpoint, validation examples show that:
+Using the best tuned checkpoint, validation examples show that:
 - the main beam-shaped dose structure is reconstructed very well
 - the beam entrance region is localized correctly
 - the along-beam decay pattern is captured especially well
 - the perpendicular structure is also reconstructed well for typical cases
 
 ### Validation error analysis
-- the best validation samples are now around **`3.46% – 3.61%`** global relative error
-- a **typical case** shows profile percentage errors of about:
-  - **`2.67%`** along the beam
-  - **`3.76%`** perpendicular to the beam
-- a **worst case** still shows clearly larger error, especially in the perpendicular direction:
-  - global relative error: **`16.64%`**
-  - along-beam mean percentage error: **`3.90%`**
-  - perpendicular mean percentage error: **`12.13%`**
+- **best case** global relative error: **`2.91%`**
+- **typical case** global relative error: **`5.48%`**
+- **worst case** global relative error: **`11.86%`**
+- **typical case** profile percentage errors:
+  - along-beam mean: **`2.71%`**
+  - perpendicular mean: **`2.67%`**
+- **worst case** profile percentage errors:
+  - along-beam mean: **`3.06%`**
+  - perpendicular mean: **`7.45%`**
+- **averaged validation profiles**:
+  - along-beam mean percentage error: **`3.73%`**
+  - perpendicular mean percentage error: **`1.13%`**
 
 ### Interpretation
 The current flow model is no longer only a pilot proof of concept.  
-On the larger train/validation setup, it trains stably, improves beyond 30 epochs, and reconstructs the main beam-related dose structure very well.
+On the larger train/validation setup, it trains stably, improves beyond 30 epochs, benefits from controlled tuning, and reconstructs the main beam-related dose structure very well.
 
 At the same time, the error is still not consistently below 1%, so the current result should be understood as a **strong development-stage result** rather than the final formal evaluation.
 
@@ -127,20 +129,26 @@ At the same time, the error is still not consistently below 1%, so the current r
 
 ## Key figures
 
-### 1. Phase-3 continuation: scaled train vs validation loss
-![Phase 3 Continuation Loss Scaled](docs/figures/phase3_continuation_loss_scaled_0_to_5e-4.png)
+### 1. Typical validation cross-section
+![Typical Sample Cross Section](docs/figures/typical_sample264_cross_section.png)
 
-### 2. Typical validation cross-section
-![Typical Sample Cross Section](docs/figures/typical_sample436_cross_section.png)
+### 2. Typical validation along-beam profile with percentage error
+![Typical Along-Beam Profile](docs/figures/typical_sample264_along_beam_profile_with_pct_error.png)
 
-### 3. Typical validation along-beam profile with percentage error
-![Typical Along-Beam Profile](docs/figures/typical_sample436_along_beam_profile_with_pct_error.png)
+### 3. Typical validation perpendicular profile with percentage error
+![Typical Perpendicular Profile](docs/figures/typical_sample264_perpendicular_profile_with_pct_error.png)
 
-### 4. Typical validation perpendicular profile with percentage error
-![Typical Perpendicular Profile](docs/figures/typical_sample436_perpendicular_profile_with_pct_error.png)
+### 4. Worst-case cross-section
+![Worst Cross Section](docs/figures/worst_sample50_cross_section.png)
 
 ### 5. Worst-case perpendicular profile with percentage error
 ![Worst Perpendicular Profile](docs/figures/worst_sample50_perpendicular_profile_with_pct_error.png)
+
+### 6. Average validation along-beam profile
+![Average Along-Beam Profile](docs/figures/average_along_beam_profile_with_pct_error.png)
+
+### 7. Average validation perpendicular profile
+![Average Perpendicular Profile](docs/figures/average_perpendicular_profile_with_pct_error.png)
 
 ---
 
@@ -163,7 +171,10 @@ ct2dose-project/
 │   ├── day4/
 │   ├── phase2/
 │   ├── phase3/
-│   └── phase3_error_analysis/
+│   ├── phase3_error_analysis/
+│   ├── phase3_continuation/
+│   ├── phase3_tuning_round1/
+│   └── phase3_best_tuned_error_analysis/
 ├── meeting/
 │   └── 2026-04-16/
 ├── docs/
