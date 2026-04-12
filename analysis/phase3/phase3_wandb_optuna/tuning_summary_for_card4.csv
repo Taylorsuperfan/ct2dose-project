@@ -1,0 +1,5 @@
+source,run_name,lr,base_ch,batch_size,epochs,best_epoch,best_val_loss,final_val_mse,final_val_mae,conclusion
+manual_tuning,lr5e4_base24_bs2_cont_to_50,5e-4,24,2,50,43,1.5e-05,1.7e-05,0.002662,current best full training result
+wandb_round,wandb_lr3e4_base24_bs2_ep30,3e-4,24,2,30,29,1.9e-05,2.1e-05,0.002897,strongest 30-epoch wandb run
+optuna_best_trial,optuna_best_trial,4.199e-4,24,2,20,-,2.6166e-05,-,-,best trial in small Optuna study
+optuna_full_run,optuna_final_lr4p2e4_base24_bs2_ep50,4.199e-4,24,2,50,40,1.9576e-05,2.4027e-05,0.003286,did not beat current best
