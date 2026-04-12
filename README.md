@@ -7,7 +7,7 @@ The project currently includes:
 
 - **Phase 1**: pilot experiments in 2D and 3D
 - **Phase 2**: analysis and interpretation of pilot results
-- **Phase 3**: a larger-scale train/validation development run for the 3D flow model, including continuation beyond 30 epochs, controlled hyperparameter tuning, and validation error analysis
+- **Phase 3**: a larger-scale train/validation development run for the 3D flow model, including continuation beyond 30 epochs, controlled hyperparameter tuning, wandb / Optuna-based search, and validation error analysis
 
 ---
 
@@ -119,9 +119,24 @@ Using the best tuned checkpoint, validation examples show that:
   - along-beam mean percentage error: **`3.73%`**
   - perpendicular mean percentage error: **`1.13%`**
 
+### Wandb / Optuna tuning
+A first tool-based tuning step was also completed with both Weights & Biases and Optuna.
+
+Both the wandb runs and the Optuna study pointed to the same strong hyperparameter region:
+- `base_ch = 24`
+- learning rate around **`4e-4` to `5e-4`**
+
+The Optuna-selected configuration (`lr ≈ 4.2e-4`, `base_ch = 24`, `batch_size = 2`) was then trained more fully to `50` epochs, but it did not outperform the current manually tuned best model.
+
+So the current best full training result still remains:
+- `lr = 5e-4`
+- `base_ch = 24`
+- `batch_size = 2`
+- continuation to `50` epochs
+
 ### Interpretation
 The current flow model is no longer only a pilot proof of concept.  
-On the larger train/validation setup, it trains stably, improves beyond 30 epochs, benefits from controlled tuning, and reconstructs the main beam-related dose structure very well.
+On the larger train/validation setup, it trains stably, improves beyond 30 epochs, benefits from controlled tuning, and is further supported by wandb / Optuna-based search.
 
 At the same time, the error is still not consistently below 1%, so the current result should be understood as a **strong development-stage result** rather than the final formal evaluation.
 
@@ -174,7 +189,8 @@ ct2dose-project/
 │   ├── phase3_error_analysis/
 │   ├── phase3_continuation/
 │   ├── phase3_tuning_round1/
-│   └── phase3_best_tuned_error_analysis/
+│   ├── phase3_best_tuned_error_analysis/
+│   └── phase3_wandb_optuna/
 ├── meeting/
 │   └── 2026-04-16/
 ├── docs/

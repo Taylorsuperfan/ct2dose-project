@@ -52,7 +52,7 @@ The main hyperparameters explored were:
 - learning rate
 - base channel size
 
-The strongest tuned configuration was:
+The strongest manually tuned configuration was:
 - `lr = 5e-4`
 - `base_ch = 24`
 - `batch_size = 2`
@@ -136,13 +136,46 @@ At the same time, the error is still not consistently below 1% for the full prob
 
 ---
 
-## 9. Current conclusion
+## 9. Wandb / Optuna-based tuning
+
+A first wandb-based tuning workflow and a small Optuna study were completed successfully.
+
+### Wandb result
+The wandb runs confirmed that:
+- `base_ch = 24` remains the strongest width
+- the strongest learning-rate region is around `3e-4` to `5e-4`
+- the worst candidate remains `1e-4`
+
+### Optuna result
+The Optuna study also pointed to the same strong region:
+- best trial: `lr ≈ 4.2e-4`, `base_ch = 24`, `batch_size = 2`
+
+The Optuna-selected configuration was then trained more fully to `50` epochs:
+- best epoch: `40`
+- best validation loss: `1.96e-05`
+- final validation MSE: `2.40e-05`
+- final validation MAE: `0.003286`
+
+This Optuna-selected model did not outperform the current manually tuned best model.
+
+Therefore:
+- wandb / Optuna successfully confirmed the strong hyperparameter region
+- but the strongest full training result still remains the manually tuned configuration:
+  - `lr = 5e-4`
+  - `base_ch = 24`
+  - `batch_size = 2`
+  - continuation to `50` epochs
+
+---
+
+## 10. Current conclusion
 
 The current phase-3 result supports the following conclusion:
 
 - the 3D flow model is stable on the larger 2000/500 development setup
 - continuation beyond 30 epochs is clearly beneficial
 - controlled tuning further improves the result
+- wandb / Optuna confirm the same strong parameter region
 - the best tuned checkpoint reconstructs the main beam-related dose structure very well
 - both typical and difficult cases improve
 - the main remaining limitation is hardest in the more difficult perpendicular cross-sectional structure
@@ -153,7 +186,7 @@ It is still not the final formal evaluation, because the hold-out test set has n
 
 ---
 
-## 10. Suggested next discussion direction
+## 11. Suggested next discussion direction
 
 The next project decision can be discussed along one of the following directions:
 1. keep this as the current development-stage result and preserve the hold-out test set for a later formal stage

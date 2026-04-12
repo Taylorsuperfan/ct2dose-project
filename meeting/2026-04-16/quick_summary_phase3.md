@@ -28,6 +28,7 @@ The goal of the current stage is to determine whether the 3D flow model:
 - trains stably on a larger setup
 - still improves beyond 30 epochs
 - can be improved further through controlled hyperparameter tuning
+- can be organized and searched more systematically with wandb / Optuna
 - reconstructs the beam-shaped dose structure well on validation data
 - achieves acceptable error levels on typical and difficult cases
 
@@ -85,13 +86,34 @@ The first controlled tuning round also shows that the original configuration is 
 
 ---
 
-## 6. Current conclusion
+## 6. Wandb / Optuna tuning result
+
+A first tool-based tuning step was completed with both Weights & Biases and Optuna.
+
+Both the wandb runs and the Optuna study pointed to the same strong hyperparameter region:
+- `base_ch = 24`
+- learning rate around `4e-4` to `5e-4`
+
+The Optuna-selected configuration (`lr ≈ 4.2e-4`, `base_ch = 24`, `batch_size = 2`) was then trained more fully to `50` epochs. However, it did not outperform the current manually tuned best model.
+
+So the current conclusion is:
+- the tool-based search confirms the same strong parameter region
+- but the best full training result still comes from the manually tuned configuration:
+  - `lr = 5e-4`
+  - `base_ch = 24`
+  - `batch_size = 2`
+  - continuation to `50` epochs
+
+---
+
+## 7. Current conclusion
 
 The tuned 3D flow model now gives the strongest development-stage result obtained so far:
 
 - training is stable on the larger 2000/500 setup
 - continuation beyond 30 epochs is beneficial
 - controlled tuning improves the result further
+- wandb / Optuna confirm the same strong hyperparameter region
 - the main beam-shaped dose structure is reconstructed very well
 - both typical and difficult cases improve compared with the earlier result
 - the main remaining difficulty is in harder perpendicular cross-sectional structure
@@ -104,7 +126,7 @@ the tuned model learns the dose distribution very well overall, but the remainin
 
 ---
 
-## 7. Current limitation
+## 8. Current limitation
 
 The hold-out test set has not yet been evaluated.
 
@@ -112,7 +134,7 @@ Therefore, the current conclusion should still be understood as a development-st
 
 ---
 
-## 8. Main discussion question
+## 9. Main discussion question
 
 The main question for the next stage is what should be prioritized after this tuned development-stage result:
 
