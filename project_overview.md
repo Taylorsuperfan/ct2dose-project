@@ -189,7 +189,11 @@ This phase includes:
 - **Mixed T=0.10** is more hard-case- / bone-in-beam-oriented
 
 ### Key phase-4 baseline summary
-![Phase 4 Targeted Summary](analysis/phase4/ct2dose_targeted_summary.png)
+
+
+=======
+[Phase 4 Targeted Summary](analysis/phase4/ct2dose_targeted_summary_evalT0p1.csv)
+
 
 ---
 
@@ -206,7 +210,10 @@ The mixed models are not redundant:
 - **Mixed T=0.15** is more balanced and stronger on the broader general set
 
 ### Bone subset summary
-![Bone Subset Summary](analysis/phase4/ct2dose_bone_subset_summary.png)
+
+=======
+[Bone Subset Summary](analysis/phase4/ct2dose_bone_subset_summary_evalT0p1.csv)
+
 
 ---
 
@@ -253,10 +260,15 @@ However:
 Routing is a **promising direction**, but the current rule-based router should be treated as an exploratory analysis result, not yet as a final method.
 
 ### Oracle routing upper bound
-![Oracle Routing Summary](analysis/phase4/ct2dose_case_routing_oracle_summary.png)
+[Oracle Routing Summary](analysis/phase4/ct2dose_case_routing_oracle_summary.csv)
 
 ### Routed system vs baselines
-![Routed vs Baselines](analysis/phase4/ct2dose_case_routing_routed_vs_baselines.png)
+
+
+
+### Routed system vs baselines
+[Routed vs Baselines](analysis/phase4/ct2dose_case_routing_routed_vs_baselines.csv)
+
 
 ---
 
@@ -270,7 +282,10 @@ This strategy increased the sampling probability of bone-in-beam candidate train
 #### Result
 It did **not** improve the mixed baseline and degraded the main metrics.
 
-![Bone-aware Negative Result](analysis/phase4/ct2dose_bone_aware_negative_summary.png)
+
+=======
+[Bone-aware Negative Result](analysis/phase4/ct2dose_bone_aware_targeted_subset_summary.csv)
+
 
 ### B. Beam-aware spatial weighting
 This strategy emphasized voxels near the inferred beam axis.
@@ -278,7 +293,10 @@ This strategy emphasized voxels near the inferred beam axis.
 #### Result
 It also did **not** improve the mixed baseline and degraded the main structure-sensitive metrics.
 
-![Beam-aware Negative Result](analysis/phase4/ct2dose_beam_aware_negative_summary.png)
+
+=======
+[Beam-aware Negative Result](analysis/phase4/ct2dose_beam_aware_targeted_summary.csv)
+
 
 ### Main interpretation of the negative results
 These experiments suggest that:
@@ -314,7 +332,9 @@ and these improvements hold in:
 - the non-bone subset
 
 ### Shoulder-aware targeted summary
-![Shoulder-aware Summary](analysis/phase4/ct2dose_shoulder_aware_summary.png)
+
+[Shoulder-aware Summary](analysis/phase4/ct2dose_shoulder_aware_targeted_summary.csv)
+
 
 ---
 
@@ -343,7 +363,10 @@ The current phase-4 picture is stable:
 - current CT-only rule still too weak
 
 ### Final comparison table
-![Final Comparison Table](analysis/phase4/ct2dose_final_comparison_table.png)
+
+=======
+[Final Comparison Table](analysis/phase4/ct2dose_final_comparison_table_card30.csv)
+
 
 ---
 
