@@ -1,0 +1,16 @@
+{
+  "run_name": "phase4_mixed_weighted_flow_lr5e4_base24_bs2_T0p10_a0p30_mw3",
+  "epochs": 50,
+  "lr": 0.0005,
+  "base_ch": 24,
+  "batch_size": 2,
+  "threshold": 0.1,
+  "threshold_mode": "absolute",
+  "alpha": 0.3,
+  "max_weight": 3.0,
+  "best_epoch": 50,
+  "best_val_loss": 1.6441224977825185e-05,
+  "elapsed_min": 54.521125773588814,
+  "best_ckpt_path": "/content/drive/MyDrive/rectified_flow_ct2dose/outputs/checkpoints/phase4_mixed_weighted_flow_lr5e4_base24_bs2_T0p10_a0p30_mw3_best.pt",
+  "latest_ckpt_path": "/content/drive/MyDrive/rectified_flow_ct2dose/outputs/checkpoints/phase4_mixed_weighted_flow_lr5e4_base24_bs2_T0p10_a0p30_mw3_latest.pt"
+}
