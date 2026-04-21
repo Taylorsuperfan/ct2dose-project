@@ -2,7 +2,7 @@
 
 This document provides a phase-by-phase overview of the CT-to-dose prediction project on paired `32×32×32` CT/dose cubes.
 
-For a shorter repository homepage summary, see the main [`README.md`](../README.md).
+For a shorter repository homepage summary, see the main [`README.md`](README.md).
 
 ---
 
@@ -63,7 +63,7 @@ The larger-scale development run uses:
 
 The hold-out test set remains untouched during the current development stage.
 
-More details are documented in [`../data/README.md`](../data/README.md).
+More details are documented in [`data/README.md`](data/README.md).
 
 ---
 
@@ -137,25 +137,25 @@ It is a stable, well-performing development-stage baseline and remains the stron
 ### Example phase-3 figures
 
 #### Typical validation cross-section
-![Typical Sample Cross Section](../docs/figures/typical_sample264_cross_section.png)
+![Typical Sample Cross Section](docs/figures/typical_sample264_cross_section.png)
 
 #### Typical validation along-beam profile
-![Typical Along-Beam Profile](../docs/figures/typical_sample264_along_beam_profile_with_pct_error.png)
+![Typical Along-Beam Profile](docs/figures/typical_sample264_along_beam_profile_with_pct_error.png)
 
 #### Typical validation perpendicular profile
-![Typical Perpendicular Profile](../docs/figures/typical_sample264_perpendicular_profile_with_pct_error.png)
+![Typical Perpendicular Profile](docs/figures/typical_sample264_perpendicular_profile_with_pct_error.png)
 
 #### Worst-case cross-section
-![Worst Cross Section](../docs/figures/worst_sample50_cross_section.png)
+![Worst Cross Section](docs/figures/worst_sample50_cross_section.png)
 
 #### Worst-case perpendicular profile
-![Worst Perpendicular Profile](../docs/figures/worst_sample50_perpendicular_profile_with_pct_error.png)
+![Worst Perpendicular Profile](docs/figures/worst_sample50_perpendicular_profile_with_pct_error.png)
 
 #### Average validation along-beam profile
-![Average Along-Beam Profile](../docs/figures/average_along_beam_profile_with_pct_error.png)
+![Average Along-Beam Profile](docs/figures/average_along_beam_profile_with_pct_error.png)
 
 #### Average validation perpendicular profile
-![Average Perpendicular Profile](../docs/figures/average_perpendicular_profile_with_pct_error.png)
+![Average Perpendicular Profile](docs/figures/average_perpendicular_profile_with_pct_error.png)
 
 ---
 
@@ -189,7 +189,7 @@ This phase includes:
 - **Mixed T=0.10** is more hard-case- / bone-in-beam-oriented
 
 ### Key phase-4 baseline summary
-![Phase 4 Targeted Summary](../analysis/phase4/phase4_targeted_summary.png)
+![Phase 4 Targeted Summary](analysis/phase4/ct2dose_targeted_summary.png)
 
 ---
 
@@ -206,7 +206,7 @@ The mixed models are not redundant:
 - **Mixed T=0.15** is more balanced and stronger on the broader general set
 
 ### Bone subset summary
-![Bone Subset Summary](../analysis/phase4/phase4_bone_subset_summary.png)
+![Bone Subset Summary](analysis/phase4/ct2dose_bone_subset_summary.png)
 
 ---
 
@@ -233,12 +233,6 @@ This revealed that the models do **not** share the same failure cases.
 ### Main conclusion
 Different models have genuinely different failure modes and should not be interpreted as simply stronger or weaker versions of each other.
 
-### Fixed-anchor worst-case comparison
-![Fixed Anchor Worst Case](../analysis/phase4/phase4_fixed_anchor_worst_case.png)
-
-### Model-specific representative cases
-![Model-specific Cases](../analysis/phase4/phase4_model_specific_cases.png)
-
 ---
 
 ## Phase 4.4 — Case routing analysis
@@ -259,10 +253,10 @@ However:
 Routing is a **promising direction**, but the current rule-based router should be treated as an exploratory analysis result, not yet as a final method.
 
 ### Oracle routing upper bound
-![Oracle Routing Summary](../analysis/phase4/ct2dose_phase4_routing_oracle_summary.png)
+![Oracle Routing Summary](analysis/phase4/ct2dose_case_routing_oracle_summary.png)
 
 ### Routed system vs baselines
-![Routed vs Baselines](../analysis/phase4/ct2dose_phase4_routed_vs_baselines.png)
+![Routed vs Baselines](analysis/phase4/ct2dose_case_routing_routed_vs_baselines.png)
 
 ---
 
@@ -276,7 +270,7 @@ This strategy increased the sampling probability of bone-in-beam candidate train
 #### Result
 It did **not** improve the mixed baseline and degraded the main metrics.
 
-![Bone-aware Negative Result](../analysis/phase4/ct2dose_phase4_bone_aware_negative_summary.png)
+![Bone-aware Negative Result](analysis/phase4/ct2dose_bone_aware_negative_summary.png)
 
 ### B. Beam-aware spatial weighting
 This strategy emphasized voxels near the inferred beam axis.
@@ -284,7 +278,7 @@ This strategy emphasized voxels near the inferred beam axis.
 #### Result
 It also did **not** improve the mixed baseline and degraded the main structure-sensitive metrics.
 
-![Beam-aware Negative Result](../analysis/phase4/ct2dose_phase4_beam_aware_negative_summary.png)
+![Beam-aware Negative Result](analysis/phase4/ct2dose_beam_aware_negative_summary.png)
 
 ### Main interpretation of the negative results
 These experiments suggest that:
@@ -320,7 +314,7 @@ and these improvements hold in:
 - the non-bone subset
 
 ### Shoulder-aware targeted summary
-![Shoulder-aware Summary](../analysis/phase4/ct2dose_phase4_shoulder_aware_summary.png)
+![Shoulder-aware Summary](analysis/phase4/ct2dose_shoulder_aware_summary.png)
 
 ---
 
@@ -349,7 +343,7 @@ The current phase-4 picture is stable:
 - current CT-only rule still too weak
 
 ### Final comparison table
-![Final Comparison Table](../analysis/phase4/ct2dose_phase4_final_comparison_table.png)
+![Final Comparison Table](analysis/phase4/ct2dose_final_comparison_table.png)
 
 ---
 
