@@ -189,7 +189,7 @@ This phase includes:
 - **Mixed T=0.10** is more hard-case- / bone-in-beam-oriented
 
 ### Key phase-4 baseline summary
-[Phase 4 Targeted Summary](analysis/phase4/ct2dose_targeted_summary.csv)
+[Phase 4 Targeted Summary](analysis/phase4/ct2dose_targeted_summary_evalT0p1.csv)
 
 ---
 
@@ -206,7 +206,7 @@ The mixed models are not redundant:
 - **Mixed T=0.15** is more balanced and stronger on the broader general set
 
 ### Bone subset summary
-[Bone Subset Summary](analysis/phase4/ct2dose_bone_subset_summary.csv)
+[Bone Subset Summary](analysis/phase4/ct2dose_bone_subset_summary_evalT0p1.csv)
 
 ---
 
@@ -278,7 +278,7 @@ This strategy emphasized voxels near the inferred beam axis.
 #### Result
 It also did **not** improve the mixed baseline and degraded the main structure-sensitive metrics.
 
-[Beam-aware Negative Result](analysis/phase4/ct2dose_beam_aware_negative_summary.csv)
+[Beam-aware Negative Result](analysis/phase4/ct2dose_beam_aware_targeted_summary.csv)
 
 ### Main interpretation of the negative results
 These experiments suggest that:
@@ -314,7 +314,7 @@ and these improvements hold in:
 - the non-bone subset
 
 ### Shoulder-aware targeted summary
-[Shoulder-aware Summary](analysis/phase4/ct2dose_shoulder_aware_summary.csv)
+[Shoulder-aware Summary](analysis/phase4/ct2dose_shoulder_aware_targeted_summary.csv)
 
 ---
 
@@ -343,7 +343,7 @@ The current phase-4 picture is stable:
 - current CT-only rule still too weak
 
 ### Final comparison table
-[Final Comparison Table](analysis/phase4/ct2dose_final_comparison_table.csv)
+[Final Comparison Table](analysis/phase4/ct2dose_final_comparison_table_card30.csv)
 
 ---
 
