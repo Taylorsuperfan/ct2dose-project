@@ -1,0 +1,4 @@
+router,hit_rate_vs_oracle_weighted_best,accuracy
+prediction_router_logreg,0.462,0.462
+prediction_router_rf,0.532,0.532
+prediction_router_xgb,0.556,0.556
