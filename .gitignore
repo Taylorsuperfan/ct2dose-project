@@ -33,6 +33,20 @@ env/
 *.mha
 *.mhd
 
+
+# Logs
+*.log
+# macOS archive artifacts
+__MACOSX/
+
+# Optional local checkpoints directory
+checkpoints/*
+!checkpoints/README.md
+
+# Local experiment scratch
+scratch/
+tmp/
+
 # temp/cache
 tmp/
 temp/
@@ -41,3 +55,4 @@ temp/
 # large data directories
 raw_data/
 outputs/
+

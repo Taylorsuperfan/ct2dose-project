@@ -339,3 +339,38 @@ ct2dose-project/
 ├── scripts/
 ├── outputs/
 └── raw_data/
+## Phase9–Phase11 profile-refinement update
+
+The later refinement work after Phase4 focuses on professor-style profile errors and the Card17 sample491 along-beam/perpendicular trade-off.
+
+### Current best result
+
+The current best profile-refinement result is **Phase10D falloff-aware direction refinement**.
+
+| Method | Along-beam x | Perpendicular y |
+|---|---:|---:|
+| Card17 Phase4 mixed weighted reference | 2.775% | 1.615% |
+| Phase9G deployable | 4.969% | 0.774% |
+| Phase10D falloff-aware | 4.363% | 0.771% |
+
+Phase10D improves the remaining along-beam error while preserving the perpendicular advantage.
+
+### Important inference note
+
+The corrected rectified-flow sampler starts from CT, not zeros:
+
+- init = CT
+- midpoint Euler time
+- positive integration sign
+- euler_steps = 10 for Phase9D-plus / Phase9G reproduction
+
+### Recommended next step
+
+Evaluate Phase10D using the same global/system metrics as the previous Phase4 final summary:
+overall MAE, weighted MSE, high-dose MAE, outside MAE, peak-core MAE, and peak-shoulder MAE.
+
+See:
+
+- `docs/phase9_to_phase11_summary.md`
+- `docs/next_steps.md`
+- `analysis/phase9_10_11/phase10d/`

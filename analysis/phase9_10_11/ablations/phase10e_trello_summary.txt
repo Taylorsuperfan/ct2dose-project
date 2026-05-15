@@ -1,0 +1,33 @@
+
+Phase10E dual-branch gated refinement smoke test
+
+Goal:
+- Test whether a dual-branch gated refinement can further improve along-beam falloff while preserving Phase9G's perpendicular advantage.
+- This extends Phase10D by separating an along-beam correction branch and a conservative safe branch, fused by a learned gate.
+
+Design:
+- Input: CT + Phase9G prediction + direction-aware features.
+- Branch 1: along-beam/falloff correction.
+- Branch 2: safe bounded correction.
+- Gate: spatially controls how much along-branch correction is applied.
+- Loss: along-beam profile/log/falloff losses + perpendicular no-worse + core no-worse + residual/smooth/gate regularization.
+
+Card17 historical reference:
+- along x: 2.775%
+- perpendicular y: 1.615%
+
+Phase9G:
+- along x: 4.969%
+- perpendicular y: 0.774%
+
+Phase10D:
+- along x: 4.363%
+- perpendicular y: 0.771%
+
+Phase10E:
+- along x: 4.755%
+- perpendicular y: 0.766%
+
+Interpretation:
+- If Phase10E further lowers along x while keeping y close to Phase9G/Phase10D, the dual-branch gating idea is promising.
+- If Phase10E does not improve over Phase10D, then Phase10D remains the best current direction-aware refinement result.
