@@ -1,0 +1,5 @@
+method,source,along_x_mean_pct,perpendicular_y_mean_pct,delta_vs_card17_mixed_along_x,delta_vs_card17_mixed_perp_y
+Card17 Phase4 mixed weighted,historical_card17_csv,2.774812,1.614564,0.0,0.0
+Phase9G deployable,current_corrected_pipeline,4.969028528393631,0.7737995990620838,2.194216528393631,-0.8407644009379163
+Phase10D falloff-aware,previous_best_direction_refinement,4.363384,0.770616,1.588572,-0.8439480000000001
+Phase11A WED-aware,phase11a,4.776968144123968,0.8181249273252928,2.002156144123968,-0.7964390726747073

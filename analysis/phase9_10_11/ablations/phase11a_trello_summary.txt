@@ -1,0 +1,44 @@
+
+Phase11A WED-aware falloff-constrained refinement smoke test
+
+Motivation:
+- The remaining along-beam issue is likely a path-integral / material attenuation problem.
+- Phase10D used x-depth and falloff-aware log-profile losses, but it did not explicitly model upstream material path.
+- Phase11A adds approximate water-equivalent depth (WED) and attenuation-prior features derived from CT.
+
+Design:
+- Input: CT + Phase9G prediction + direction-aware + WED-aware features.
+- Added WED features:
+  - approximate relative density from normalized CT
+  - cumulative density along x
+  - normalized WED
+  - attenuation prior exp(-beta * WED)
+- Output: small bounded residual added to Phase9G.
+- Loss:
+  - along-beam profile loss
+  - along-beam log-profile loss
+  - falloff-region log loss
+  - WED-normalized log-slope loss
+  - falloff no-worse
+  - perpendicular no-worse
+  - core no-worse
+
+Card17 historical reference:
+- along x: 2.775%
+- perpendicular y: 1.615%
+
+Phase9G:
+- along x: 4.969%
+- perpendicular y: 0.774%
+
+Phase10D:
+- along x: 4.363%
+- perpendicular y: 0.771%
+
+Phase11A:
+- along x: 4.777%
+- perpendicular y: 0.818%
+
+Interpretation:
+- If Phase11A improves over Phase10D on along x while preserving perpendicular y, WED-aware path information is helpful.
+- If Phase11A does not improve over Phase10D, then the current approximate WED feature or WED-slope loss needs refinement.

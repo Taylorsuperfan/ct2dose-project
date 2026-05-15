@@ -29,3 +29,13 @@ outputs/*
 
 # Logs
 *.log
+# macOS archive artifacts
+__MACOSX/
+
+# Optional local checkpoints directory
+checkpoints/*
+!checkpoints/README.md
+
+# Local experiment scratch
+scratch/
+tmp/

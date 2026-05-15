@@ -1,0 +1,7 @@
+method,source,along_x_mean_pct,perpendicular_y_mean_pct,delta_vs_card17_mixed_along_x,delta_vs_card17_mixed_perpendicular_y
+Card17 tuned baseline,historical_card17_csv,5.287613,4.050796,2.5128010000000005,2.436232
+Card17 Phase4 mixed weighted,historical_card17_csv,2.774812,1.614564,0.0,0.0
+Phase5E along-falloff base,current_corrected_pipeline,10.804301157910821,14.784469656457013,8.02948915791082,13.169905656457013
+Phase9D-plus,current_corrected_pipeline,4.964146170359458,0.7789441706103726,2.1893341703594578,-0.8356198293896275
+Phase9G deployable,current_corrected_pipeline,4.969028528393631,0.7737995990620838,2.194216528393631,-0.8407644009379163
+Phase10A x-scale oracle,oracle_headroom_diagnostic,8.99018595396374,12.136906961453132,6.2153739539637405,10.522342961453132
