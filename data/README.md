@@ -1,32 +1,70 @@
-# Data notes
+# Data README
 
-This repository does not include the full raw CT-dose cube dataset.
+## Overview
+This project uses paired `32×32×32` CT-dose cubes for CT-to-dose prediction experiments.
 
-## Included
-- train/test split files for 2D and 3D experiments:
-  - `splits/train_pairs_2d.json`
-  - `splits/test_pairs_2d.json`
-  - `splits/train_pairs_3d.json`
-  - `splits/test_pairs_3d.json`
+Each sample consists of:
+- one **CT cube**
+- one aligned **dose cube**
 
-## Not included
-- raw `.npy` cube files
-- large intermediate outputs
-- large checkpoints
+The task is to learn the mapping:
 
-## Data organization used in the experiments
+`CT cube -> dose cube`
 
-The project assumes paired folders of the form:
+---
 
-- `input_cubes/`
-- `output_cubes/`
+## Data format
+The working data are stored as paired cube files, typically in NumPy format.
 
-where matching files share the same filename.
+Each cube has shape:
 
-A patient-level split was used:
-- first 8 case folders for training
-- last 2 case folders for testing
+`32 x 32 x 32`
 
-## Notes
+with:
+- CT values representing the anatomical / material structure
+- dose values representing the target dose distribution
 
-The raw dataset is intentionally excluded from version control to keep the repository lightweight and reproducible.
+---
+
+## Pairing
+The project assumes that each CT cube has a corresponding dose cube with the same filename or sample identity.
+
+This pairing is required for:
+- regression experiments
+- flow-based experiments
+- validation and targeted evaluation
+- casewise comparison across models
+
+---
+
+## Dataset usage across phases
+
+### Early pilot stage
+Earlier pilot experiments used smaller subsets, such as:
+- 64 training samples
+- 32 test samples
+
+These were mainly used for:
+- feasibility checking
+- pipeline debugging
+- early qualitative analysis
+
+### Current development stage
+The larger development-stage 3D flow experiments use:
+- **2000 training samples**
+- **500 validation samples**
+
+In terms of case-level grouping, the project uses:
+- **6 training cases**
+- **2 validation cases**
+- **2 fully held-out test cases**
+
+The held-out test set is intentionally kept untouched during the current development stage.
+
+---
+
+## Splits
+Split files are stored in:
+
+```text
+data/splits/

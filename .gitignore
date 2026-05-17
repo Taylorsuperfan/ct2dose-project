@@ -10,22 +10,29 @@ __pycache__/
 # macOS
 .DS_Store
 
-# Raw data
-raw_data/*
-!raw_data/.gitkeep
+# virtual environments
+.venv/
+venv/
+env/
 
-# Generic outputs
-outputs/*
-!outputs/.gitkeep
+# logs
+*.log
 
-# Model checkpoints
+# large checkpoints
 *.pt
 *.pth
+*.ckpt
 
-# Large arrays and archives
+# raw / heavy arrays
 *.npy
 *.npz
-*.zip
+*.h5
+*.mat
+*.nii
+*.nii.gz
+*.mha
+*.mhd
+
 
 # Logs
 *.log
@@ -39,3 +46,13 @@ checkpoints/*
 # Local experiment scratch
 scratch/
 tmp/
+
+# temp/cache
+tmp/
+temp/
+.cache/
+
+# large data directories
+raw_data/
+outputs/
+
