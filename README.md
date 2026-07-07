@@ -244,17 +244,4 @@ The current remaining bottleneck is **hard along-beam falloff-shape error**. The
 
 ---
 
-## Recommended next steps
 
-1. Evaluate the Optuna-selected Phase3 candidate under the same region- and profile-level metrics.
-2. Run full strict test2 evaluation when computational time is available.
-3. Evaluate Phase10D-strict under the Phase4 system-level metric suite.
-4. Analyze the hard-falloff cohort.
-5. Design falloff-shape-specific refinement only after confirming the failure pattern.
-6. If needed, perform fully strict end-to-end retraining.
-
----
-
-## Repository notes
-
-This repository is meant to support the report and project discussion. For reproducibility, raw data and large checkpoints should remain outside the public repository unless explicitly approved.
