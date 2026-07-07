@@ -1,376 +1,260 @@
+# 3D Rectified Flow Matching for CT-to-Dose Prediction
 
-# CT-to-Dose Prediction: Regression and Flow on Paired 2D/3D Cubes
+This repository documents an advanced-practice project on **3D CT-to-dose prediction** using 3D rectified flow matching and profile-aware refinement.
 
-This project studies the mapping from paired CT cubes to dose cubes on a `32×32×32` dataset, using both regression-based and flow-based approaches.
+The task is to predict a `32 × 32 × 32` radiation dose cube from a paired `32 × 32 × 32` CT cube. The project started with a stable 3D rectified-flow baseline and later moved toward region- and profile-aware refinement, because global validation loss alone did not fully explain the quality of the predicted dose profiles.
 
-The project currently includes:
-
-- **Phase 1**: pilot experiments in 2D and 3D
-- **Phase 2**: analysis and interpretation of pilot results
-- **Phase 3**: a larger-scale train/validation development run for the 3D flow model, including continuation beyond 30 epochs, controlled hyperparameter tuning, and validation error analysis
-- **Phase 4**: targeted evaluation, subset analysis, model-specific case analysis, routing analysis, and refinement experiments on top of the mixed-loss baselines
+> **Current status:** this repository is mainly a documentation and analysis repository. The raw CT/dose arrays and large model checkpoints are not included. The final report draft describes the project as a reader-facing research story: application → rectified flow matching → data loader and loss adaptation → stable baseline → hyperparameter optimization → evaluation metrics → hypothesis-driven refinements → corrected final evaluation.
 
 ---
 
-## Project goal
+## Project motivation
 
-The goal is to learn a mapping from **CT cubes** to **dose cubes**:
+Radiotherapy dose prediction is a structured 3D regression problem. A useful model should not only minimize global voxel-wise error, but also preserve physically meaningful dose profiles:
 
-`CT cube → dose cube`
+- **depth-dose profile** along the beam direction,
+- **lateral profiles** perpendicular to the beam,
+- **high-dose core** behavior,
+- **shoulder / transition-region** behavior,
+- **falloff** and **low-dose tail** behavior.
 
-and to understand how well different models reconstruct the beam-shaped dose structure, especially in **clinically relevant high-dose regions**.
+The main question in the later project stage was:
 
-In the current project stage, the main priority is **not** to optimize all regions equally.  
-Instead, the focus is placed on:
-
-1. high-dose region quality  
-2. structure-sensitive region quality  
-3. transition / shoulder-region accuracy  
-4. global stability as a secondary but still monitored objective
+> Can the remaining depth-dose profile error be reduced while preserving the already strong lateral profile behavior?
 
 ---
 
-## Current project phases
+## Project workflow
 
-### Phase 1 — Pilot experiments
-This phase focused on:
-- building the 2D and 3D pipelines
-- verifying that the task is learnable
-- establishing initial regression and flow baselines
+<p align="center">
+  <img src="docs/assets/data_pipeline_overview.png" width="780">
+</p>
 
-### Phase 2 — Analysis of pilot results
-This phase focused on:
-- training stability checks
-- normalization and scaling analysis
-- prediction / ground-truth / difference visualization
-- beam-based profile analysis
-- flow behavior visualization
+<p align="center">
+  <em>Overview of the adapted 3D CT-to-dose data pipeline and PyTorch data loader.</em>
+</p>
 
-### Phase 3 — Larger-scale development run
-This phase moved beyond the pilot setup and used:
-- **6 training cases**
-- **2 validation cases**
-- **2 fully held-out test cases**
+The main project-specific adaptations were:
 
-At the sample level, the development run used:
-- **2000 training samples**
-- **500 validation samples**
+1. custom data loaders for paired CT-dose cube manifests,
+2. CT clipping and normalization,
+3. dose scaling before training,
+4. a conditional 3D U-Net velocity model,
+5. a flow-matching velocity loss,
+6. CT-initialized Euler sampling,
+7. depth-dose and lateral-dose profile evaluation,
+8. profile-aware refinement heads.
 
-The hold-out test set is intentionally left untouched for later formal evaluation.
-
-### Phase 4 — Targeted evaluation and refinement
-This phase focused on:
-- targeted evaluation with structure-sensitive metrics
-- mixed-loss comparison against the tuned baseline
-- bone-in-beam subset analysis
-- fixed-anchor and model-specific representative-case analysis
-- case-dependent routing analysis
-- exploratory biasing strategies
-- a final positive refinement result based on **shoulder-aware fine-tuning**
+No single external GitHub repository was identified in the archived project files as the direct final code base for the 3D CT-to-dose experiments. The conceptual starting point is the rectified flow / flow matching formulation, and the implementation was adapted inside this project repository.
 
 ---
 
 ## Data setup
 
-The project uses paired `32×32×32` CT-dose cubes.
+The project uses paired 3D CT-dose cubes.
 
-### Pilot-scale setup
-Earlier pilot experiments used smaller subsets such as:
-- 64 training samples
-- 32 test samples
+### Cube representation
 
-These experiments were mainly used for feasibility checks and early model understanding.
+- CT cube shape: `1 × 32 × 32 × 32`
+- dose cube shape: `1 × 32 × 32 × 32`
+- CT preprocessing: clip to `[-1024, 1500]`, then linearly normalize
+- dose preprocessing: scale by `dose_scale = 1000.0`
 
-### Current development setup
-The larger-scale development run uses:
-- **2000 training samples**
-- **500 validation samples**
-- hold-out test set reserved for later use
+### Case-level split design
 
-More details are documented in `data/README.md`.
+The intended split is case-level:
 
----
+| Split role | Case groups | Notes |
+|---|---:|---|
+| training | 6 | used for model fitting |
+| validation | 2 | used for model selection / diagnostics |
+| final test | 2 | held-out case groups |
 
-## Phase 3 baseline result
+The full generated JSON files later contained many cube records per case:
 
-### Best tuned baseline configuration
-- `lr = 5e-4`
-- `base_ch = 24`
-- `batch_size = 2`
-- continuation to `50` epochs
+| JSON file | Case groups | Records per case | Total records |
+|---|---:|---:|---:|
+| `train_pairs_3d.json` | 8 | 2000 | 16000 |
+| `test_pairs_3d.json` | 2 | 2000 | 4000 |
 
-### Best validation result
-- **best epoch:** `43`
-- **best validation loss:** `1.5e-05`
-
-### Final tuned baseline evaluation
-- **overall validation MAE:** `0.002662`
-
-### Interpretation
-The phase-3 tuned model is no longer only a pilot proof of concept.  
-It trains stably on the current train/validation setup and serves as the strongest conservative global baseline for later phase-4 targeted evaluation.
+The eight cases in `train_pairs_3d.json` correspond to the six training cases plus the two validation cases. Later, a corrected strict split was created for the final Phase10D-strict refinement-head evaluation.
 
 ---
 
-## Phase 4 main results
+## Baseline training and hyperparameter optimization
 
-### Main reference models
-The most important phase-4 reference models are:
+The first stable 3D rectified-flow baseline used sampled training and validation records.
 
-- **Tuned**
-- **Mixed T=0.10, alpha=0.30, max_weight=3.0**
-- **Mixed T=0.15, alpha=0.30, max_weight=3.0**
-- **Shoulder-aware T=0.15, beta=0.10**
+| Item | Value |
+|---|---:|
+| training records | 2000 |
+| validation records | 500 |
+| base channels | 24 |
+| batch size | 2 |
+| learning rate | `3e-4` |
+| epochs | 30 |
+| best epoch | 26 |
+| final validation MAE | 0.004768 |
 
-### Current model ranking
-
-#### Conservative global baseline
-1. **Tuned**
-
-#### High-dose / structure-sensitive ranking
-1. **Shoulder-aware T=0.15**
-2. **Mixed T=0.15**
-3. **Mixed T=0.10**
-4. **Tuned** (still strongest outside-region baseline)
-
-### Best current high-dose / structure-sensitive candidate
-The strongest current phase-4 candidate is:
-
-**Shoulder-aware T=0.15, beta=0.10**
-
-Its targeted evaluation summary is:
-
-- **overall_mae:** `0.002683`
-- **weighted_mse:** `0.000028`
-- **high_mae:** `0.004179`
-- **outside_mae:** `0.002488`
-- **peak_core_mae:** `0.036051`
-- **peak_shoulder_mae:** `0.015444`
-
-Compared with the original mixed T=0.15 baseline, it improves:
-- weighted MSE
-- high-dose MAE
-- peak-core MAE
-- peak-shoulder MAE
-
-and the improvement holds in:
-- the full validation set
-- the bone-in-beam subset
-- the non-bone subset
-
-### Tuned baseline still remains important
-The tuned model still remains the strongest conservative baseline for:
-- global/outside-region behavior
-- clean outside-region error control
-
-Its targeted evaluation summary is:
-
-- **overall_mae:** `0.002662`
-- **weighted_mse:** `0.000038`
-- **high_mae:** `0.004830`
-- **outside_mae:** `0.002382`
-- **peak_core_mae:** `0.047654`
-- **peak_shoulder_mae:** `0.022622`
-
-### Interpretation
-The current main conclusion is therefore:
-
-- **Tuned** remains the strongest conservative global baseline
-- **Shoulder-aware T=0.15** is the strongest current model when the evaluation priority is shifted toward clinically relevant high-dose structure and transition-region quality
-
----
-
-## Main phase-4 observations
-
-### Mixed-loss baselines
-The mixed-loss direction is meaningful. The two original mixed baselines already show different preferences:
-
-- **Mixed T=0.15** is the strongest original balanced mixed baseline
-- **Mixed T=0.10** is more aggressive and more hard-case- / bone-in-beam-oriented
-
-### Bone-in-beam subset analysis
-The validation set was split into:
-- bone-in-beam candidate cases
-- non-bone candidate cases
-
-This analysis showed that:
-- the mixed models are not redundant
-- different models are better suited to different structural case types
-
-### Representative-case analysis
-Two complementary representative-case strategies were used:
-
-1. **fixed-anchor best / typical / worst cases**  
-   for fair comparison on identical validation cases
-
-2. **model-specific best / typical / worst cases**  
-   to reveal genuine differences in model-specific failure modes
-
-The model-specific analysis showed that the models do **not** share the same worst cases.
-
-### Routing analysis
-A case-dependent routing analysis was also performed.
-
-Main findings:
-- different models do not fail on the same cases
-- oracle routing shows a strong theoretical upper bound improvement
-- however, the current simple CT-only hand-crafted routing rule is still too weak
-
-So routing is:
-- **promising in principle**
-- but **not yet a final practical method**
-
----
-
-## Negative results
-
-Two exploratory phase-4 extensions were tested and did **not** improve the mixed baselines:
-
-### Bone-aware oversampling
-This strategy increased the sampling probability of bone-in-beam candidate training cases.  
-It did not improve the mixed baselines and degraded the main evaluation metrics.
-
-### Beam-aware spatial weighting
-This strategy emphasized voxels near the inferred beam axis.  
-It also did not improve the mixed baselines and degraded the structure-sensitive metrics.
-
-### Interpretation of the negative results
-These two negative results suggest that:
-- coarse case-level biasing is too rough
-- coarse beam-axis weighting is also too rough
-
-In contrast, the successful shoulder-aware refinement indicates that the **transition / shoulder region** is a much more meaningful refinement target.
-
----
-
-## Final experimental picture
-
-At the current stage, the experimental picture is stable:
-
-- **Tuned**: strongest conservative global / outside-region baseline
-- **Mixed T=0.15**: strongest original balanced mixed baseline
-- **Mixed T=0.10**: useful hard-case-oriented reference model
-- **Shoulder-aware T=0.15**: strongest current high-dose / structure-sensitive candidate
-- **Bone-aware oversampling**: negative result
-- **Beam-aware weighting**: negative result
-- **CT-only routing rule**: promising analysis result, but not yet strong enough as a final method
-
----
-
-## Key figures
-
-### Phase 3 baseline figures
-#### 1. Typical validation cross-section
-![Typical Sample Cross Section](docs/figures/typical_sample264_cross_section.png)
-
-#### 2. Typical validation along-beam profile with percentage error
-![Typical Along-Beam Profile](docs/figures/typical_sample264_along_beam_profile_with_pct_error.png)
-
-#### 3. Typical validation perpendicular profile with percentage error
-![Typical Perpendicular Profile](docs/figures/typical_sample264_perpendicular_profile_with_pct_error.png)
-
-#### 4. Worst-case cross-section
-![Worst Cross Section](docs/figures/worst_sample50_cross_section.png)
-
-#### 5. Worst-case perpendicular profile with percentage error
-![Worst Perpendicular Profile](docs/figures/worst_sample50_perpendicular_profile_with_pct_error.png)
-
-#### 6. Average validation along-beam profile
-![Average Along-Beam Profile](docs/figures/average_along_beam_profile_with_pct_error.png)
-
-#### 7. Average validation perpendicular profile
-![Average Perpendicular Profile](docs/figures/average_perpendicular_profile_with_pct_error.png)
-
-### Phase 4 suggested summary figures
-Recommended phase-4 summary figures include:
-- targeted summary comparison table
-- bone-in-beam subset summary table
-- representative worst-case same-scale comparison
-- oracle routing summary table
-- routed-vs-baselines comparison table
-- shoulder-aware targeted summary table
-- final comparison table
-
----
-
-## Repository structure
+Continuation from 30 to 50 epochs improved validation MAE to:
 
 ```text
-ct2dose-project/
-├── README.md
-├── .gitignore
-├── data/
-│   ├── README.md
-│   └── splits/
-├── notebooks/
-│   ├── 2d/
-│   ├── 3d/
-│   ├── phase4_baselines/
-│   ├── phase4_case_analysis/
-│   ├── phase4_negative_results/
-│   └── phase4_positive_result/
-├── analysis/
-│   ├── day1/
-│   ├── day2/
-│   ├── day3/
-│   ├── day4/
-│   ├── phase2/
-│   ├── phase3/
-│   ├── phase3_error_analysis/
-│   ├── phase3_continuation/
-│   ├── phase3_tuning_round1/
-│   ├── phase3_best_tuned_error_analysis/
-│   ├── phase3_wandb_optuna/
-│   ├── ct2dose_phase4_targeted_evaluation/
-│   ├── ct2dose_phase4_case_type_analysis/
-│   ├── ct2dose_phase4_case_routing_analysis/
-│   ├── ct2dose_phase4_bone_aware_mixed_training/
-│   ├── ct2dose_phase4_bone_aware_targeted_evaluation/
-│   ├── ct2dose_phase4_beam_aware_mixed_training/
-│   ├── ct2dose_phase4_beam_aware_targeted_evaluation/
-│   ├── ct2dose_phase4_shoulder_aware_finetuning/
-│   └── ct2dose_phase4_shoulder_aware_targeted_evaluation/
-├── meeting/
-│   └── 2026-04-16/
-    └── 2026-04-28/
+0.002913
+```
 
-├── docs/
-│   └── figures/
-├── scripts/
-├── outputs/
-└── raw_data/
-## Phase9–Phase11 profile-refinement update
+<p align="center">
+  <img src="docs/assets/baseline_training_validation_curves.png" width="780">
+</p>
 
-The later refinement work after Phase4 focuses on professor-style profile errors and the Card17 sample491 along-beam/perpendicular trade-off.
+<p align="center">
+  <em>Joint training and validation curves for the stable 3D rectified-flow baseline.</em>
+</p>
 
-### Current best result
+### Main Phase3 candidates
 
-The current best profile-refinement result is **Phase10D falloff-aware direction refinement**.
+| Candidate | Learning rate | Base channels | Batch size | Val MAE | Role |
+|---|---:|---:|---:|---:|---|
+| Initial stable baseline | `3e-4` | 24 | 2 | 0.004768 | first stable 3D flow run |
+| Continuation baseline | `3e-4` | 24 | 2 | 0.002913 | showed longer training helped |
+| Manual tuned baseline | `5e-4` | 24 | 2 | 0.002662 | downstream baseline lineage |
+| Optuna candidate | `1.6e-4` | 32 | 2 | 0.002421 | best Phase3 sampled-validation candidate |
 
-| Method | Along-beam x | Perpendicular y |
+The Optuna candidate achieved the lowest Phase3 sampled-validation MAE under global validation metrics. However, later Phase4--Phase10 experiments continued from the manually tuned `lr=5e-4`, `base_ch=24`, batch size 2 baseline and its derived systems. That branch had already been evaluated under the region- and profile-based analysis used in later project stages.
+
+Therefore, this project distinguishes between:
+
+- **best Phase3 sampled-validation candidate**: the Optuna candidate,
+- **downstream baseline lineage**: the manually tuned baseline used for the later Phase4--Phase10 profile-refinement analysis.
+
+---
+
+## Evaluation framework
+
+The project uses several evaluation layers.
+
+### Global / system-level metrics
+
+The earlier Phase4 system-level metric suite included:
+
+- overall MAE,
+- weighted MSE,
+- high-dose MAE,
+- outside-dose MAE,
+- peak-core MAE,
+- peak-shoulder MAE.
+
+### Profile-level metrics
+
+The later analysis uses:
+
+- depth-dose profile error along the beam direction,
+- lateral-dose profile error perpendicular to the beam,
+- local percentage error,
+- peak-normalized error,
+- best / typical / worst diagnostic records.
+
+<p align="center">
+  <img src="docs/assets/baseline_depth_lateral_profiles.png" width="780">
+</p>
+
+<p align="center">
+  <em>Representative depth-dose and lateral-dose profile analysis.</em>
+</p>
+
+---
+
+## Phase4 system-level metric result
+
+The manually tuned baseline and a shoulder-aware variant were compared with the Phase4 system-level metric suite.
+
+| Model | Overall MAE | Weighted MSE | High MAE | Outside MAE | Peak-core MAE | Peak-shoulder MAE |
+|---|---:|---:|---:|---:|---:|---:|
+| Tuned baseline | 0.002662 | 0.000038 | 0.004830 | 0.002382 | 0.047654 | 0.022622 |
+| Shoulder-aware | 0.002683 | 0.000028 | 0.004179 | 0.002488 | 0.036051 | 0.015444 |
+
+Interpretation:
+
+- The tuned baseline remains the conservative global / outside-region reference.
+- The shoulder-aware variant improves high-dose and peak-region metrics.
+- This was an early sign that model selection depends on which aspect of dose quality is emphasized.
+
+---
+
+## Later profile-refinement work
+
+After Phase4, the project shifted toward profile-level limitations.
+
+The key finding was directional:
+
+- Phase9G achieved strong lateral profile behavior.
+- The remaining depth-dose / along-beam error was still high.
+
+### Historical sample491 profile reference
+
+The historical sample491 profile comparison was used as a representative depth-dose / lateral-dose diagnostic case.
+
+| Method | Along-beam depth-dose x | Lateral / perpendicular y |
 |---|---:|---:|
-| Card17 Phase4 mixed weighted reference | 2.775% | 1.615% |
+| Historical Phase4 mixed-weighted profile reference | 2.775% | 1.615% |
 | Phase9G deployable | 4.969% | 0.774% |
-| Phase10D falloff-aware | 4.363% | 0.771% |
+| Phase10D-strict | 4.354% | 0.773% |
 
-Phase10D improves the remaining along-beam error while preserving the perpendicular advantage.
+<p align="center">
+  <img src="docs/assets/phase10d_strict_sample491_profiles.png" width="900">
+</p>
 
-### Important inference note
+<p align="center">
+  <em>Historical sample491 profile diagnostic: Phase10D-strict reduces the depth-dose error while preserving lateral behavior.</em>
+</p>
 
-The corrected rectified-flow sampler starts from CT, not zeros:
+Interpretation:
 
-- init = CT
-- midpoint Euler time
-- positive integration sign
-- euler_steps = 10 for Phase9D-plus / Phase9G reproduction
+- Phase10D-strict reduces the remaining depth-dose error.
+- It preserves the lateral-profile advantage of Phase9G.
+- It is still not a complete solution for typical and worst hard-profile records.
 
-### Recommended next step
+---
 
-Evaluate Phase10D using the same global/system metrics as the previous Phase4 final summary:
-overall MAE, weighted MSE, high-dose MAE, outside MAE, peak-core MAE, and peak-shoulder MAE.
+## Corrected strict evaluation caveat
 
-See:
+Phase10D-strict follows a corrected refinement-head split protocol:
 
-- `docs/phase9_to_phase11_summary.md`
-- `docs/next_steps.md`
-- `analysis/phase9_10_11/phase10d/`
+| Split | Role |
+|---|---|
+| strict train6 | train the Phase10D refinement head |
+| strict val2 | validation / model selection pool |
+| strict test2 | held-out test pool |
+| stratified val/test subsets | reported diagnostic summaries |
+
+However, Phase10D-strict is **not** a fully strict end-to-end retraining, because the upstream Phase5E / Phase9G base checkpoint is reused.
+
+---
+
+## Current remaining bottleneck
+
+The current remaining bottleneck is **hard along-beam falloff-shape error**. The typical and worst diagnostic records show that Phase10D-strict improves the average depth-dose profile but does not fully solve hard-profile cases.
+
+<p align="center">
+  <img src="docs/assets/tail_uplift_diagnosis.png" width="820">
+</p>
+
+<p align="center">
+  <em>Tail/falloff diagnosis. Typical uplift is mostly a percentage-denominator effect; the worst record shows true falloff-shape failure.</em>
+</p>
+
+---
+
+## Recommended next steps
+
+1. Evaluate the Optuna-selected Phase3 candidate under the same region- and profile-level metrics.
+2. Run full strict test2 evaluation when computational time is available.
+3. Evaluate Phase10D-strict under the Phase4 system-level metric suite.
+4. Analyze the hard-falloff cohort.
+5. Design falloff-shape-specific refinement only after confirming the failure pattern.
+6. If needed, perform fully strict end-to-end retraining.
+
+---
+
+## Repository notes
+
+This repository is meant to support the report and project discussion. For reproducibility, raw data and large checkpoints should remain outside the public repository unless explicitly approved.
