@@ -1,0 +1,11 @@
+name: attenuation_diffusion_v1
+state_variable: TODO_fluence_or_dose_surrogate
+attenuation_coefficient: TODO
+transverse_diffusion_coefficient: TODO
+depth_step: TODO_from_physical_spacing
+source_condition: TODO
+boundary_condition: TODO
+solver: TODO_finite_difference_or_finite_volume
+notes: >-
+  Implement only after the PDE, units, boundary conditions, and numerical
+  stability criterion are approved in thesis/FORMULATION.md.

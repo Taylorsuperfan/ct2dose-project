@@ -1,0 +1,9 @@
+name: direct_unet3d_baseline
+input_channels: TODO
+base_channels: 24
+output_channels: 1
+conditioning:
+  ct: true
+  beam_depth: TODO
+  radial_distance: TODO
+notes: Match model capacity and training budget to the physical-prior CFM baseline.

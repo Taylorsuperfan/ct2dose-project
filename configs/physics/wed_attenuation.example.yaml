@@ -1,0 +1,9 @@
+name: wed_attenuation_v1
+hu_to_density_calibration: TODO_authoritative_source
+beam_geometry_source: TODO_metadata_field
+beta: TODO_calibrate_on_train_validation_only
+incident_fluence_profile: TODO
+output_unit: TODO
+notes: >-
+  Do not copy coefficients from unrelated scanners or beam energies. All values
+  must be documented in the decision log and experiment registry.

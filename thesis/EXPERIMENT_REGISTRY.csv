@@ -1,0 +1,1 @@
+experiment_id,date,git_commit,config_file,data_split,seed,model,physical_model,physics_parameters,cfm_source,conditioning,path,loss,checkpoint_metric,best_epoch,global_mae,depth_mean_pct,lateral_mean_pct,falloff_peak_norm_pct,runtime,status,notes
