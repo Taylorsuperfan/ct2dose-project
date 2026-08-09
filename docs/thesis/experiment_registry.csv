@@ -1,0 +1,6 @@
+experiment_id,experiment_name,phase,goal,data_split,config,seeds,status,result_path,git_commit,notes
+E001,Strict split and metadata audit,Phase11A,Verify case independence units geometry and beam metadata,train-validation-test,configs/protocol/strict_v1.yaml,,in_progress,reports/data_audit/,,
+E002,Raw HU validation,Phase11A,Determine whether CT values are raw HU,train-validation,,,pending,,,,
+E003,HU-to-density conversion,Phase11B,Construct a physically documented density mapping,train-validation,,,pending,,,,
+E004,Beam coordinate construction,Phase11B,Construct physical transport coordinate s,train-validation,,,pending,,,,
+E005,WED attenuation baseline,Phase11C,Construct the first explicit physical baseline,train-validation-test,,,pending,,,,

@@ -1,0 +1,8 @@
+{
+  "protocol_id": "strict_v1",
+  "generated_at": null,
+  "hash_algorithm": "sha256",
+  "train": {},
+  "validation": {},
+  "test": {}
+}
