@@ -1,0 +1,4 @@
+# One anonymized case_id per line.
+# Include every case previously used, evaluated, visualized,
+# calibrated, or manually inspected during Advanced Practice.
+# Populate the actual case inventory during the strict split audit.
