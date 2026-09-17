@@ -1,0 +1,13 @@
+method,baseline,metric,baseline_value,method_value,absolute_delta,relative_change_percent,absolute_delta_unit
+new_residual_rf,phase10d_strict,rmse_stored_units,4.3277492140000001e-06,4.1457718009999999e-06,-1.8197741300000024e-07,-4.2048973727801702,stored_numerical_units
+new_residual_rf,phase10d_strict,mae_stored_units,3.1066932740000002e-06,2.8757906699999999e-06,-2.3090260400000032e-07,-7.4324235975411712,stored_numerical_units
+new_residual_rf,phase10d_strict,x_profile_rmse_stored_units,1.3857422849999999e-05,1.4335892590000001e-05,4.7846974000000136e-07,3.452804646139529,stored_numerical_units
+new_residual_rf,phase10d_strict,y_profile_rmse_stored_units,9.8783827069999994e-06,9.9102700879999997e-06,3.1887381000000349e-08,0.32279961149312975,stored_numerical_units
+new_residual_rf,phase10d_strict,z_profile_rmse_stored_units,9.943986058e-06,9.9768819000000001e-06,3.2895842000000094e-08,0.33081142519839624,stored_numerical_units
+new_residual_rf,phase10d_strict,x_mean_pct,6.6741684809999997,7.8950024609999998,1.2208339800000001,18.2919263047594,percentage_points
+new_hjd_rf,phase10d_strict,rmse_stored_units,4.3277492140000001e-06,4.1773838049999996e-06,-1.5036540900000049e-07,-3.4744483001366566,stored_numerical_units
+new_hjd_rf,phase10d_strict,mae_stored_units,3.1066932740000002e-06,2.9515391810000002e-06,-1.5515409300000003e-07,-4.9941876881920972,stored_numerical_units
+new_hjd_rf,phase10d_strict,x_profile_rmse_stored_units,1.3857422849999999e-05,1.4181764819999999e-05,3.2434197e-07,2.3405648619577279,stored_numerical_units
+new_hjd_rf,phase10d_strict,y_profile_rmse_stored_units,9.8783827069999994e-06,1.000422538e-05,1.2584267300000066e-07,1.2739197977299055,stored_numerical_units
+new_hjd_rf,phase10d_strict,z_profile_rmse_stored_units,9.943986058e-06,1.003416638e-05,9.0180321999999981e-08,0.9068830293406327,stored_numerical_units
+new_hjd_rf,phase10d_strict,x_mean_pct,6.6741684809999997,7.268618794,0.59445031300000029,8.9067321973108626,percentage_points

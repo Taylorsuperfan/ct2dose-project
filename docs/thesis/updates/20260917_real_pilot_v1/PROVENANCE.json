@@ -1,0 +1,27 @@
+{
+  "note_date": "2026-09-17",
+  "experiment_report_date": "2026-09-16",
+  "evidence_basis": "High-precision aggregate metrics supplied by the user in this conversation; previous user execution logs and the two supplied source archives.",
+  "comparison_reported_csv": "Transcription of supplied aggregate metrics, not a fresh evaluation and not a byte copy of Drive comparison.csv.",
+  "derivations": "relative_changes_vs_phase10d.csv uses (new/baseline - 1)*100 and new-baseline.",
+  "user_drive_access_this_turn": false,
+  "new_training_this_turn": false,
+  "new_prediction_evaluation_this_turn": false,
+  "github_push_this_turn": false,
+  "trello_mutation_this_turn": false,
+  "source_archives": [
+    {
+      "archive": "phase10d_recovered_comparison_v1.zip",
+      "sha256": "c97556c383966cd38b2e14d1db2350b5e07fbd7df258143f53adca7a1a6d49e4",
+      "n_files": 29,
+      "copy_policy": "all original package files copied byte-for-byte; no model/source edits"
+    },
+    {
+      "archive": "phase9g_signed_real_v1.zip",
+      "sha256": "33968481ce7dda62b1c4012218c13f025e7b5777eeb1ff189dea9c9c3e308c9e",
+      "n_files": 35,
+      "copy_policy": "all original package files copied byte-for-byte; no model/source edits"
+    }
+  ],
+  "sharing": "No individual record IDs, patient IDs, weights, medical arrays or private reports included in this update folder. Permission to publish code/unpublished research is not inferred."
+}

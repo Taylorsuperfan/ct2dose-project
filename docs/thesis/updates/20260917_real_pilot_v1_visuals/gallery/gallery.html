@@ -1,0 +1,27 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>V1 visual comparison</title>
+<main style="max-width:1100px;margin:2rem auto;font-family:Arial,sans-serif;line-height:1.55">
+<h1>Frozen V1: global / profile comparison</h1>
+<p>600 records, 2 development cases, one new-model seed. Learned Phase9G reference, NOT water. No blind final-test or clinical claim. Aggregate inputs only; no new inference.</p>
+<p>Input provenance: user_reported_aggregate. Parameters are correction-only. Negative relative change means lower error, not statistical significance.</p>
+<h2>Whole-volume RMSE</h2>
+<img style="width:100%" alt="Whole-volume RMSE" src="figures/01_volume_rmse.png">
+<p>All six saved methods, in fixed lineage order; bars begin at zero. Values are means of record RMSEs, not one pooled RMSE.</p>
+<h2>Whole-volume MAE</h2>
+<img style="width:100%" alt="Whole-volume MAE" src="figures/02_volume_mae.png">
+<p>All six saved methods, same order and zero origin. Scaling by 10^6 is display only, not a conversion to Gy.</p>
+<h2>Legacy-x percentage error</h2>
+<img style="width:100%" alt="Legacy-x percentage error" src="figures/03_x_percentage_error.png">
+<p>Mean local percentage error on the original GT-peak profile. The original evaluator keeps positions at least 1% of that GT line peak. Not an independently verified physical beam axis.</p>
+<h2>Absolute profile RMSE</h2>
+<img style="width:100%" alt="Absolute profile RMSE" src="figures/04_xyz_profile_rmse.png">
+<p>Whole-line absolute errors, one grouped figure for x/y/z. Legacy x=W, y=H, z=D. The large upstream RF bar is retained; figure 05 resolves smaller relative differences.</p>
+<h2>Changes relative to Phase10D-strict</h2>
+<img style="width:100%" alt="Changes relative to Phase10D-strict" src="figures/05_relative_changes_vs_phase10d.png">
+<p>100*(new/Phase10D-1), computed separately for each metric. Negative means lower error; positive means higher error. These are relative percentages, NOT percentage-point differences and NOT a combined score.</p>
+<h2>Global/profile trade-off</h2>
+<img style="width:100%" alt="Global/profile trade-off" src="figures/06_global_profile_tradeoff.png">
+<p>Detail view of five correction systems; the upstream Phase5E is excluded from this detail view only and remains in figures 01-04. Both axes are errors: lower left is better. Axes are zoomed and labeled. No connecting curve, significance claim, or Pareto guarantee.</p>
+<h2>New correction-network size</h2>
+<img style="width:100%" alt="New correction-network size" src="figures/07_correction_parameter_count.png">
+<p>Only the two newly trained correction networks. Counts come from the user-supplied resource table, not from timing. Shared upstream weights and runtime/particle costs are excluded; fewer parameters does not prove faster inference.</p>
+</main></html>

@@ -1,0 +1,58 @@
+[
+  {
+    "key": "D1",
+    "list": "Done",
+    "title": "[REAL-V1] Recover Phase10D-strict and verify val600",
+    "description": "Scope: recover the original final Practical system, not a Phase3 replay.\nCompleted: original definitions recovered; RF base, Phase9D-plus and Phase10D-strict weights strictly loaded. Reused original Phase9G calibration and sampler. Smoke4 and 600 real validation records evaluated; no new test-array evaluation.\nEvidence: old run01_val600 report and inspection/source hashes. Maximum aggregate historical difference: 0.0007223514 percentage points.\nLimit: aggregate consistency is not bitwise/record-order identity or fully blind end-to-end certification. Historical upstream exposure remains disclosed.\nDone means runnable recovery and documented validation check, not proof of clinical readiness.",
+    "checklist": [
+      "Record source and checkpoint identity",
+      "Preserve old val600 report and historical delta",
+      "State upstream exposure and axis/unit limitations"
+    ]
+  },
+  {
+    "key": "D2",
+    "list": "Done",
+    "title": "[REAL-V1] Train ordinary residual RF and spatial HJD",
+    "description": "Target: r = real GT - frozen Phase9G prediction; NOT water dose or a new artificial reference. Old Phase9G/Phase10D weights remain unchanged.\nCompleted: train-only scaling; 192 real training records across six cases; all selected records have both residual signs; HJD target reconstruction and target overlap errors were zero. Separate 12-record learnability checks, then fresh pilot initialization.\nBoth pilots: seed17, batch2, 384 optimizer updates. Best model selected by full-volume RMSE on the same40 validation records. RF:340545 parameters; HJD:104144. Correction Euler8; HJD4096 particles per branch. Best monitor epochs: RF4, HJD9.\nEvidence: pilot_seed17_residual_rf / pilot_seed17_hjd_rf histories, best/last pointers and checkpoints in private Drive.\nLimits: small pilot, not all12000 train records; no exact CUDA-determinism or final-test claim.",
+    "checklist": [
+      "Keep cache identity and train-only normalization",
+      "Keep both complete run folders and checkpoint pointers",
+      "Record actual budgets and validation-only selection"
+    ]
+  },
+  {
+    "key": "D3",
+    "list": "Done",
+    "title": "[REAL-V1] Compare on val600 and document global/profile trade-off",
+    "description": "Completed: both new methods compared with identical frozen old predictions on600 records from two validation cases; high-precision profile review completed.\nVersus Phase10D-strict:\n- ordinary RF: volume RMSE -4.20%, MAE -7.43%; x-profile absolute RMSE +3.45%; x mean error6.674168% ->7.895002% (+1.220834pp).\n- HJD: volume RMSE -3.47%, MAE -4.99%; x-profile absolute RMSE +2.34%; x mean error6.674168% ->7.268619% (+0.594450pp).\nBoth new models have slightly higher x/y/z absolute profile RMSE. HJD reduces x regression vs ordinary RF but has not surpassed Phase10D's x result. Not solely a percentage-denominator effect; failure location/cause is not established.\nEvidence: V1 report, comparison and paired per-case deltas, plus docs/thesis/updates/20260917_real_pilot_v1.\nLimits: one seed, two cases; monitor40 overlaps val600; inherited exposure; legacy array axes, not verified beam/mm; stored units, not certified Gy. Development evidence only. V1 frozen.",
+    "checklist": [
+      "Keep exact aggregate and paired per-case results",
+      "Report both improved global error and worsened profile",
+      "Freeze V1; do not overwrite checkpoint selection"
+    ]
+  },
+  {
+    "key": "W1",
+    "list": "Doing",
+    "title": "[REAL-V1] Publish reviewed source and aggregate result note",
+    "description": "Update existing publication card #109 rather than creating a duplicate.\nScope: submit research/phase10d_recovered_comparison, research/phase9g_signed_real_v1 and the new 20260917 result note. Keep source releases byte-identical; prior status-at-delivery records remain historical.\nAcceptance: verify local working tree and remote (`github`=GitHub, `origin`=GitLab); check proposed import for conflicts; verify hashes and inspect all staged content; no medical arrays, weights, case manifests, private reports, tokens or executed notebook outputs; commit/push on thesis/phase9g-real-residual-pilot; verify local and remote commit IDs; paste actual commit link here.\nStatus: user action pending. This handoff does not push GitHub or modify Trello. Close only after publication is verified. Confirm permission before making research public.",
+    "checklist": [
+      "Import exact source and result-note files without overwriting",
+      "Review file list, permissions and staged diff",
+      "Commit and push to github; verify remote hash",
+      "Attach actual commit link and reviewed result-note path"
+    ]
+  },
+  {
+    "key": "P1",
+    "list": "To Do",
+    "title": "[REAL-V2] Predefine profile-aware objective and checkpoint selection",
+    "description": "Planned only; no V2 run yet.\nQuestion: can reconstructed-dose profile supervision and aligned checkpoint selection retain global improvements without x-profile regression?\nBefore training: preserve V1; declare actual array axes and GT-peak training/evaluation convention; specify primary x absolute/percentage metric, global/lateral guardrails, loss weights and tolerances; apply a comparable protocol to ordinary residual RF and HJD; record endpoint-rollout cost, seeds and update budget.\nDo not choose weights/checkpoints after looking at val600 to declare V1 a winner. Evaluate final dose, not log of signed residual. Keep the same learned-reference task unless a separately agreed target is documented.\nDevelopment data remains development data. Independent final-test eligibility and physical water-reference definition are not solved by this task.",
+    "checklist": [
+      "Write V2 protocol and acceptance criteria before running",
+      "Define axes, losses, selection and no-worse tolerances",
+      "Preserve V1 and predeclare training budget/seeds"
+    ]
+  }
+]

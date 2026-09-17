@@ -1,0 +1,14 @@
+[
+  {
+    "archive": "phase10d_recovered_comparison_v1.zip",
+    "sha256": "c97556c383966cd38b2e14d1db2350b5e07fbd7df258143f53adca7a1a6d49e4",
+    "n_files": 29,
+    "copy_policy": "all original package files copied byte-for-byte; no model/source edits"
+  },
+  {
+    "archive": "phase9g_signed_real_v1.zip",
+    "sha256": "33968481ce7dda62b1c4012218c13f025e7b5777eeb1ff189dea9c9c3e308c9e",
+    "n_files": 35,
+    "copy_policy": "all original package files copied byte-for-byte; no model/source edits"
+  }
+]

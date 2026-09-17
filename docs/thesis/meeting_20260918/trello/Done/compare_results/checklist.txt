@@ -1,0 +1,5 @@
+Same600 validation cubes and metric definitions used for all methods
+Full-precision volume and profile errors reviewed together
+Case-level changes retained privately without treating cubes as independent patients
+Improvements and regressions both included in the conclusion
+Completed results preserved without retrospective model reselection

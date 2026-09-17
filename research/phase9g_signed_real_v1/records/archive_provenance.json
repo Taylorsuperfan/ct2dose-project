@@ -1,0 +1,15 @@
+{
+  "archive_sha256": "1663ef8ac429ce3736e1df738e4bf5bf034780094173a808eb234b5ab5fab28f",
+  "copied_files_sha256": {
+    "historical_validation_reported.csv": "4df173595f82337da14a5ec6a9f4be82423dbed27d60c0287f65c28f87782ef4",
+    "historical_training_reported.csv": "6b02f701f9080b712ee3c22e57d32248a6f6c714ed2bd946b5cee4e8cf55b079"
+  },
+  "validation_reaggregation_check": {
+    "n_rows": 1800,
+    "n_records_from_batch_local": 600,
+    "max_abs_reaggregated_delta": 5.551115123125783e-17
+  },
+  "kind": "ARCHIVED_REPORTED_VALUES_NOT_NEW_INFERENCE",
+  "only_selected_validation_tables_and_training_log_read": true,
+  "original_record_manifest_hash_available": false
+}

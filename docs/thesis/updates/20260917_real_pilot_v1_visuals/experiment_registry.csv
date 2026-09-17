@@ -1,0 +1,8 @@
+task,status,evidence_scope
+V1_execution,completed_user_reported,existing real validation comparison
+V1_visual_source,implemented,read-only aggregate figures
+V1_reported_snapshot_figures,generated_locally,7 figures from user-reported aggregates; no model inference
+V1_Drive_csv_visual_check,pending_user_execution,V0-V3 independent Colab notebook
+GitHub_publication,pending_user_execution,no push executed by assistant
+Trello_update,pending_user_execution,draft text only
+V2_profile_aware_training,not_started,design proposal only

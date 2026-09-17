@@ -1,0 +1,7 @@
+Runnable Phase10D-strict recovery and val600 aggregate consistency are complete in the recovery card. This card concerns the separate unresolved historical evidence.
+
+Remaining: document base/refinement training and selection exposure; identify reused parent checkpoints and their data history; retain current case-group checks and unresolved patient mapping. Do not interpret head-level strict naming as fully blind end-to-end evidence.
+
+The present600-record comparison is development evidence. No new final-test evaluation or search/training is required merely to update this card.
+
+Close only when the remaining lineage question is resolved with evidence, or explicitly scoped as an acknowledged limitation. Do not relabel recovery as failed and do not erase exposure history.

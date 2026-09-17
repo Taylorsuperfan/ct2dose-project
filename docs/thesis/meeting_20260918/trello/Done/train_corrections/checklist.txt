@@ -1,0 +1,5 @@
+Both approaches use the same fixed calibrated predictor and training records
+Data scaling was fitted on selected training cubes only
+Positive and negative correction targets reconstruct the original residual
+Both training runs completed and their states/logs are retained
+Selection data and actual optimizer-update budget are documented

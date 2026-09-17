@@ -1,0 +1,10 @@
+id,task,execution,scope,scientific_conclusion,evidence
+P10-REC,Recover original Phase10D system and val600 aggregate check,completed_user_reported,old_system_development_reproduction,aggregate_consistency_not_bitwise_or_blind_certification,old run01_val600 and user supplied logs
+R9G-CACHE,Train192 real residual cache and exact HJD targets,completed_user_reported,selected_train6_only,both_signs_observed_192_reconstruction_error_zero,P3 cache READY and supplied audit
+R9G-SMALL,Train12 learnability checks,completed_user_reported,train_only_diagnostic,improvement_not_complete_overfit,small RF/HJD summaries
+R9G-RF,Ordinary residual RF pilot,completed_user_reported,192_train_40_monitor_seed17,best_monitor_epoch4_not_last_epoch,pilot_seed17_residual_rf
+R9G-HJD,Spatial HJD RF pilot,completed_user_reported,192_train_40_monitor_seed17,best_monitor_epoch9_not_last_epoch,pilot_seed17_hjd_rf
+R9G-CMP,Both new methods compared with frozen old outputs on val600,completed_user_reported,600_records_two_validation_cases,global_error_better_profile_tradeoff_not_overall_superiority,comparison_reported.csv and user report
+V1-REVIEW,High precision absolute versus percentage profile review,completed_documented,supplied_aggregate_results,absolute_x_error_also_higher,RESULTS_CN_EN.md
+V1-PUBLISH,Review local files commit push and verify remote,pending_user_action,code_and_permitted_aggregate_summary_only,not_applicable,record actual commit after push
+V2-PROTOCOL,Define profile-aware V2 objective and checkpoint selection,planned_not_run,separate_future_version,hypothesis_not_proven,weekly_plan.md

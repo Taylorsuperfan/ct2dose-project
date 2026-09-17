@@ -1,0 +1,4 @@
+Parent checkpoint/data-exposure evidence documented
+Case vs patient grouping status stated separately
+Final-test eligibility not inferred from strict filename
+Outstanding limitations written in the experiment registry

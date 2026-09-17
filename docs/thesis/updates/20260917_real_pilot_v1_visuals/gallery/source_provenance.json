@@ -1,0 +1,37 @@
+{
+  "input_csv_sha256": "726e76f3b6bc285b413e7b95f8bdacc1630cb4929faa2722b32dd23f24057460",
+  "plot_code_sha256": "789351be06cf653f0fb5af2746784ee94b9e6c146f248dff1145baa536be3082",
+  "source_kind": "user_reported_aggregate",
+  "version": "pg9-v1-visuals-1.0.0",
+  "input_name": "comparison_reported.csv",
+  "no_raw_input_copy": true,
+  "export_columns": [
+    "method",
+    "rmse_stored_units",
+    "mae_stored_units",
+    "x_mean_pct",
+    "x_max_pct",
+    "x_profile_rmse_stored_units",
+    "y_profile_rmse_stored_units",
+    "z_profile_rmse_stored_units",
+    "n_cases",
+    "n_records"
+  ],
+  "statistical_scope": {
+    "n_cases": 2,
+    "n_records": 600,
+    "new_training_seed": 17,
+    "aggregation": "equal-case mean of record-level metrics",
+    "uncertainty": "not supplied; no error bars or significance inference",
+    "units": "stored numerical units; not certified Gy",
+    "reference": "frozen learned Phase9G; not water",
+    "validation": "development, monitor40 overlaps val600",
+    "parameters": "user-reported correction-only counts; common upstream excluded"
+  },
+  "runtime": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "matplotlib": "3.10.8"
+  },
+  "reads": "one aggregate CSV; no checkpoints, arrays, raw medical images, or model code"
+}

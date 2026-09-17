@@ -1,0 +1,5 @@
+Profile objective and array-axis conventions agreed before training
+Allowed volume and other-profile changes defined
+Comparable loss and saved-model selection rules set for both approaches
+Data, seeds, training budget and uncertainty plan recorded
+Completed experiment preserved and new run clearly separated

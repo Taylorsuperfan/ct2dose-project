@@ -1,0 +1,11 @@
+Why this remains separate
+The previous system has been restored and evaluated successfully. That does not answer whether all of its reused components avoided the present validation cases throughout earlier training and tuning.
+
+Remaining evidence
+Record the training and model-selection data used by the reused components. Distinguish case grouping from verified patient grouping. State which information is known and which remains unavailable.
+
+Interpretation
+The current comparison is development evidence. A corrected split for the final refinement head does not make the entire historical system a fully independent test.
+
+Completion
+Resolve the outstanding questions where evidence is available, and clearly record any acknowledged limitations. Do not erase past exposure or classify the completed system recovery as failed. This task does not require another model search or training run merely to update the card.

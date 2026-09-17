@@ -1,0 +1,3 @@
+# Aggregate gallery only; never an exemption for medical-image folders.
+!gallery/
+!gallery/**

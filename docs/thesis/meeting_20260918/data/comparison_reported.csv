@@ -1,0 +1,7 @@
+method,rmse_stored_units,mae_stored_units,x_mean_pct,x_max_pct,x_profile_rmse_stored_units,y_profile_rmse_stored_units,z_profile_rmse_stored_units,n_cases,n_records,aggregation,evidence
+new_hjd_rf,4.177383805e-06,2.951539181e-06,7.268618794,23.91492018,1.418176482e-05,1.000422538e-05,1.003416638e-05,2,600,equal_case_mean_of_record_metrics,user_reported_20260916_run_high_precision_console
+new_residual_rf,4.145771801e-06,2.875790670e-06,7.895002461,25.75885206,1.433589259e-05,9.910270088e-06,9.976881900e-06,2,600,equal_case_mean_of_record_metrics,user_reported_20260916_run_high_precision_console
+phase10d_strict,4.327749214e-06,3.106693274e-06,6.674168481,22.37178318,1.385742285e-05,9.878382707e-06,9.943986058e-06,2,600,equal_case_mean_of_record_metrics,user_reported_20260916_run_high_precision_console
+phase5e_rf,7.641087575e-06,3.971085270e-06,11.80505737,30.53641342,6.555021282e-05,7.316675854e-05,7.322201903e-05,2,600,equal_case_mean_of_record_metrics,user_reported_20260916_run_high_precision_console
+phase9d_plus,4.320415591e-06,3.100483344e-06,6.998469013,22.8180824,1.272855493e-05,8.343185700e-06,8.444101941e-06,2,600,equal_case_mean_of_record_metrics,user_reported_20260916_run_high_precision_console
+phase9g,4.325564007e-06,3.100996372e-06,7.021546388,22.81808233,1.402103825e-05,9.908387479e-06,9.986081380e-06,2,600,equal_case_mean_of_record_metrics,user_reported_20260916_run_high_precision_console

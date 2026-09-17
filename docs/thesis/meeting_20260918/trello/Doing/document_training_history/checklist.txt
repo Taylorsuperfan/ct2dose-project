@@ -1,0 +1,4 @@
+Training and selection exposure of reused components documented where available
+Case independence and patient independence reported separately
+Unavailable historical information explicitly marked
+Current comparison consistently described as development evidence

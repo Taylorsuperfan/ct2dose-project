@@ -1,0 +1,5 @@
+All seven figure pairs generated with descriptive method names
+Metric definitions and shared-model relationships explained
+Original numerical table copied without alteration
+Both performance improvements and profile regressions shown
+Internal identifiers retained only for technical traceability

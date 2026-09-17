@@ -1,0 +1,22 @@
+# Review/append to the EXISTING root .gitignore; do not replace it.
+__pycache__/
+.pytest_cache/
+.venv/
+.DS_Store
+*.pyc
+.env
+.env.*
+!.env.example
+*.local/
+*.local.*
+*.private/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.npy
+*.npz
+*.dcm
+*.nii
+*.nii.gz
+# Do not use blanket '*.csv' or '*.json': approved summary/config files are needed.

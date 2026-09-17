@@ -1,0 +1,9 @@
+Planned; V2 training has NOT started.
+
+Question: retain global improvements while avoiding regression in the main legacy-x profile relative to the old system.
+
+Before training: freeze actual array-axis/profile conventions, primary x metric, global/lateral guardrails, loss coefficients, tolerances, seeds, checkpoint-selection rule and compute budget. Apply comparable final-dose profile supervision to ordinary residual RF and HJD; record differentiable endpoint cost.
+
+Profile losses act on reconstructed dose, not log(signed residual). Keep the same frozen upstream and data policy unless a separately documented design change is agreed. Keep V1 files/results unchanged.
+
+Do not select thresholds after seeing val600 to claim V1 wins. Development remains development; physical-reference definition and independent final-test eligibility are separate unresolved questions. No promised improvement or completed V2 claim.

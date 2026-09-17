@@ -1,0 +1,9 @@
+Scope: recover the original final Practical system, not a synthetic or Phase3 replay.
+
+Completed: the original definitions were recovered; RF base, Phase9D-plus and Phase10D-strict states were strictly bound; original sampling/calibration behavior was retained. Smoke4 and the same 600-record real validation evaluation completed.
+
+Historical aggregate check: maximum absolute mean-profile difference was 0.0007223514 percentage points. This is aggregate consistency, not bitwise or historical record-order identity.
+
+Evidence stays on private Drive: inspection hashes, run01_val600, source snapshots and historical_summary_delta.csv. No new final-test arrays were evaluated. Inherited upstream-exposure and patient-independence limitations remain open; see the lineage card.
+
+Done = runnable recovery and documented validation comparison, not clinical or fully blind certification.

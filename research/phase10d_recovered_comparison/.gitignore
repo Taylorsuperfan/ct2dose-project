@@ -1,0 +1,16 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
+*.local.*
+*.local/
+source_snapshot/
+reports.private/
+inputs.private/
+outputs.private/
+.env
+.venv/

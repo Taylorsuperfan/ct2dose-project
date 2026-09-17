@@ -1,0 +1,7 @@
+id,task,status,evidence_scope
+REC-SOURCE,Extract original Phase10D definitions,COMPLETED_LOCAL,30 source-segment hashes from uploaded notebook
+REC-TEST,Software validation,COMPLETED_LOCAL,24 tests on temporary files and arrays; no trained user weights
+REC-LOAD,Strict-load three user checkpoints,PENDING_USER_RUN,Must run S2 in Colab
+REC-SMOKE,Four real validation records,PENDING_USER_RUN,Must run S3
+REC-VAL600,Archived 600-record validation subset,PENDING_USER_RUN,Must run S4; no test arrays
+CMP-NEW,Same-real-cohort old versus new model,PENDING_NEW_REAL_PREDICTIONS,Interface implemented; no new HJD model result fabricated

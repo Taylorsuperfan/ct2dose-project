@@ -1,0 +1,9 @@
+Publication scope: the unchanged Phase10D recovery and Phase9G real-training packages, existing V1 records, the new read-only visualization source, and the reviewed aggregate figure gallery.
+
+Remaining: run visual Notebook V0-V3 against the saved Drive CSV; check values/hashes/captions; review repository conflicts and all staged files; confirm sharing permission; commit/push and verify local/remote IDs. Figure generation does not mean publication has occurred.
+
+Use branch thesis/phase9g-real-residual-pilot. Preserve github=GitHub and origin=GitLab. Use the NEW tools/pilot_v1_visual_release/check_release.py --staged for the expanded allowlist, not the old staged-only checker.
+
+Exclude trained weights, CT/dose/prediction arrays, case/patient manifests, private reports, credentials and executed notebook outputs. PNG/SVG allowed here are only the enumerated aggregate charts.
+
+Attach the reviewed figure05/06 and actual commit URL after completion. Do not overwrite old releases/manifests or make V2 performance claims. Move Done only after verification.

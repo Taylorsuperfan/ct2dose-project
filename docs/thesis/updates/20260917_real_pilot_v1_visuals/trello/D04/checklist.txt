@@ -1,0 +1,5 @@
+Seven PNG/SVG pairs generated from declared aggregate input
+Source provenance and numeric table retained
+Whole-volume gains and profile regressions both shown
+No private case IDs or medical images in the snapshot figures
+Fourteen visualization software tests passed locally
