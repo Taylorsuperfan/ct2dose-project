@@ -1,0 +1,5 @@
+Primary objective and array-axis mapping written before training
+Global/lateral guardrails and tolerances fixed
+Comparable loss/selection protocol fixed for both models
+Seed/data/compute budget and uncertainty plan stated
+V1 frozen and V2 stored as a new version

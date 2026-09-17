@@ -1,0 +1,9 @@
+Task: r = real GT dose - frozen Phase9G prediction. This reference is a learned old predictor, NOT water dose.
+
+Completed: 192 real train records across six cases; train-only scaling; signed decomposition and zero-overlap target audit; separate 12-record learnability checks; fresh initialization for the two formal pilots.
+
+Each pilot: seed17, batch2, 384 optimizer updates. Best checkpoint selected using equal-case whole-volume RMSE on 40 validation records. Correction ODE: 8 Euler steps; HJD uses 4,096 particles per branch.
+
+Trainable correction parameters: ordinary RF 340,545; HJD 104,144. These exclude the shared frozen upstream and do not establish inference speed.
+
+Checkpoints, optimizer/RNG state, logs, config and source identity stay on Drive. This is a small192-record pilot, not exhaustive full-data training; CUDA determinism is not guaranteed.

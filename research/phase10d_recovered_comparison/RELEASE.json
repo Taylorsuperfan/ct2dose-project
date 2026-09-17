@@ -1,0 +1,33 @@
+{
+  "release": "phase10d_recovered_comparison_v1.0.0",
+  "files": {
+    ".gitignore": "69c1d6905309e5b3d4a9c81cad1f935acf715a8936662c35a882af24275965d4",
+    "README_CN.md": "b0d5ec7e0aa2cdcff9e9ead04b205a793abff572ff61cac155c2b5bba5caafec",
+    "docs/GITHUB_TRELLO_CN.md": "e042d51d12698c2e6c9bc91da6b147020b77b17134150f4b4168023297b26f90",
+    "docs/NEW_MODEL_CONTRACT.md": "e3304883646465b8a68ad28ba552b1ea008d20386c46a51dd664a2b32a7b3c54",
+    "docs/STEPS_CN.md": "698dcc08696800d02eb5e65c29a305cf4d817df50eb8f953b8e53d9cd2ef98f6",
+    "docs/original_training_and_binding_source.md": "b24e5e944872df0d7fccde85e90e8e127677b5042065de4ae21724fd9a69473e",
+    "notebooks/phase10d_recovered_colab.ipynb": "2b2ed26afa8d1e25989f619043bf5c4c78f36cfa6513693949d5ee74e8d20706",
+    "p10recover/__init__.py": "27e8febb48ada44153ea2add9969a2c50a9831a74d9755fdd53c549a888b1cc2",
+    "p10recover/__main__.py": "46fc75a66c9e6a2ae9acc3e92e3f43f5fa4d05fdde6c1a780cbe675d229a618e",
+    "p10recover/data.py": "16cc07b5c12bede71724cc4f9789d2c90acedf86aa6f6740e41499f8ea23e4ca",
+    "p10recover/evaluate.py": "4809c6309f5cb92e96958953426ec9dbb66e2a3cbd3ab60c87160941749840cd",
+    "p10recover/external.py": "b83f1f1e61945ab2c2a43f68f865d5622044fb6a4f7efc0ad4dd4c5c71b9ddc9",
+    "p10recover/io.py": "0ca6f089a053f20bd82885111417dd44f63e725986546e48bb6d8a8e9ba60b31",
+    "p10recover/legacy_defs.py": "b439bf12099a5330241b67a00fc8341d4a44c195f9e33d2649ae7b9bfc54b3ae",
+    "p10recover/metrics.py": "84f7b60b23c222b2aeb9be4dcf1010898d588a347d8fe5bef702e6ff4ba94484",
+    "p10recover/pipeline.py": "1b72b06ab8ac742c7331c1cae1cd317b5ed4345f5634dfb2a6805e0ba82a378c",
+    "p10recover/verify.py": "95eb783d23ec434984ad4a56fa20ab185aef7f615f6b989952e5ceba429f2d94",
+    "records/archive_provenance.json": "8c959c657201a8a2335520a43c3a9f9d0d42f4adee06fc787b5b60fd5a51f5e1",
+    "records/decision_log.append.md": "fc9f726054933786fbd9e41a66f8498eba0a648e94c116debcb80ac28299647a",
+    "records/experiment_registry.csv": "7db2d167bff6e1ae920a559f33884f2749911f6cfb53638c55f4365dd35c0dbe",
+    "records/historical_training_reported.csv": "6b02f701f9080b712ee3c22e57d32248a6f6c714ed2bd946b5cee4e8cf55b079",
+    "records/historical_validation_reported.csv": "4df173595f82337da14a5ec6a9f4be82423dbed27d60c0287f65c28f87782ef4",
+    "records/source_provenance.json": "ea2560cd24bda42a034323e4ad6aa726295b065e4f71b0bfb497e57c57b6180b",
+    "records/weekly_plan.md": "6ea5562183442123c3af35e370e88f0af1c2a4eb2fa499eff6028328d18aaa4e",
+    "requirements.txt": "3a8afaa5ede42f11a82a941557b4de97b63e538acaa1da19dacbf1020df92acb",
+    "scripts/public_check.py": "1b5260264437d12b0381c14893bc97067af1f4425b383b797d0d1276ae20d4a8",
+    "tests/test_recovered.py": "5f3d0ff00b66b9c005ca52d3c0eccb4c8f41d550100bfc08db5cd9b5bb33d325",
+    "verification/VERIFICATION.md": "fabda078a89d4049ed273c1a44f0500ec232a3a66ed06eb5a1b0850fb3f63673"
+  }
+}

@@ -56,3 +56,72 @@ temp/
 raw_data/
 outputs/
 
+
+# ==============================
+# Local paths and secrets
+# ==============================
+.env
+.env.*
+!.env.example
+configs/local_paths.*
+*.pem
+*.key
+
+# ==============================
+# Raw / processed medical data
+# ==============================
+data/raw/
+data/interim/
+data/processed/
+data/private/
+
+*.npy
+*.npz
+*.dcm
+*.nii
+*.nii.gz
+*.mha
+*.mhd
+*.raw
+
+# ==============================
+# Model outputs and checkpoints
+# ==============================
+checkpoints/
+runs/
+outputs/
+wandb/
+mlruns/
+tensorboard/
+
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# ==============================
+# Local audit mappings
+# ==============================
+reports/data_audit/*.local.csv
+reports/data_audit/*.local.json
+artifacts/data_audit/*.local.txt
+artifacts/data_audit/*.local.csv
+artifacts/data_audit/*.local.json
+
+# ==============================
+# Python
+# ==============================
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# ==============================
+# Jupyter / macOS / VS Code
+# ==============================
+.ipynb_checkpoints/
+.DS_Store
+.vscode/settings.json

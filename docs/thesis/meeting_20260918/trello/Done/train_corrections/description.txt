@@ -1,0 +1,17 @@
+Research question
+Can learning the remaining prediction error improve an existing computed-tomography-to-dose predictor?
+
+Target
+For each paired training sample, subtract the frozen calibrated prediction from the ground-truth dose. The resulting correction may be positive or negative. The starting prediction is learned from data; it is not a dose-to-water field.
+
+Approach 1: directly learned signed correction
+Use rectified flow matching to predict one correction field containing both positive and negative values, then add it to the same fixed starting prediction.
+
+Approach 2: separate positive/negative corrections
+Use Hahn–Jordan decomposition to split the correction into two nonnegative components. Learn two spatial flow fields and each component's total magnitude, subtract the negative component from the positive one, and add the result to the fixed starting prediction. Include a loss discouraging unnecessary overlap.
+
+Completed training
+Used 192 cubes from six training cases, 384 optimizer updates per approach, batch size two and one seed. Selected the saved weights using whole-cube root-mean-square dose error on 40 validation cubes. Separate small-data checks did not supply trained weights to the main runs.
+
+Records
+Saved training settings, source versions, model weights, optimizer state, random-generator state and logs. This is a small development experiment, not full-data training.

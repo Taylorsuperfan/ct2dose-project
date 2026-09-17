@@ -1,0 +1,11 @@
+Research question
+Can direct signed-correction learning and separate positive/negative correction learning retain their whole-volume improvements while avoiding the x-profile regression?
+
+Before training
+Define the actual array directions and the line-profile extraction rule. Predefine the main profile metric, acceptable changes in whole-volume and other-direction errors, loss weights, saved-model selection rule, data, seeds and compute budget.
+
+Method comparison
+Use comparable final-dose profile supervision for both approaches. Account for the cost of integrating the learned flow when computing endpoint losses. Apply profile terms to reconstructed dose, not the logarithm of a signed correction.
+
+Status
+Planned only. No new training or improved result is claimed. Keep the completed experiment and its results unchanged. The missing physical water-reference definition and independent final-test eligibility remain separate issues.

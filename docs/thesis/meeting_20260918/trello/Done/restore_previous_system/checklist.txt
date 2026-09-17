@@ -1,0 +1,4 @@
+Recovered definitions and saved weights are linked to the correct components
+Completed validation results and historical differences are retained
+Aggregate agreement is distinguished from exact historical identity
+Remaining historical training-exposure limits are recorded

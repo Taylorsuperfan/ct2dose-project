@@ -1,0 +1,5 @@
+Both new methods evaluated on exactly600 validation records
+Full-precision global and profile metrics reviewed
+Per-case differences retained privately
+Benefits and regressions reported together
+V1 results frozen; no overall-superiority claim

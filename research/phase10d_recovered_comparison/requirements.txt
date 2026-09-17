@@ -1,0 +1,5 @@
+# Use the existing PyTorch runtime; do not silently upgrade torch/CUDA.
+numpy
+pandas
+matplotlib
+pytest

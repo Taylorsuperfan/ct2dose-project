@@ -1,0 +1,14 @@
+Purpose
+Re-establish the previous final system as the reference for this study, rather than replacing it with a newly written approximation.
+
+Completed work
+Recovered the original model and inference definitions, matched the saved weights to all required components, and ran the complete system on 600 validation cubes from two cases. Original preprocessing, sampling and calibration were retained.
+
+Result
+The largest difference between the newly calculated and archived mean dose-profile errors was approximately 0.000722 percentage points. This is agreement of aggregate results, not proof that every historical voxel or record ordering is identical.
+
+Limitations
+The earlier training history of the reused components still needs to be reported. This recovery does not establish an independent final test or clinical validity. No new final-test arrays were evaluated.
+
+Technical traceability
+Original final-system identifier: phase10d_strict. Exact source, weights and execution evidence remain in the existing recovery records.

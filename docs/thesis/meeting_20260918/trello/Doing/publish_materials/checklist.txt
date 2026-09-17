@@ -1,0 +1,5 @@
+Reader-facing method names and captions checked against the original identifiers
+Actual result-table values and all figure units reviewed
+Only intended source/documents/aggregate figures staged
+No private medical data, credentials or trained weights included
+Actual remote commit and figure links recorded on the card

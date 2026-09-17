@@ -1,0 +1,22 @@
+{
+  "FIGURES_READY.json": "c9c45c2772d7fda3919a114d6b089481fb664477f9c5d17123d6378a69c9b917",
+  "README.md": "e5edda166f4f02674b891edc2a3905d1682e3cb1234986f66eebe454d96e28a0",
+  "comparison_approved_columns.csv": "adc675d1945a2b8549e27a6897a9cee29ebe63ba909b6389b3e14903f8e2b91e",
+  "figures/01_volume_rmse.png": "5b913e8757c1d6e0195f45fbd7b277ab34c1ad20006f4a95e18e9f21ff617f0e",
+  "figures/01_volume_rmse.svg": "01cc25f8469a5a36a04963fbdeb2b4ff352ca2c08ce9320452aba13414a2e4dc",
+  "figures/02_volume_mae.png": "4b8f15605e64cf0e1f853288c68799d414e83736538ccf5a329667ff11095d3f",
+  "figures/02_volume_mae.svg": "59cc96bcfdf3e52ff988ce79026e3e2f5bdd6770021cc2ee3d21402a16411e6b",
+  "figures/03_x_percentage_error.png": "e810523281870ccf7953b1ade80b8287297e5c5b71a942aba2850f6712d2a05d",
+  "figures/03_x_percentage_error.svg": "44fb5a8dae100cf20e2f5b7a3ab60b6366ec77971709b36ad160021750cf149e",
+  "figures/04_xyz_profile_rmse.png": "1d98cc53fea86399f06aa05bc718eb869a07023a6087feedcccc4d02fd79ecb7",
+  "figures/04_xyz_profile_rmse.svg": "b23533f92890bcb2173c74412979c059f27347e51e955ab35e9bbd264970dd6a",
+  "figures/05_relative_changes_vs_phase10d.png": "cabc9f8269c54f72f2c4af5119a3bb821bb966d7970e28235b279ae019b1a511",
+  "figures/05_relative_changes_vs_phase10d.svg": "954743c2a57be65f675abe13f74eb93a8f3934cf6b5bfc766f03ae8b26e391bd",
+  "figures/06_global_profile_tradeoff.png": "11e932f2f48860fdb75f8eee312af1bd92f1ee2e5a3615851b6fcd4a3a91d5fd",
+  "figures/06_global_profile_tradeoff.svg": "64fb85f645f54ede438120087c497ae92c831be64aff9664a260c25fb6fbc683",
+  "figures/07_correction_parameter_count.png": "528ff093d7892baec5741cc0abca82003dc0c11c6851319669dab621762a11d5",
+  "figures/07_correction_parameter_count.svg": "c61c8e501be5b8acb130165f5c1821896f6de45c462dda7104e0dc5b7218c892",
+  "gallery.html": "c377a64856c6c416a36abd21305a819fd55682bfa173f693447cf0f70805487f",
+  "relative_changes_vs_phase10d.csv": "3a275fc93c7a1dc8d2467bb0ffc1f7e160c653277ded30e5f172b5a3bbf45cee",
+  "source_provenance.json": "2d9ba0b0eadc778a152b13756d07b1a448af73a8ce0b241da6285c8343c15a95"
+}

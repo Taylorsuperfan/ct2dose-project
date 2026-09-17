@@ -1,0 +1,9 @@
+Compared two new corrections and four old-system stages on the same600 validation records, two cases; old predictions were reused.
+
+Relative to Phase10D-strict:
+Ordinary RF: whole-volume RMSE -4.20%, MAE -7.43%; absolute x-profile RMSE +3.45%; mean x percentage error 6.674168% -> 7.895002%.
+HJD: whole-volume RMSE -3.47%, MAE -4.99%; absolute x-profile RMSE +2.34%; mean x percentage error -> 7.268619%.
+
+Both new models have higher aggregate absolute x/y/z profile RMSE than Phase10D. HJD mitigates the x regression relative to ordinary RF but is not an overall winner. Regression is not solely a percentage-denominator effect; its spatial cause has not been isolated.
+
+Scope: equal-case record averages; seed17; monitor40 overlaps val600. Stored numerical units and legacy array axes, not certified beam/mm/Gy. Not water, a blind final test, or significance evidence. Freeze V1; do not reselect a checkpoint to make it win.

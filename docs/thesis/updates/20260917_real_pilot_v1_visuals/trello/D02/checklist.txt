@@ -1,0 +1,5 @@
+192-record selection and train-only scaling recorded
+Both real signed-target training runs completed
+Best/last checkpoints and optimizer/RNG history retained
+Small-run weights not reused in pilot
+Budget and source/normalization identities recorded

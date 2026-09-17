@@ -1,0 +1,14 @@
+Purpose
+Make the completed experiment understandable and reproducible for a reader who has not followed the development notebooks.
+
+Remaining work
+Read the revised method overview and figure captions; compare the plots with the saved result table; review the files to be committed; confirm sharing permission; publish the code and approved aggregate figures; then record the actual commit link in this card.
+
+Preserve
+Existing training code, evaluation rules, saved weights, numerical results and historical version records. Descriptive display names must not rename program identifiers or modify the experiment.
+
+Exclude from the repository and card attachments
+Medical arrays, trained weights, prediction caches, patient/case manifests, private record-level reports, credentials and old notebooks with saved outputs. Aggregate figures also require appropriate sharing permission.
+
+Completion
+Move this card to Done only after the files have been reviewed, the remote commit is verified and the intended figures/links are attached. No publication action has been performed by generating these drafts.

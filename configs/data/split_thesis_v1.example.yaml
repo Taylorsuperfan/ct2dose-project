@@ -1,0 +1,8 @@
+name: split_thesis_v1
+seed: 42
+train_cases: []
+validation_cases: []
+test_cases: []
+notes: >-
+  Populate only after the case-level audit. Final test cases must remain untouched
+  during model development.

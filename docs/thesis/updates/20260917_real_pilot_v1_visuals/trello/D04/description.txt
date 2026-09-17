@@ -1,0 +1,9 @@
+Completed in the delivered visual package: seven figures, each PNG + SVG, generated from the user-reported high-precision V1 aggregate snapshot. No training, checkpoint loading, medical-array access or model inference.
+
+Figures: global RMSE; global MAE; mean x percentage error; grouped x/y/z absolute profile RMSE; relative changes vs Phase10D; global/x trade-off scatter; correction-only parameter count.
+
+Bars begin at zero. Figure06 is an explicit zoomed five-system detail; upstream Phase5E remains in figures01-04. Figure05 uses100*(new/old-1), not percentage points or a combined score. No invented error bars, boxplots or statistical significance.
+
+Fourteen visualization software checks pass. Plot sources, approved numeric columns, SVG/PNG, figure captions and hashes are supplied. Counts of parameters are separately user-reported, not timed.
+
+Done covers source/snapshot-figure generation only. User-side Drive CSV verification, board attachment and GitHub push remain in the publication card.

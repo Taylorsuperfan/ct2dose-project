@@ -1,0 +1,82 @@
+{
+  "basis": "Read-only Trello card snapshot from 2026-09-17. User said descriptions were already updated. No cards or attachments changed by this package.",
+  "cards": [
+    {
+      "number": 105,
+      "title": "Restore the final dose-prediction system from the master practical",
+      "list": "Done",
+      "url": "https://trello.com/c/W8qFh0lb",
+      "figures": [],
+      "comment": "Recovery evidence is provided by the saved inspection and historical aggregate comparison. The new-model comparison figures are not evidence of exact historical reproduction."
+    },
+    {
+      "number": 110,
+      "title": "Train two approaches for correcting the existing dose predictions",
+      "list": "Done",
+      "url": "https://trello.com/c/5wfsxQqg",
+      "figures": [
+        "07_correction_model_size.png"
+      ],
+      "comment": "Trainable parameters of the two newly trained correction models: 340,545 for directly learned signed corrections and 104,144 for separate positive/negative corrections. Both methods use the same frozen upstream predictor. This comparison excludes the upstream parameters and does not measure training completion, inference speed or prediction quality."
+    },
+    {
+      "number": 111,
+      "title": "Compare dose accuracy: whole-volume gains versus dose-profile regressions",
+      "list": "Done",
+      "url": "https://trello.com/c/9vaspJpF",
+      "figures": [
+        "05_changes_from_previous_system.png",
+        "06_volume_and_profile_accuracy.png"
+      ],
+      "optional": [
+        "01_whole_cube_squared_error.png",
+        "03_x_dose_line_percentage_error.png",
+        "04_dose_line_errors.png"
+      ],
+      "comment": "The two figures summarize the completed comparison on the same 600 validation cubes from two cases. In figure 05, changes are calculated relative to the previous final system separately for each metric: negative means lower error; positive means higher error. These are relative percentages, not percentage-point differences. In figure 06, lower and further left is better. Both new methods improve whole-cube error but worsen the main x-direction dose-profile result. These are development results, not an independent final test; no uncertainty intervals were estimated."
+    },
+    {
+      "number": 112,
+      "title": "Prepare comparison figures that explain the methods without reading the code",
+      "list": "Done",
+      "url": "https://trello.com/c/e1UaS7XZ",
+      "figures": [
+        "01_whole_cube_squared_error.png",
+        "02_whole_cube_absolute_error.png",
+        "03_x_dose_line_percentage_error.png",
+        "04_dose_line_errors.png",
+        "05_changes_from_previous_system.png",
+        "06_volume_and_profile_accuracy.png",
+        "07_correction_model_size.png"
+      ],
+      "comment": "This gallery contains the seven descriptive-name figures generated from the reported aggregate result table. They show the whole-cube and dose-line measures together. Only presentation names and captions changed; numerical inputs and trained models were preserved. Exact model identifiers, metric definitions and limitations are explained in the linked experiment overview."
+    },
+    {
+      "number": 106,
+      "title": "Review and publish the experiment code, figures and result summary",
+      "list": "Doing",
+      "url": "https://trello.com/c/XHTatLTB",
+      "figures": [],
+      "comment": "After publication, add the actual commit URL and the reader-facing experiment overview. Move this card to Done only after source review, push verification and attachment checks. Generating a ZIP is not publication."
+    },
+    {
+      "number": 113,
+      "title": "Document which data the previous models encountered during development",
+      "list": "Doing",
+      "url": "https://trello.com/c/rutRO79M",
+      "figures": [],
+      "comment": "Aggregate performance figures cannot resolve historical training exposure or verified patient independence. Keep this card focused on the available lineage evidence and documented limitations, without attaching case/patient identifiers."
+    },
+    {
+      "number": 58,
+      "title": "Design the next experiment to improve dose profiles without losing overall accuracy",
+      "list": "To Do",
+      "url": "https://trello.com/c/8o0x3hNN",
+      "figures": [],
+      "optional": [
+        "05_changes_from_previous_system.png"
+      ],
+      "comment": "Motivation from the completed experiment, NOT a result of the planned experiment. The next design will align reconstructed-dose profile supervision and saved-model selection while preserving the completed experiment unchanged. No new performance improvement is claimed."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+Completed comparison
+Evaluated the two newly trained correction approaches and the previous system on the same 600 validation cubes from two cases, using unchanged dose metrics and line-profile definitions.
+
+Relative to the previous final system
+Directly learned signed correction: whole-cube root-mean-square error decreased by 4.20%, while absolute x-profile root-mean-square error increased by 3.45%.
+Separate positive/negative corrections: whole-cube root-mean-square error decreased by 3.47%, while absolute x-profile root-mean-square error increased by 2.34%.
+
+The mean x-profile percentage error was 6.674% for the previous final system, 7.895% for the new direct approach and 7.269% for the new separated approach.
+
+Interpretation
+Both approaches improve overall dose error but have not improved the previous system's main x-profile result. The separated approach mitigates the x regression relative to the direct approach. All three absolute line-profile errors are slightly higher for both new approaches than for the previous final system, so there is no overall superiority claim.
+
+Limits
+A dose profile is an array-aligned line through the target-dose peak, not an independently verified physical beam direction. The 40 model-selection cubes are part of the 600 validation cubes. One training seed and two development cases do not establish significance or patient-level generalization. The physical location and sole cause of the regression remain unresolved.

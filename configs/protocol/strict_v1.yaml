@@ -1,0 +1,48 @@
+protocol_id: strict_v1
+project: conditional_cfm_physical_ct2dose
+
+split:
+  unit: case
+  patient_grouping_required_when_available: true
+
+  train_manifest: data/splits/strict_v1/train_cases.txt
+  validation_manifest: data/splits/strict_v1/val_cases.txt
+  test_manifest: data/splits/strict_v1/test_cases.txt
+  legacy_seen_manifest: data/splits/strict_v1/legacy_seen_cases.txt
+
+  final_test_eligibility:
+    never_used_for_training: true
+    never_used_for_validation: true
+    never_used_for_metric_computation: true
+    never_visualized: true
+    no_same_patient_in_train_or_validation: true
+
+test_policy:
+  target_access_before_model_freeze: false
+  target_visualization_before_model_freeze: false
+  metric_computation_before_model_freeze: false
+  parameter_tuning_on_test: false
+
+calibration:
+  physical_solver:
+    allowed_sets:
+      - train
+      - validation
+
+  neural_models:
+    allowed_sets:
+      - train
+      - validation
+
+reproducibility:
+  deterministic_split_manifest: true
+  record_environment: true
+  record_git_commit: true
+  record_config_hash: true
+  seeds: null
+
+reporting:
+  distinguish_record_case_patient: true
+  prohibit_clinical_readiness_claim: true
+  report_missing_metadata: true
+  report_assumed_parameters: true

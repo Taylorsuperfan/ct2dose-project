@@ -1,0 +1,6 @@
+V0-V3 verified the saved Drive report and generated a new figure folder
+Snapshot and Drive-derived chart values/captions reviewed
+Local import conflicts reconciled without overwriting evidence
+New combined release checker and manual staged review passed
+Commit pushed to github and local/remote hashes match
+Actual commit link and reviewed PNGs attached to cards

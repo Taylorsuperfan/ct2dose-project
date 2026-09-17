@@ -1,0 +1,19 @@
+# Suggested thesis additions; merge manually into the repository .gitignore.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+.env
+
+# Never commit raw patient/simulation data or large checkpoints.
+data/raw/
+outputs/checkpoints/
+*.pt
+*.pth
+*.ckpt
+
+# Keep small, final thesis tables and figures only.
+thesis/results/tmp/
+thesis/figures/tmp/

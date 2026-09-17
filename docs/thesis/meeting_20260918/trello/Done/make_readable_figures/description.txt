@@ -1,0 +1,11 @@
+Completed presentation work
+Generated seven numerical comparison figures from the reported aggregate result table. The figures now use descriptive method names: the previous final dose-prediction system, the shared calibrated predictor, directly learned signed corrections, and separately learned positive/negative corrections.
+
+Figures
+Whole-cube root-mean-square error; mean absolute error; x-profile percentage error; absolute profile errors in three array directions; relative changes from the previous final system; whole-volume/profile trade-off; and trainable correction-network size.
+
+Accuracy of presentation
+Model identifiers and version tags are explained in a separate code-to-name table. Captions define the error measures, numerical units and validation scope. Bars start at zero; the scatter plot is explicitly zoomed. No error bars, confidence intervals or significance results were invented.
+
+Scope
+Only labels, captions and presentation documents changed. The numerical input table, trained models and original results were not changed. Generated figures are based on the supplied aggregate snapshot, not new model inference. Uploading them to Trello or GitHub is a separate task.

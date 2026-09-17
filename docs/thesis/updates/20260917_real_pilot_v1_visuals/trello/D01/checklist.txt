@@ -1,0 +1,4 @@
+Original source and three model-state bindings recorded
+Smoke4 and val600 reports saved
+Historical aggregate differences retained without tuning to match
+Upstream exposure and historical identity limitations disclosed

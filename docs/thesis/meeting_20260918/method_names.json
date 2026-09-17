@@ -1,0 +1,38 @@
+{
+  "phase5e_rf": {
+    "short": "Dose predictor before refinement",
+    "plot": "Dose predictor\nbefore refinement",
+    "full": "Earlier rectified-flow dose predictor before the later correction stages",
+    "meaning": "The frozen upstream model actually used by the recovered system. It is not claimed to be an untouched initial Practical model."
+  },
+  "phase9d_plus": {
+    "short": "Predictor with learned scale/offset correction",
+    "plot": "Predictor with learned\nscale/offset correction",
+    "full": "Dose predictor with learned multiplicative and additive correction",
+    "meaning": "An intermediate stage of the previous system, before the additional calibration and final refinement."
+  },
+  "phase9g": {
+    "short": "Shared calibrated dose predictor",
+    "plot": "Shared calibrated\ndose predictor",
+    "full": "Frozen calibrated dose predictor shared by the compared correction methods",
+    "meaning": "Provides the starting dose prediction used to define the new correction target. It is a learned prediction, not dose-to-water."
+  },
+  "phase10d_strict": {
+    "short": "Previous final dose-prediction system",
+    "plot": "Previous final\ndose-prediction system",
+    "full": "Final Practical dose-prediction system with falloff-aware bounded refinement",
+    "meaning": "The recovered previous final system. Its final refinement head used the corrected training/validation case split; this does not certify the entire upstream history as blind."
+  },
+  "new_residual_rf": {
+    "short": "New: directly learned signed correction",
+    "plot": "New: directly learned\nsigned correction\n(flow matching)",
+    "full": "Rectified flow matching with direct signed-residual prediction",
+    "meaning": "Predicts one correction field that can contain positive and negative values, then adds it to the shared calibrated prediction. This is not a direct-regression baseline."
+  },
+  "new_hjd_rf": {
+    "short": "New: separate positive/negative corrections",
+    "plot": "New: separate positive/\nnegative corrections\n(flow matching)",
+    "full": "Rectified flow matching with Hahn–Jordan decomposition of the signed residual",
+    "meaning": "Uses two spatial flow fields and predicted component magnitudes to reconstruct a positive correction minus a nonnegative negative-correction magnitude, then adds the signed result to the shared calibrated prediction."
+  }
+}
