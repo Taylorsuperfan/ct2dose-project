@@ -1,0 +1,42 @@
+[
+  {
+    "archive": "phase9g_signed_real_v1.zip",
+    "member": "pg9learn/cache.py",
+    "sha256": "d1f0045a36a229c7c36e8f073d395c801ef486089c929996895d315b85260f97"
+  },
+  {
+    "archive": "phase9g_signed_real_v1.zip",
+    "member": "pg9learn/train.py",
+    "sha256": "9fa9ac213790c9ad2f96e2252457819721d06a2a3c7ce74f0042a2dfb2347fcb"
+  },
+  {
+    "archive": "phase9g_signed_real_v1.zip",
+    "member": "pg9learn/compare.py",
+    "sha256": "2ea5dea262ca6710e3d27bc020c946b48c8bebf4a8ae886bafa01f8423038c98"
+  },
+  {
+    "archive": "phase9g_signed_real_v1.zip",
+    "member": "p10recover/metrics.py",
+    "sha256": "84f7b60b23c222b2aeb9be4dcf1010898d588a347d8fe5bef702e6ff4ba94484"
+  },
+  {
+    "archive": "phase9g_signed_real_v1.zip",
+    "member": "p10recover/legacy_defs.py",
+    "sha256": "b439bf12099a5330241b67a00fc8341d4a44c195f9e33d2649ae7b9bfc54b3ae"
+  },
+  {
+    "archive": "signed_grid_bridge.zip",
+    "member": "gridbridge/core.py",
+    "sha256": "af1a4611a0da4d29999413b9ddbf73515f3eb4addf06e8d70578cf580f023dd9"
+  },
+  {
+    "archive": "signed_grid_bridge.zip",
+    "member": "gridbridge/torch_ops.py",
+    "sha256": "b0b05c24bb60da16879ffe3c818bca75ee3110ea5f4cdcb93ba18f70e33cb679"
+  },
+  {
+    "archive": "signed_grid_bridge.zip",
+    "member": "gridbridge/cache_reader.py",
+    "sha256": "e98d3bb6fdae296c468ba0d249f798eeaaea461084a285007c9921ab5dbcabdd"
+  }
+]

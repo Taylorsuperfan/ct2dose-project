@@ -1,0 +1,17 @@
+Repository: /tmp/tmpdrdjr3cb
+New files: 40
+Identical files retained: 0
+CHECK ONLY: re-run with --apply after review.
+
+Repository: /tmp/tmpdrdjr3cb
+New files: 40
+Identical files retained: 0
+Imported into: /tmp/tmpdrdjr3cb/research/conditional_wfr_dose
+
+Repository: /tmp/tmpdrdjr3cb
+New files: 0
+Identical files retained: 40
+Imported into: /tmp/tmpdrdjr3cb/research/conditional_wfr_dose
+
+Conflicting existing files; no files copied:
+/tmp/tmpdrdjr3cb/research/conditional_wfr_dose/README.md

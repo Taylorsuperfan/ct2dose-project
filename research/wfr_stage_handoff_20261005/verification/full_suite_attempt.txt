@@ -1,0 +1,5 @@
+The unchanged original full refinement suite was attempted during packaging.
+The container command reached its 200-second time limit during the synthetic
+600-record integration test. No completed full-suite result is claimed for this
+packaging run. The separate 33-test core suite did complete successfully.
+No user medical arrays/checkpoints were opened by either test command.

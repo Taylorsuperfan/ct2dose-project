@@ -1,0 +1,19 @@
+{
+  "source_archive": "conditional_wfr_dose.zip",
+  "source_archive_sha256": "e67a2e6e3bf2a44e095cf759502c9467ecaed30ff6c3ea068cdff5f1977f97c6",
+  "modules_byte_identical": true,
+  "module_sha256": {
+    "cwfr/__init__.py": "c91f64e242cc868d4507037d16d7d93f62ef24f1607c27a1d3bc07321e42cad6",
+    "cwfr/__main__.py": "74e0d513e6963c33e85889a077874465697bf4236c2ef63be423b6e67e92482b",
+    "cwfr/common.py": "d6fd5e2ace2b692b8d27bd6d9c0eecc881e9adc2cb412f2e8bcbf819d26af0d9",
+    "cwfr/config.py": "76500f84f0d74038bac573f51de7f26c5b17af25ee51f78bcfc086ae10598d11",
+    "cwfr/data.py": "02ca04a96dbe352419a5448b49ea036f0a8cb0bd56517cb69a44f4efb1033d4e",
+    "cwfr/evaluate.py": "72391401b74008fe201abb2ce4299fa5f58d9ccf29ff986f07d322ace9b2d937",
+    "cwfr/geometry.py": "09b7b535f735571f42f40c439fdca764396721a443c140e3a431257dc92205cb",
+    "cwfr/metrics.py": "57ed442dbfe234d73e2216dd7a549a096e0cc1658cb81f462e6fe5e84952663d",
+    "cwfr/model.py": "729b81fe3491d5c918f5cb19074b1556ab09501ab3af5e073985d0456b6519b5",
+    "cwfr/plans.py": "0829a35c4916a263a00d220d5ec6b8a7e8a5b5502fbf723850325cd13e6871e7",
+    "cwfr/train.py": "cea50952298cd6f3b2b944399e935748cd9501b8aaf6aa7f688055167bb40b82"
+  },
+  "note": "These are the user-provided parent implementation modules, not redistributed third-party WFR-FM source."
+}

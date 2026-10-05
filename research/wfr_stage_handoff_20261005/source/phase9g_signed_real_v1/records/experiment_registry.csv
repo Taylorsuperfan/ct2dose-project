@@ -1,0 +1,7 @@
+id,task,status_at_delivery,scope,evidence_required
+OLD-RECOVER,Phase10D strict old val600,reported_complete_by_user,real_development_historical_limit,existing run01_val600
+R9G-00,selected train192 cache,ready_to_run,real Phase9G error targets,READY and residual_audit
+R9G-01,train-only12 RF/HJD learnability,ready_to_run,train diagnostics only,small training summaries
+R9G-02,ordinary residual RF pilot,ready_to_run,192train 40monitor,checkpoint history status
+R9G-03,HJD spatial RF pilot,ready_to_run,192train 40monitor,checkpoint history status
+R9G-04,new models vs old on600,ready_to_run,validation development not final test,paired deltas and report

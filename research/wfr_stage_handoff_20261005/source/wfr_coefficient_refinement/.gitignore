@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+*.local/
+*.private.*
+*.pt
+*.pth
+*.npz
+*.npy
+*.ckpt
+.env
+.ipynb_checkpoints/

@@ -1,0 +1,14 @@
+[
+  {
+    "path": "source/wfr_coefficient_refinement/notebooks/wfr_coefficient_refinement_colab.ipynb",
+    "payload_sha256": "ac6e9508bbe1e6435d3bb598dab46f3063650dc0d8d5b7f39f2cd874739307dc",
+    "source_python_bytes_match": true,
+    "outputs_present": false
+  },
+  {
+    "path": "source/conditional_wfr_dose/notebooks/conditional_wfr_dose_colab.ipynb",
+    "payload_sha256": "8a39e6d44fc92502c2103290b35d8d385a28a17cecf2041d1d6c044200ed3513",
+    "source_python_bytes_match": true,
+    "outputs_present": false
+  }
+]

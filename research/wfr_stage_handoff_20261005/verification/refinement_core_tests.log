@@ -1,0 +1,41 @@
+test_bounded_output (test_core.CoreTests.test_bounded_output) ... ok
+test_config_validation (test_core.CoreTests.test_config_validation) ... ok
+test_equal_case_mean_not_pooled (test_core.CoreTests.test_equal_case_mean_not_pooled) ... ok
+test_factor_recalls (test_core.CoreTests.test_factor_recalls) ... ok
+test_frozen_envelope_bound (test_core.CoreTests.test_frozen_envelope_bound) ... ok
+test_head_is_a_deep_copy (test_core.CoreTests.test_head_is_a_deep_copy) ... ok
+test_initial_head_matches_parent (test_core.CoreTests.test_initial_head_matches_parent) ... ok
+test_no_input_mutation (test_core.CoreTests.test_no_input_mutation) ... ok
+test_no_oracle_training_setting (test_core.CoreTests.test_no_oracle_training_setting) ... ok
+test_objective_arms_differ_only_profile (test_core.CoreTests.test_objective_arms_differ_only_profile) ... /mnt/data/stage_build/source_check/wfr_coefficient_refinement/tests/test_core.py:85: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  self.assertAlmostEqual(float(b-a), self.cfg.profile_weight * terms_b["profile_scaled"], places=6)
+ok
+test_objective_has_coefficient_gradient_only (test_core.CoreTests.test_objective_has_coefficient_gradient_only) ... ok
+test_profile_gradient_is_finite (test_core.CoreTests.test_profile_gradient_is_finite) ... ok
+test_profile_relative_matches_manual (test_core.CoreTests.test_profile_relative_matches_manual) ... ok
+test_profile_uses_array_x (test_core.CoreTests.test_profile_uses_array_x) ... ok
+test_real_parent_and_head_prediction (test_core.CoreTests.test_real_parent_and_head_prediction) ... ok
+test_receipt_tampering (test_core.CoreTests.test_receipt_tampering) ... ok
+test_reject_trainable_magnitude (test_core.CoreTests.test_reject_trainable_magnitude) ... ok
+test_save_npz_is_non_overwriting (test_core.CoreTests.test_save_npz_is_non_overwriting) ... ok
+test_schedule_same_across_arms_and_resume (test_core.CoreTests.test_schedule_same_across_arms_and_resume) ... ok
+test_schedule_seed_matters (test_core.CoreTests.test_schedule_seed_matters) ... ok
+test_selection_allows_declared_margin_only (test_core.CoreTests.test_selection_allows_declared_margin_only) ... ok
+test_selection_enforces_each_case (test_core.CoreTests.test_selection_enforces_each_case) ... ok
+test_selection_keeps_parent_on_tie (test_core.CoreTests.test_selection_keeps_parent_on_tie) ... ok
+test_selection_mismatched_cases (test_core.CoreTests.test_selection_mismatched_cases) ... ok
+test_selection_rejects_global_only_improvement (test_core.CoreTests.test_selection_rejects_global_only_improvement) ... ok
+test_selection_rejects_missing_metric (test_core.CoreTests.test_selection_rejects_missing_metric) ... ok
+test_sign_weighting_preserves_batch_normalization (test_core.CoreTests.test_sign_weighting_preserves_batch_normalization) ... ok
+test_small_head_can_reduce_product_loss (test_core.CoreTests.test_small_head_can_reduce_product_loss) ... ok
+test_target_free_interface (test_core.CoreTests.test_target_free_interface) ... ok
+test_transport_remains_unchanged_when_training_head (test_core.CoreTests.test_transport_remains_unchanged_when_training_head) ... ok
+test_weight_archive_roundtrip (test_core.CoreTests.test_weight_archive_roundtrip) ... ok
+test_weighted_bernoulli_population_identity (test_core.CoreTests.test_weighted_bernoulli_population_identity) ... ok
+test_zero_target_losses_are_finite (test_core.CoreTests.test_zero_target_losses_are_finite) ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 0.823s
+
+OK
