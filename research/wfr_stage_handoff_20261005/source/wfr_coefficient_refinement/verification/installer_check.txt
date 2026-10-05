@@ -1,0 +1,1 @@
+Four temporary-repository checks passed: dry run writes nothing; apply copies source; repeated apply retains identical bytes; conflict is rejected without overwrite. No real repository was accessed.

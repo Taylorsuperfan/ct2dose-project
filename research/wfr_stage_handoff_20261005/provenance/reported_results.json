@@ -1,0 +1,28 @@
+{
+  "basis": "User-uploaded final-stage Markdown report; not recomputed from medical arrays during packaging.",
+  "report_sha256": "98d6e54918d7a02083ec8fb4f6d37c0a25b42cde03bfc3c3b04524938216291b",
+  "report_included_verbatim": false,
+  "reason_for_exclusion": "Original includes case identifiers and private per-case rows.",
+  "primary_numeric_source": "Primary comparison section; preserve displayed numeric precision.",
+  "last_numeric_source": "Secondary fixed-budget table; preserve its more limited displayed precision.",
+  "per_case_results_included": false,
+  "original_predictions_or_checkpoints_opened": false,
+  "figures": [
+    {
+      "filename": "figures/01_whole_cube_rmse.png",
+      "sha256": "59df9c5653692efe5e7682d8044a68100118d4afeb95be80426c157795fe7c11",
+      "origin": "unchanged user-uploaded aggregate plot"
+    },
+    {
+      "filename": "figures/02_x_profile_percentage.png",
+      "sha256": "947e6d7e47122b6f024cc2312e9b3efba10e01f5444285aad88df2690dae9756",
+      "origin": "unchanged user-uploaded aggregate plot"
+    },
+    {
+      "filename": "figures/03_x_profile_absolute.png",
+      "sha256": "738a0f0033fb9bd7488c0f5b91817c7d65b4261852dd5e87fbcc48fd7c29b500",
+      "origin": "unchanged user-uploaded aggregate plot"
+    }
+  ],
+  "publication_approval": "Not established by this package."
+}

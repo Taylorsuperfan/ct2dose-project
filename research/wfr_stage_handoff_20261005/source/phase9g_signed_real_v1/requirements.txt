@@ -1,0 +1,6 @@
+# Use the existing working Colab torch; do not automatically upgrade CUDA/torch.
+torch
+numpy
+pandas
+matplotlib
+pytest

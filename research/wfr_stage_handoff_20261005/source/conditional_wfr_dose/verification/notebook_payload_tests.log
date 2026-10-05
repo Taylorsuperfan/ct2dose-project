@@ -1,0 +1,112 @@
+PAIRED COMPARISON 100/600, no model inference
+PAIRED COMPARISON 200/600, no model inference
+PAIRED COMPARISON 300/600, no model inference
+PAIRED COMPARISON 400/600, no model inference
+PAIRED COMPARISON 500/600, no model inference
+PAIRED COMPARISON 600/600, no model inference
+                               method                                         display_name  rmse_stored_units  mae_stored_units  negative_prediction_fraction  x_mean_pct  x_max_pct  x_profile_rmse_stored_units  y_mean_pct  y_max_pct  y_profile_rmse_stored_units  z_mean_pct  z_max_pct  z_profile_rmse_stored_units  n_records  n_cases                                                       aggregation
+            conditional_wfr_grid_sign        New: conditional WFR magnitude with grid sign           0.000006          0.000005                           0.0    0.516817   1.052633                     0.000006    0.952377   0.952377                     0.000010    0.952377   0.952377                     0.000010      600.0      2.0 equal_case_mean_of_per_record_metrics; development_not_blind_test
+conditional_wfr_hard_sign_sensitivity          New: hard grid-sign sensitivity (secondary)           0.000006          0.000005                           0.0    0.516817   1.052633                     0.000006    0.952377   0.952377                     0.000010    0.952377   0.952377                     0.000010      600.0      2.0 equal_case_mean_of_per_record_metrics; development_not_blind_test
+          previous_direct_signed_flow          Previous directly learned signed correction           0.000015          0.000013                           0.0    1.292040   2.631581                     0.000015    2.380948   2.380948                     0.000025    2.380948   2.380948                     0.000025      600.0      2.0 equal_case_mean_of_per_record_metrics; development_not_blind_test
+                previous_final_system                 Previous final Practical dose system           0.000009          0.000008                           0.0    0.775223   1.578941                     0.000009    1.428571   1.428571                     0.000015    1.428571   1.428571                     0.000015      600.0      2.0 equal_case_mean_of_per_record_metrics; development_not_blind_test
+     previous_positive_negative_flows Previous separate positive/negative correction flows           0.000018          0.000015                           0.0    1.550448   3.157894                     0.000018    2.857143   2.857143                     0.000030    2.857143   2.857143                     0.000030      600.0      2.0 equal_case_mean_of_per_record_metrics; development_not_blind_test
+          shared_calibrated_predictor                     Shared calibrated dose predictor           0.000030          0.000026                           0.0    2.584081   5.263161                     0.000030    4.761897   4.761897                     0.000050    4.761897   4.761897                     0.000050      600.0      2.0 equal_case_mean_of_per_record_metrics; development_not_blind_test
+COMPARISON: /tmp/tmpuodlct8_/comparison
+VALIDATION 1/2 saved/verified
+                   method  rmse_stored_units  mae_stored_units  negative_prediction_fraction  x_mean_pct  x_max_pct  x_profile_rmse_stored_units  y_mean_pct  y_max_pct  y_profile_rmse_stored_units  z_mean_pct  z_max_pct  z_profile_rmse_stored_units  n_records  n_cases                                                       aggregation
+conditional_wfr_grid_sign            0.00003          0.000026                           0.0    2.584081   5.263161                      0.00003    4.761897   4.761897                      0.00005    4.761897   4.761897                      0.00005        2.0      2.0 equal_case_mean_of_per_record_metrics; development_not_blind_test
+Saved evaluation verified; no inference.
+TRAIN COUPLINGS 1/1 saved/verified
+{'n_training_records': 1, 'n_banks': 1, 'banks_reaching_iterate_tolerance': 0, 'max_final_relative_change': 0.022076784758179504, 'approximation': 'finite support, finite iterations, fixed small bank set; not exact full-grid OT', 'training_arrays_opened': 1, 'validation_arrays_opened': 0, 'test_arrays_opened': 0, 'raw_arrays_opened': 0, 'new_baseline_predictions': 0}
+START one: train=1, monitor=1, zero-correction RMSE=2.97841572e-05
+PAUSED safely. Re-run this exact command to continue.
+Fork created, not trained: /tmp/tmpy3thouzr/child
+RESUME next update=2, total budget=6
+UPDATE 2/6 loss=1.85238 monitor_RMSE=2.97841494e-05 x_mean_pct=2.5840715248887065
+UPDATE 4/6 loss=1.83347 monitor_RMSE=2.97841207e-05 x_mean_pct=2.5841062649939444
+UPDATE 6/6 loss=1.85284 monitor_RMSE=2.97841022e-05 x_mean_pct=2.584087895881002
+TRAINING COMPLETE: /tmp/tmpy3thouzr/child
+{'scope': 'REAL_CONDITIONAL_WFR_MAGNITUDE_GRID_SIGN_NOT_WATER_NOT_BLIND_FINAL_TEST', 'stage': 'one', 'updates': 6, 'selected_step': 6, 'initial_monitor': {'rmse_stored_units': 2.9784157190063573e-05, 'mae_stored_units': 2.5806438177824028e-05, 'negative_prediction_fraction': 0.0, 'x_mean_pct': 2.584080535111032, 'x_max_pct': 5.263159160213737, 'x_profile_rmse_stored_units': 2.9784157190063573e-05, 'x_valid_count': 32.0, 'y_mean_pct': 4.761900391499542, 'y_max_pct': 4.761900391499542, 'y_profile_rmse_stored_units': 4.9999952316284214e-05, 'y_valid_count': 32.0, 'z_mean_pct': 4.761900391499542, 'z_max_pct': 4.761900391499542, 'z_profile_rmse_stored_units': 4.9999952316284214e-05, 'z_valid_count': 32.0, 'base_rmse': 2.9784157190063573e-05, 'raw_rmse': 2.9784157190063573e-05, 'residual_rmse_normalized': 0.2978415719006357, 'magnitude_mae_normalized': 0.7419356182217598, 'magnitude_total_relative_error': 2.8750019054869247, 'active_sign_accuracy': 0.0, 'soft_sign_retained_magnitude_fraction': 0.0, 'n_records': 1, 'n_cases': 1}, 'selected_monitor': {'rmse_stored_units': 2.9784102203869054e-05, 'mae_stored_units': 2.580640263769755e-05, 'negative_prediction_fraction': 0.0, 'x_mean_pct': 2.584087895881002, 'x_max_pct': 5.263468169262652, 'x_profile_rmse_stored_units': 2.978414835973054e-05, 'x_valid_count': 32.0, 'y_mean_pct': 4.761557593936266, 'y_max_pct': 4.761611066684473, 'y_profile_rmse_stored_units': 4.9996352942182425e-05, 'y_valid_count': 32.0, 'z_mean_pct': 4.761620549262082, 'z_max_pct': 4.76162615190763, 'z_profile_rmse_stored_units': 4.9997013973169094e-05, 'z_valid_count': 32.0, 'base_rmse': 2.9784157190063573e-05, 'raw_rmse': 2.9784102203869054e-05, 'residual_rmse_normalized': 0.2978410220386905, 'magnitude_mae_normalized': 0.7387866096919704, 'magnitude_total_relative_error': 2.8627994914335964, 'active_sign_accuracy': 0.5, 'soft_sign_retained_magnitude_fraction': 4.1636229328933494e-05, 'n_records': 1, 'n_cases': 1}, 'parameters': 2823, 'batch_size': 1, 'training_records': 1, 'monitor_records': 1, 'training_seed': 17, 'optimizer_seconds_this_call_including_monitor': 0.6133295320000798, 'learned_beyond_zero_on_monitor': True, 'relative_monitor_rmse_improvement': 1.8461557991233946e-06, 'learnability_note': 'A positive improvement boolean alone is not an overfit/convergence certificate.', 'primary_selection': 'monitor_case_mean_clipped_dose_rmse', 'fairness': 'same train192/monitor40 and nominal update budget only; architectures, operations and old training history differ', 'scientific_status': 'PENDING_REVIEW_NO_IMPROVEMENT_GUARANTEE', 'training_arrays_opened': 1, 'validation_arrays_opened': 0, 'test_arrays_opened': 0, 'raw_arrays_opened': 0, 'new_baseline_predictions': 0}
+START one: train=1, monitor=1, zero-correction RMSE=2.97841572e-05
+UPDATE 2/4 loss=1.85238 monitor_RMSE=2.97841494e-05 x_mean_pct=2.5840715248887065
+UPDATE 4/4 loss=1.83347 monitor_RMSE=2.97841207e-05 x_mean_pct=2.5841062649939444
+TRAINING COMPLETE: /tmp/tmpy3thouzr/completed
+{'scope': 'REAL_CONDITIONAL_WFR_MAGNITUDE_GRID_SIGN_NOT_WATER_NOT_BLIND_FINAL_TEST', 'stage': 'one', 'updates': 4, 'selected_step': 4, 'initial_monitor': {'rmse_stored_units': 2.9784157190063573e-05, 'mae_stored_units': 2.5806438177824028e-05, 'negative_prediction_fraction': 0.0, 'x_mean_pct': 2.584080535111032, 'x_max_pct': 5.263159160213737, 'x_profile_rmse_stored_units': 2.9784157190063573e-05, 'x_valid_count': 32.0, 'y_mean_pct': 4.761900391499542, 'y_max_pct': 4.761900391499542, 'y_profile_rmse_stored_units': 4.9999952316284214e-05, 'y_valid_count': 32.0, 'z_mean_pct': 4.761900391499542, 'z_max_pct': 4.761900391499542, 'z_profile_rmse_stored_units': 4.9999952316284214e-05, 'z_valid_count': 32.0, 'base_rmse': 2.9784157190063573e-05, 'raw_rmse': 2.9784157190063573e-05, 'residual_rmse_normalized': 0.2978415719006357, 'magnitude_mae_normalized': 0.7419356182217598, 'magnitude_total_relative_error': 2.8750019054869247, 'active_sign_accuracy': 0.0, 'soft_sign_retained_magnitude_fraction': 0.0, 'n_records': 1, 'n_cases': 1}, 'selected_monitor': {'rmse_stored_units': 2.9784120733362023e-05, 'mae_stored_units': 2.58064113984455e-05, 'negative_prediction_fraction': 0.0, 'x_mean_pct': 2.5841062649939444, 'x_max_pct': 5.26423389066291, 'x_profile_rmse_stored_units': 2.9784147724163612e-05, 'x_valid_count': 32.0, 'y_mean_pct': 4.760890849232007, 'y_max_pct': 4.760922332636058, 'y_profile_rmse_stored_units': 4.998935212292524e-05, 'y_valid_count': 32.0, 'z_mean_pct': 4.760931347284144, 'z_max_pct': 4.7609355279524195, 'z_profile_rmse_stored_units': 4.998977735250326e-05, 'z_valid_count': 32.0, 'base_rmse': 2.9784157190063573e-05, 'raw_rmse': 2.9784120733362023e-05, 'residual_rmse_normalized': 0.2978412073336202, 'magnitude_mae_normalized': 0.7398428260920842, 'magnitude_total_relative_error': 2.8668923319966435, 'active_sign_accuracy': 0.5, 'soft_sign_retained_magnitude_fraction': 0.00010941358768996411, 'n_records': 1, 'n_cases': 1}, 'parameters': 2823, 'batch_size': 1, 'training_records': 1, 'monitor_records': 1, 'training_seed': 17, 'optimizer_seconds_this_call_including_monitor': 0.5190079330000117, 'learned_beyond_zero_on_monitor': True, 'relative_monitor_rmse_improvement': 1.224029987367814e-06, 'learnability_note': 'A positive improvement boolean alone is not an overfit/convergence certificate.', 'primary_selection': 'monitor_case_mean_clipped_dose_rmse', 'fairness': 'same train192/monitor40 and nominal update budget only; architectures, operations and old training history differ', 'scientific_status': 'PENDING_REVIEW_NO_IMPROVEMENT_GUARANTEE', 'training_arrays_opened': 1, 'validation_arrays_opened': 0, 'test_arrays_opened': 0, 'raw_arrays_opened': 0, 'new_baseline_predictions': 0}
+START one: train=1, monitor=1, zero-correction RMSE=2.97841572e-05
+PAUSED safely. Re-run this exact command to continue.
+START one: train=1, monitor=1, zero-correction RMSE=2.97841572e-05
+UPDATE 2/4 loss=1.85238 monitor_RMSE=2.97841494e-05 x_mean_pct=2.5840715248887065
+UPDATE 4/4 loss=1.83347 monitor_RMSE=2.97841207e-05 x_mean_pct=2.5841062649939444
+TRAINING COMPLETE: /tmp/tmpy3thouzr/uninterrupted
+{'scope': 'REAL_CONDITIONAL_WFR_MAGNITUDE_GRID_SIGN_NOT_WATER_NOT_BLIND_FINAL_TEST', 'stage': 'one', 'updates': 4, 'selected_step': 4, 'initial_monitor': {'rmse_stored_units': 2.9784157190063573e-05, 'mae_stored_units': 2.5806438177824028e-05, 'negative_prediction_fraction': 0.0, 'x_mean_pct': 2.584080535111032, 'x_max_pct': 5.263159160213737, 'x_profile_rmse_stored_units': 2.9784157190063573e-05, 'x_valid_count': 32.0, 'y_mean_pct': 4.761900391499542, 'y_max_pct': 4.761900391499542, 'y_profile_rmse_stored_units': 4.9999952316284214e-05, 'y_valid_count': 32.0, 'z_mean_pct': 4.761900391499542, 'z_max_pct': 4.761900391499542, 'z_profile_rmse_stored_units': 4.9999952316284214e-05, 'z_valid_count': 32.0, 'base_rmse': 2.9784157190063573e-05, 'raw_rmse': 2.9784157190063573e-05, 'residual_rmse_normalized': 0.2978415719006357, 'magnitude_mae_normalized': 0.7419356182217598, 'magnitude_total_relative_error': 2.8750019054869247, 'active_sign_accuracy': 0.0, 'soft_sign_retained_magnitude_fraction': 0.0, 'n_records': 1, 'n_cases': 1}, 'selected_monitor': {'rmse_stored_units': 2.9784120733362023e-05, 'mae_stored_units': 2.58064113984455e-05, 'negative_prediction_fraction': 0.0, 'x_mean_pct': 2.5841062649939444, 'x_max_pct': 5.26423389066291, 'x_profile_rmse_stored_units': 2.9784147724163612e-05, 'x_valid_count': 32.0, 'y_mean_pct': 4.760890849232007, 'y_max_pct': 4.760922332636058, 'y_profile_rmse_stored_units': 4.998935212292524e-05, 'y_valid_count': 32.0, 'z_mean_pct': 4.760931347284144, 'z_max_pct': 4.7609355279524195, 'z_profile_rmse_stored_units': 4.998977735250326e-05, 'z_valid_count': 32.0, 'base_rmse': 2.9784157190063573e-05, 'raw_rmse': 2.9784120733362023e-05, 'residual_rmse_normalized': 0.2978412073336202, 'magnitude_mae_normalized': 0.7398428260920842, 'magnitude_total_relative_error': 2.8668923319966435, 'active_sign_accuracy': 0.5, 'soft_sign_retained_magnitude_fraction': 0.00010941358768996411, 'n_records': 1, 'n_cases': 1}, 'parameters': 2823, 'batch_size': 1, 'training_records': 1, 'monitor_records': 1, 'training_seed': 17, 'optimizer_seconds_this_call_including_monitor': 0.5466184899999007, 'learned_beyond_zero_on_monitor': True, 'relative_monitor_rmse_improvement': 1.224029987367814e-06, 'learnability_note': 'A positive improvement boolean alone is not an overfit/convergence certificate.', 'primary_selection': 'monitor_case_mean_clipped_dose_rmse', 'fairness': 'same train192/monitor40 and nominal update budget only; architectures, operations and old training history differ', 'scientific_status': 'PENDING_REVIEW_NO_IMPROVEMENT_GUARANTEE', 'training_arrays_opened': 1, 'validation_arrays_opened': 0, 'test_arrays_opened': 0, 'raw_arrays_opened': 0, 'new_baseline_predictions': 0}
+START one: train=1, monitor=1, zero-correction RMSE=2.97841572e-05
+PAUSED safely. Re-run this exact command to continue.
+RESUME next update=2, total budget=4
+UPDATE 2/4 loss=1.85238 monitor_RMSE=2.97841494e-05 x_mean_pct=2.5840715248887065
+UPDATE 4/4 loss=1.83347 monitor_RMSE=2.97841207e-05 x_mean_pct=2.5841062649939444
+TRAINING COMPLETE: /tmp/tmpy3thouzr/resumed
+{'scope': 'REAL_CONDITIONAL_WFR_MAGNITUDE_GRID_SIGN_NOT_WATER_NOT_BLIND_FINAL_TEST', 'stage': 'one', 'updates': 4, 'selected_step': 4, 'initial_monitor': {'rmse_stored_units': 2.9784157190063573e-05, 'mae_stored_units': 2.5806438177824028e-05, 'negative_prediction_fraction': 0.0, 'x_mean_pct': 2.584080535111032, 'x_max_pct': 5.263159160213737, 'x_profile_rmse_stored_units': 2.9784157190063573e-05, 'x_valid_count': 32.0, 'y_mean_pct': 4.761900391499542, 'y_max_pct': 4.761900391499542, 'y_profile_rmse_stored_units': 4.9999952316284214e-05, 'y_valid_count': 32.0, 'z_mean_pct': 4.761900391499542, 'z_max_pct': 4.761900391499542, 'z_profile_rmse_stored_units': 4.9999952316284214e-05, 'z_valid_count': 32.0, 'base_rmse': 2.9784157190063573e-05, 'raw_rmse': 2.9784157190063573e-05, 'residual_rmse_normalized': 0.2978415719006357, 'magnitude_mae_normalized': 0.7419356182217598, 'magnitude_total_relative_error': 2.8750019054869247, 'active_sign_accuracy': 0.0, 'soft_sign_retained_magnitude_fraction': 0.0, 'n_records': 1, 'n_cases': 1}, 'selected_monitor': {'rmse_stored_units': 2.9784120733362023e-05, 'mae_stored_units': 2.58064113984455e-05, 'negative_prediction_fraction': 0.0, 'x_mean_pct': 2.5841062649939444, 'x_max_pct': 5.26423389066291, 'x_profile_rmse_stored_units': 2.9784147724163612e-05, 'x_valid_count': 32.0, 'y_mean_pct': 4.760890849232007, 'y_max_pct': 4.760922332636058, 'y_profile_rmse_stored_units': 4.998935212292524e-05, 'y_valid_count': 32.0, 'z_mean_pct': 4.760931347284144, 'z_max_pct': 4.7609355279524195, 'z_profile_rmse_stored_units': 4.998977735250326e-05, 'z_valid_count': 32.0, 'base_rmse': 2.9784157190063573e-05, 'raw_rmse': 2.9784120733362023e-05, 'residual_rmse_normalized': 0.2978412073336202, 'magnitude_mae_normalized': 0.7398428260920842, 'magnitude_total_relative_error': 2.8668923319966435, 'active_sign_accuracy': 0.5, 'soft_sign_retained_magnitude_fraction': 0.00010941358768996411, 'n_records': 1, 'n_cases': 1}, 'parameters': 2823, 'batch_size': 1, 'training_records': 1, 'monitor_records': 1, 'training_seed': 17, 'optimizer_seconds_this_call_including_monitor': 0.4986088930002097, 'learned_beyond_zero_on_monitor': True, 'relative_monitor_rmse_improvement': 1.224029987367814e-06, 'learnability_note': 'A positive improvement boolean alone is not an overfit/convergence certificate.', 'primary_selection': 'monitor_case_mean_clipped_dose_rmse', 'fairness': 'same train192/monitor40 and nominal update budget only; architectures, operations and old training history differ', 'scientific_status': 'PENDING_REVIEW_NO_IMPROVEMENT_GUARANTEE', 'training_arrays_opened': 1, 'validation_arrays_opened': 0, 'test_arrays_opened': 0, 'raw_arrays_opened': 0, 'new_baseline_predictions': 0}
+START one: train=1, monitor=1, zero-correction RMSE=2.97841572e-05
+PAUSED safely. Re-run this exact command to continue.
+
+test_complete_comparison_six_methods_600 (test_comparison.ComparisonTests.test_complete_comparison_six_methods_600) ... ok
+test_previous_method_mismatch_stops (test_comparison.ComparisonTests.test_previous_method_mismatch_stops) ... ok
+test_scope_does_not_use_test_arrays (test_comparison.ComparisonTests.test_scope_does_not_use_test_arrays) ... ok
+test_inference_and_reuse_on_two_synthetic_validation_records (test_evaluation.EvaluationTests.test_inference_and_reuse_on_two_synthetic_validation_records) ... ok
+test_bank_preserves_total_ratio (test_math.MathTests.test_bank_preserves_total_ratio) ... ok
+test_boundary_total (test_math.MathTests.test_boundary_total) ... ok
+test_center_roundtrip (test_math.MathTests.test_center_roundtrip) ... ok
+test_config_cutoff (test_math.MathTests.test_config_cutoff) ... ok
+test_config_matrix_limit (test_math.MathTests.test_config_matrix_limit) ... ok
+test_cost_cutoff (test_math.MathTests.test_cost_cutoff) ... ok
+test_cost_symmetry (test_math.MathTests.test_cost_symmetry) ... ok
+test_general_semicoupling (test_math.MathTests.test_general_semicoupling) ... ok
+test_grid_sign_order (test_math.MathTests.test_grid_sign_order) ... ok
+test_one_point_distance (test_math.MathTests.test_one_point_distance) ... ok
+test_outside_stops (test_math.MathTests.test_outside_stops) ... ok
+test_path_derivative (test_math.MathTests.test_path_derivative) ... ok
+test_path_endpoints (test_math.MathTests.test_path_endpoints) ... ok
+test_same_location_midpoint (test_math.MathTests.test_same_location_midpoint) ... ok
+test_sample_is_reproducible (test_math.MathTests.test_sample_is_reproducible) ... ok
+test_signed_net_conservation (test_math.MathTests.test_signed_net_conservation) ... ok
+test_single_point_oet (test_math.MathTests.test_single_point_oet) ... ok
+test_solver_against_convex_numeric_reference (test_math.MathTests.test_solver_against_convex_numeric_reference) ... ok
+test_solver_rejects_zero_weights (test_math.MathTests.test_solver_rejects_zero_weights) ... ok
+test_target_mass_not_normalized_away (test_math.MathTests.test_target_mass_not_normalized_away) ... ok
+test_zero_target_stops (test_math.MathTests.test_zero_target_stops) ... ok
+test_axis_mapping (test_model.ModelTests.test_axis_mapping) ... ok
+test_condition_not_modified (test_model.ModelTests.test_condition_not_modified) ... ok
+test_duplicate_metrics_rejected (test_model.ModelTests.test_duplicate_metrics_rejected) ... ok
+test_equal_case_aggregation (test_model.ModelTests.test_equal_case_aggregation) ... ok
+test_field_shapes_and_gradients (test_model.ModelTests.test_field_shapes_and_gradients) ... ok
+test_global_metrics (test_model.ModelTests.test_global_metrics) ... ok
+test_growth_scales_weights (test_model.ModelTests.test_growth_scales_weights) ... ok
+test_initial_zero_correction (test_model.ModelTests.test_initial_zero_correction) ... ok
+test_legacy_threshold_and_epsilon (test_model.ModelTests.test_legacy_threshold_and_epsilon) ... ok
+test_query_chunk_invariance (test_model.ModelTests.test_query_chunk_invariance) ... ok
+test_soft_sign_bound (test_model.ModelTests.test_soft_sign_bound) ... ok
+test_target_free_signature (test_model.ModelTests.test_target_free_signature) ... ok
+test_array_tampering (test_pipeline.CacheTests.test_array_tampering) ... ok
+test_metadata_only_constructor (test_pipeline.CacheTests.test_metadata_only_constructor) ... ok
+test_no_overwrite_contract (test_pipeline.CacheTests.test_no_overwrite_contract) ... ok
+test_normalization_tampering (test_pipeline.CacheTests.test_normalization_tampering) ... ok
+test_one_selection_value_independent (test_pipeline.CacheTests.test_one_selection_value_independent) ... ok
+test_output_separation (test_pipeline.CacheTests.test_output_separation) ... ok
+test_path_escape (test_pipeline.CacheTests.test_path_escape) ... ok
+test_pilot_and_monitor_count (test_pipeline.CacheTests.test_pilot_and_monitor_count) ... ok
+test_reads_selected_train_only (test_pipeline.CacheTests.test_reads_selected_train_only) ... ok
+test_six_selection (test_pipeline.CacheTests.test_six_selection) ... ok
+test_unknown_split (test_pipeline.CacheTests.test_unknown_split) ... ok
+test_val_requires_explicit_access (test_pipeline.CacheTests.test_val_requires_explicit_access) ... ok
+test_validation_case_overlap (test_pipeline.CacheTests.test_validation_case_overlap) ... ok
+test_explicit_fork_preserves_parent (test_pipeline.TrainTests.test_explicit_fork_preserves_parent) ... ok
+test_new_inference_after_completed_load (test_pipeline.TrainTests.test_new_inference_after_completed_load) ... ok
+test_pause_status_and_existing_progress (test_pipeline.TrainTests.test_pause_status_and_existing_progress) ... ok
+test_plan_preparation_does_not_read_validation (test_pipeline.TrainTests.test_plan_preparation_does_not_read_validation) ... ok
+test_resume_identical_cpu_state (test_pipeline.TrainTests.test_resume_identical_cpu_state) ... ok
+test_scientific_change_rejected (test_pipeline.TrainTests.test_scientific_change_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 56 tests in 11.632s
+
+OK

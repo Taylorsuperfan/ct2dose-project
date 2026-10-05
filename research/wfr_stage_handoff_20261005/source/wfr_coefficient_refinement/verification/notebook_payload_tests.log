@@ -1,0 +1,380 @@
+test_bounded_output (test_core.CoreTests.test_bounded_output) ... ok
+test_config_validation (test_core.CoreTests.test_config_validation) ... ok
+test_equal_case_mean_not_pooled (test_core.CoreTests.test_equal_case_mean_not_pooled) ... ok
+test_factor_recalls (test_core.CoreTests.test_factor_recalls) ... ok
+test_frozen_envelope_bound (test_core.CoreTests.test_frozen_envelope_bound) ... ok
+test_head_is_a_deep_copy (test_core.CoreTests.test_head_is_a_deep_copy) ... ok
+test_initial_head_matches_parent (test_core.CoreTests.test_initial_head_matches_parent) ... ok
+test_no_input_mutation (test_core.CoreTests.test_no_input_mutation) ... ok
+test_no_oracle_training_setting (test_core.CoreTests.test_no_oracle_training_setting) ... ok
+test_objective_arms_differ_only_profile (test_core.CoreTests.test_objective_arms_differ_only_profile) ... /mnt/data/coef_work/payload_check/tests/test_core.py:85: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  self.assertAlmostEqual(float(b-a), self.cfg.profile_weight * terms_b["profile_scaled"], places=6)
+ok
+test_objective_has_coefficient_gradient_only (test_core.CoreTests.test_objective_has_coefficient_gradient_only) ... ok
+test_profile_gradient_is_finite (test_core.CoreTests.test_profile_gradient_is_finite) ... ok
+test_profile_relative_matches_manual (test_core.CoreTests.test_profile_relative_matches_manual) ... ok
+test_profile_uses_array_x (test_core.CoreTests.test_profile_uses_array_x) ... ok
+test_real_parent_and_head_prediction (test_core.CoreTests.test_real_parent_and_head_prediction) ... ok
+test_receipt_tampering (test_core.CoreTests.test_receipt_tampering) ... ok
+test_reject_trainable_magnitude (test_core.CoreTests.test_reject_trainable_magnitude) ... ok
+test_save_npz_is_non_overwriting (test_core.CoreTests.test_save_npz_is_non_overwriting) ... ok
+test_schedule_same_across_arms_and_resume (test_core.CoreTests.test_schedule_same_across_arms_and_resume) ... ok
+test_schedule_seed_matters (test_core.CoreTests.test_schedule_seed_matters) ... ok
+test_selection_allows_declared_margin_only (test_core.CoreTests.test_selection_allows_declared_margin_only) ... ok
+test_selection_enforces_each_case (test_core.CoreTests.test_selection_enforces_each_case) ... ok
+test_selection_keeps_parent_on_tie (test_core.CoreTests.test_selection_keeps_parent_on_tie) ... ok
+test_selection_mismatched_cases (test_core.CoreTests.test_selection_mismatched_cases) ... ok
+test_selection_rejects_global_only_improvement (test_core.CoreTests.test_selection_rejects_global_only_improvement) ... ok
+test_selection_rejects_missing_metric (test_core.CoreTests.test_selection_rejects_missing_metric) ... ok
+test_sign_weighting_preserves_batch_normalization (test_core.CoreTests.test_sign_weighting_preserves_batch_normalization) ... ok
+test_small_head_can_reduce_product_loss (test_core.CoreTests.test_small_head_can_reduce_product_loss) ... ok
+test_target_free_interface (test_core.CoreTests.test_target_free_interface) ... ok
+test_transport_remains_unchanged_when_training_head (test_core.CoreTests.test_transport_remains_unchanged_when_training_head) ... ok
+test_weight_archive_roundtrip (test_core.CoreTests.test_weight_archive_roundtrip) ... ok
+test_weighted_bernoulli_population_identity (test_core.CoreTests.test_weighted_bernoulli_population_identity) ... ok
+test_zero_target_losses_are_finite (test_core.CoreTests.test_zero_target_losses_are_finite) ... ok
+Protocol recorded: /tmp/tmpjk3zyxrk/refinement/protocol.json
+Parent selected step: 384 Additional updates per arm: 4
+No medical arrays were opened.
+FROZEN CACHE 1/232 saved; split=train
+Cache paused safely. Repeat prepare to continue.
+FROZEN CACHE 2/232 saved; split=train
+FROZEN CACHE 3/232 saved; split=train
+FROZEN CACHE 4/232 saved; split=train
+FROZEN CACHE 5/232 saved; split=train
+FROZEN CACHE 6/232 saved; split=train
+FROZEN CACHE 7/232 saved; split=train
+FROZEN CACHE 8/232 saved; split=train
+FROZEN CACHE 9/232 saved; split=train
+FROZEN CACHE 10/232 saved; split=train
+FROZEN CACHE 11/232 saved; split=train
+FROZEN CACHE 12/232 saved; split=train
+FROZEN CACHE 13/232 saved; split=train
+FROZEN CACHE 14/232 saved; split=train
+FROZEN CACHE 15/232 saved; split=train
+FROZEN CACHE 16/232 saved; split=train
+FROZEN CACHE 17/232 saved; split=train
+FROZEN CACHE 18/232 saved; split=train
+FROZEN CACHE 19/232 saved; split=train
+FROZEN CACHE 20/232 saved; split=train
+FROZEN CACHE 21/232 saved; split=train
+FROZEN CACHE 22/232 saved; split=train
+FROZEN CACHE 23/232 saved; split=train
+FROZEN CACHE 24/232 saved; split=train
+FROZEN CACHE 25/232 saved; split=train
+FROZEN CACHE 26/232 saved; split=train
+FROZEN CACHE 27/232 saved; split=train
+FROZEN CACHE 28/232 saved; split=train
+FROZEN CACHE 29/232 saved; split=train
+FROZEN CACHE 30/232 saved; split=train
+FROZEN CACHE 31/232 saved; split=train
+FROZEN CACHE 32/232 saved; split=train
+FROZEN CACHE 33/232 saved; split=train
+FROZEN CACHE 34/232 saved; split=train
+FROZEN CACHE 35/232 saved; split=train
+FROZEN CACHE 36/232 saved; split=train
+FROZEN CACHE 37/232 saved; split=train
+FROZEN CACHE 38/232 saved; split=train
+FROZEN CACHE 39/232 saved; split=train
+FROZEN CACHE 40/232 saved; split=train
+FROZEN CACHE 41/232 saved; split=train
+FROZEN CACHE 42/232 saved; split=train
+FROZEN CACHE 43/232 saved; split=train
+FROZEN CACHE 44/232 saved; split=train
+FROZEN CACHE 45/232 saved; split=train
+FROZEN CACHE 46/232 saved; split=train
+FROZEN CACHE 47/232 saved; split=train
+FROZEN CACHE 48/232 saved; split=train
+FROZEN CACHE 49/232 saved; split=train
+FROZEN CACHE 50/232 saved; split=train
+FROZEN CACHE 51/232 saved; split=train
+FROZEN CACHE 52/232 saved; split=train
+FROZEN CACHE 53/232 saved; split=train
+FROZEN CACHE 54/232 saved; split=train
+FROZEN CACHE 55/232 saved; split=train
+FROZEN CACHE 56/232 saved; split=train
+FROZEN CACHE 57/232 saved; split=train
+FROZEN CACHE 58/232 saved; split=train
+FROZEN CACHE 59/232 saved; split=train
+FROZEN CACHE 60/232 saved; split=train
+FROZEN CACHE 61/232 saved; split=train
+FROZEN CACHE 62/232 saved; split=train
+FROZEN CACHE 63/232 saved; split=train
+FROZEN CACHE 64/232 saved; split=train
+FROZEN CACHE 65/232 saved; split=train
+FROZEN CACHE 66/232 saved; split=train
+FROZEN CACHE 67/232 saved; split=train
+FROZEN CACHE 68/232 saved; split=train
+FROZEN CACHE 69/232 saved; split=train
+FROZEN CACHE 70/232 saved; split=train
+FROZEN CACHE 71/232 saved; split=train
+FROZEN CACHE 72/232 saved; split=train
+FROZEN CACHE 73/232 saved; split=train
+FROZEN CACHE 74/232 saved; split=train
+FROZEN CACHE 75/232 saved; split=train
+FROZEN CACHE 76/232 saved; split=train
+FROZEN CACHE 77/232 saved; split=train
+FROZEN CACHE 78/232 saved; split=train
+FROZEN CACHE 79/232 saved; split=train
+FROZEN CACHE 80/232 saved; split=train
+FROZEN CACHE 81/232 saved; split=train
+FROZEN CACHE 82/232 saved; split=train
+FROZEN CACHE 83/232 saved; split=train
+FROZEN CACHE 84/232 saved; split=train
+FROZEN CACHE 85/232 saved; split=train
+FROZEN CACHE 86/232 saved; split=train
+FROZEN CACHE 87/232 saved; split=train
+FROZEN CACHE 88/232 saved; split=train
+FROZEN CACHE 89/232 saved; split=train
+FROZEN CACHE 90/232 saved; split=train
+FROZEN CACHE 91/232 saved; split=train
+FROZEN CACHE 92/232 saved; split=train
+FROZEN CACHE 93/232 saved; split=train
+FROZEN CACHE 94/232 saved; split=train
+FROZEN CACHE 95/232 saved; split=train
+FROZEN CACHE 96/232 saved; split=train
+FROZEN CACHE 97/232 saved; split=train
+FROZEN CACHE 98/232 saved; split=train
+FROZEN CACHE 99/232 saved; split=train
+FROZEN CACHE 100/232 saved; split=train
+FROZEN CACHE 101/232 saved; split=train
+FROZEN CACHE 102/232 saved; split=train
+FROZEN CACHE 103/232 saved; split=train
+FROZEN CACHE 104/232 saved; split=train
+FROZEN CACHE 105/232 saved; split=train
+FROZEN CACHE 106/232 saved; split=train
+FROZEN CACHE 107/232 saved; split=train
+FROZEN CACHE 108/232 saved; split=train
+FROZEN CACHE 109/232 saved; split=train
+FROZEN CACHE 110/232 saved; split=train
+FROZEN CACHE 111/232 saved; split=train
+FROZEN CACHE 112/232 saved; split=train
+FROZEN CACHE 113/232 saved; split=train
+FROZEN CACHE 114/232 saved; split=train
+FROZEN CACHE 115/232 saved; split=train
+FROZEN CACHE 116/232 saved; split=train
+FROZEN CACHE 117/232 saved; split=train
+FROZEN CACHE 118/232 saved; split=train
+FROZEN CACHE 119/232 saved; split=train
+FROZEN CACHE 120/232 saved; split=train
+FROZEN CACHE 121/232 saved; split=train
+FROZEN CACHE 122/232 saved; split=train
+FROZEN CACHE 123/232 saved; split=train
+FROZEN CACHE 124/232 saved; split=train
+FROZEN CACHE 125/232 saved; split=train
+FROZEN CACHE 126/232 saved; split=train
+FROZEN CACHE 127/232 saved; split=train
+FROZEN CACHE 128/232 saved; split=train
+FROZEN CACHE 129/232 saved; split=train
+FROZEN CACHE 130/232 saved; split=train
+FROZEN CACHE 131/232 saved; split=train
+FROZEN CACHE 132/232 saved; split=train
+FROZEN CACHE 133/232 saved; split=train
+FROZEN CACHE 134/232 saved; split=train
+FROZEN CACHE 135/232 saved; split=train
+FROZEN CACHE 136/232 saved; split=train
+FROZEN CACHE 137/232 saved; split=train
+FROZEN CACHE 138/232 saved; split=train
+FROZEN CACHE 139/232 saved; split=train
+FROZEN CACHE 140/232 saved; split=train
+FROZEN CACHE 141/232 saved; split=train
+FROZEN CACHE 142/232 saved; split=train
+FROZEN CACHE 143/232 saved; split=train
+FROZEN CACHE 144/232 saved; split=train
+FROZEN CACHE 145/232 saved; split=train
+FROZEN CACHE 146/232 saved; split=train
+FROZEN CACHE 147/232 saved; split=train
+FROZEN CACHE 148/232 saved; split=train
+FROZEN CACHE 149/232 saved; split=train
+FROZEN CACHE 150/232 saved; split=train
+FROZEN CACHE 151/232 saved; split=train
+FROZEN CACHE 152/232 saved; split=train
+FROZEN CACHE 153/232 saved; split=train
+FROZEN CACHE 154/232 saved; split=train
+FROZEN CACHE 155/232 saved; split=train
+FROZEN CACHE 156/232 saved; split=train
+FROZEN CACHE 157/232 saved; split=train
+FROZEN CACHE 158/232 saved; split=train
+FROZEN CACHE 159/232 saved; split=train
+FROZEN CACHE 160/232 saved; split=train
+FROZEN CACHE 161/232 saved; split=train
+FROZEN CACHE 162/232 saved; split=train
+FROZEN CACHE 163/232 saved; split=train
+FROZEN CACHE 164/232 saved; split=train
+FROZEN CACHE 165/232 saved; split=train
+FROZEN CACHE 166/232 saved; split=train
+FROZEN CACHE 167/232 saved; split=train
+FROZEN CACHE 168/232 saved; split=train
+FROZEN CACHE 169/232 saved; split=train
+FROZEN CACHE 170/232 saved; split=train
+FROZEN CACHE 171/232 saved; split=train
+FROZEN CACHE 172/232 saved; split=train
+FROZEN CACHE 173/232 saved; split=train
+FROZEN CACHE 174/232 saved; split=train
+FROZEN CACHE 175/232 saved; split=train
+FROZEN CACHE 176/232 saved; split=train
+FROZEN CACHE 177/232 saved; split=train
+FROZEN CACHE 178/232 saved; split=train
+FROZEN CACHE 179/232 saved; split=train
+FROZEN CACHE 180/232 saved; split=train
+FROZEN CACHE 181/232 saved; split=train
+FROZEN CACHE 182/232 saved; split=train
+FROZEN CACHE 183/232 saved; split=train
+FROZEN CACHE 184/232 saved; split=train
+FROZEN CACHE 185/232 saved; split=train
+FROZEN CACHE 186/232 saved; split=train
+FROZEN CACHE 187/232 saved; split=train
+FROZEN CACHE 188/232 saved; split=train
+FROZEN CACHE 189/232 saved; split=train
+FROZEN CACHE 190/232 saved; split=train
+FROZEN CACHE 191/232 saved; split=train
+FROZEN CACHE 192/232 saved; split=train
+FROZEN CACHE 193/232 saved; split=validation
+FROZEN CACHE 194/232 saved; split=validation
+FROZEN CACHE 195/232 saved; split=validation
+FROZEN CACHE 196/232 saved; split=validation
+FROZEN CACHE 197/232 saved; split=validation
+FROZEN CACHE 198/232 saved; split=validation
+FROZEN CACHE 199/232 saved; split=validation
+FROZEN CACHE 200/232 saved; split=validation
+FROZEN CACHE 201/232 saved; split=validation
+FROZEN CACHE 202/232 saved; split=validation
+FROZEN CACHE 203/232 saved; split=validation
+FROZEN CACHE 204/232 saved; split=validation
+FROZEN CACHE 205/232 saved; split=validation
+FROZEN CACHE 206/232 saved; split=validation
+FROZEN CACHE 207/232 saved; split=validation
+FROZEN CACHE 208/232 saved; split=validation
+FROZEN CACHE 209/232 saved; split=validation
+FROZEN CACHE 210/232 saved; split=validation
+FROZEN CACHE 211/232 saved; split=validation
+FROZEN CACHE 212/232 saved; split=validation
+FROZEN CACHE 213/232 saved; split=validation
+FROZEN CACHE 214/232 saved; split=validation
+FROZEN CACHE 215/232 saved; split=validation
+FROZEN CACHE 216/232 saved; split=validation
+FROZEN CACHE 217/232 saved; split=validation
+FROZEN CACHE 218/232 saved; split=validation
+FROZEN CACHE 219/232 saved; split=validation
+FROZEN CACHE 220/232 saved; split=validation
+FROZEN CACHE 221/232 saved; split=validation
+FROZEN CACHE 222/232 saved; split=validation
+FROZEN CACHE 223/232 saved; split=validation
+FROZEN CACHE 224/232 saved; split=validation
+FROZEN CACHE 225/232 saved; split=validation
+FROZEN CACHE 226/232 saved; split=validation
+FROZEN CACHE 227/232 saved; split=validation
+FROZEN CACHE 228/232 saved; split=validation
+FROZEN CACHE 229/232 saved; split=validation
+FROZEN CACHE 230/232 saved; split=validation
+FROZEN CACHE 231/232 saved; split=validation
+FROZEN CACHE 232/232 saved; split=validation
+FROZEN CACHE COMPLETE: /tmp/tmpjk3zyxrk/refinement/frozen.local
+test_01_cache_counts_and_train_only_normalization (test_pipeline.PipelineTests.test_01_cache_counts_and_train_only_normalization) ... ok
+test_02_cache_reuse_does_not_infer (test_pipeline.PipelineTests.test_02_cache_reuse_does_not_infer) ... Frozen cache verified; no transport inference.
+ok
+test_03_resume_matches_continuous_cpu (test_pipeline.PipelineTests.test_03_resume_matches_continuous_cpu) ... START composition: parent x=2.58408, train=192 monitor=40
+UPDATE 2/4 composition: loss=1.1, x=2.58401, RMSE=2.9783706e-05, eligible=True, selected=True
+UPDATE 4/4 composition: loss=1.0999, x=2.58437, RMSE=2.9781859e-05, eligible=False, selected=False
+TRAINING COMPLETE: /tmp/tmpjk3zyxrk/refinement/runs.local/continuous
+{'arm': 'composition', 'status': 'accepted_refinement', 'parent_updates': 384, 'additional_updates_executed': 4, 'selected_additional_step': 2, 'cumulative_updates_at_selected_state': 386, 'total_experiment_updates': 388, 'selected_monitor': {'rmse_stored_units': 2.978370580634123e-05, 'mae_stored_units': 2.5806155989016588e-05, 'negative_prediction_fraction': 0.0, 'x_mean_pct': 2.5840061073894383, 'x_max_pct': 5.260232299804187, 'x_profile_rmse_stored_units': 2.9783921905616225e-05, 'x_valid_count': 32.0, 'y_mean_pct': 4.764493621131213, 'y_max_pct': 4.7649014212424365, 'y_profile_rmse_stored_units': 5.002718172436681e-05, 'y_valid_count': 32.0, 'z_mean_pct': 4.764172439565279, 'z_max_pct': 4.764502282985742, 'z_profile_rmse_stored_units': 5.002380931224154e-05, 'z_valid_count': 32.0, 'raw_rmse_stored_units': 2.978370580634123e-05, 'active_sign_accuracy': 0.5, 'positive_recall': 0.0, 'negative_recall': 1.0, 'magnitude_weighted_sign_error': 0.4999998211860657, 'coefficient_abs_mean_active': 0.0002875083113802468, 'retained_magnitude_fraction': 0.0002875083113802468, 'residual_rmse_normalized': 0.29783706907895674, 'n_records': 40, 'n_cases': 2}, 'parent_monitor': {'rmse_stored_units': 2.9784156202730233e-05, 'mae_stored_units': 2.5806437406572513e-05, 'negative_prediction_fraction': 0.0, 'x_mean_pct': 2.5840805741514252, 'x_max_pct': 5.263161064136251, 'x_profile_rmse_stored_units': 2.9784156202730233e-05, 'x_valid_count': 32.0, 'y_mean_pct': 4.761896797143432, 'y_max_pct': 4.761896797143432, 'y_profile_rmse_stored_units': 4.9999915063381195e-05, 'y_valid_count': 32.0, 'z_mean_pct': 4.761896797143432, 'z_max_pct': 4.761896797143432, 'z_profile_rmse_stored_units': 4.9999915063381195e-05, 'z_valid_count': 32.0, 'raw_rmse_stored_units': 2.9784156202730233e-05, 'active_sign_accuracy': 0.0, 'positive_recall': 0.0, 'negative_recall': 0.0, 'magnitude_weighted_sign_error': 1.0, 'coefficient_abs_mean_active': 0.0, 'retained_magnitude_fraction': 0.0, 'residual_rmse_normalized': 0.2978415567705157, 'n_records': 40, 'n_cases': 2}, 'coefficient_parameters': 1315, 'training_seconds_accumulated': 1.253417890000037, 'training_cases': 6, 'training_records': 192, 'monitor_records': 40, 'parent_magnitude_updated': False, 'parent_initialization_sha256': '0b0473810a12d4bf5523d5ce21c1e7d128ea5c63cb637322e42d791c417906d4', 'schedule_sha256': '6d94889a702fe34aa3485d2fca30497e83bdc45b3b2f0883adef8d08cc70709a', 'guard_relative_tolerance': 0.01, 'scope': 'DEVELOPMENT_MONITOR_SELECTION_NOT_TEST_OR_CLINICAL_ACCEPTANCE'}
+START composition: parent x=2.58408, train=192 monitor=40
+PAUSED safely. Repeat the same train command.
+RESUME composition: next additional update=2
+UPDATE 2/4 composition: loss=1.1, x=2.58401, RMSE=2.9783706e-05, eligible=True, selected=True
+UPDATE 4/4 composition: loss=1.0999, x=2.58437, RMSE=2.9781859e-05, eligible=False, selected=False
+TRAINING COMPLETE: /tmp/tmpjk3zyxrk/refinement/runs.local/resumed
+{'arm': 'composition', 'status': 'accepted_refinement', 'parent_updates': 384, 'additional_updates_executed': 4, 'selected_additional_step': 2, 'cumulative_updates_at_selected_state': 386, 'total_experiment_updates': 388, 'selected_monitor': {'rmse_stored_units': 2.978370580634123e-05, 'mae_stored_units': 2.5806155989016588e-05, 'negative_prediction_fraction': 0.0, 'x_mean_pct': 2.5840061073894383, 'x_max_pct': 5.260232299804187, 'x_profile_rmse_stored_units': 2.9783921905616225e-05, 'x_valid_count': 32.0, 'y_mean_pct': 4.764493621131213, 'y_max_pct': 4.7649014212424365, 'y_profile_rmse_stored_units': 5.002718172436681e-05, 'y_valid_count': 32.0, 'z_mean_pct': 4.764172439565279, 'z_max_pct': 4.764502282985742, 'z_profile_rmse_stored_units': 5.002380931224154e-05, 'z_valid_count': 32.0, 'raw_rmse_stored_units': 2.978370580634123e-05, 'active_sign_accuracy': 0.5, 'positive_recall': 0.0, 'negative_recall': 1.0, 'magnitude_weighted_sign_error': 0.4999998211860657, 'coefficient_abs_mean_active': 0.0002875083113802468, 'retained_magnitude_fraction': 0.0002875083113802468, 'residual_rmse_normalized': 0.29783706907895674, 'n_records': 40, 'n_cases': 2}, 'parent_monitor': {'rmse_stored_units': 2.9784156202730233e-05, 'mae_stored_units': 2.5806437406572513e-05, 'negative_prediction_fraction': 0.0, 'x_mean_pct': 2.5840805741514252, 'x_max_pct': 5.263161064136251, 'x_profile_rmse_stored_units': 2.9784156202730233e-05, 'x_valid_count': 32.0, 'y_mean_pct': 4.761896797143432, 'y_max_pct': 4.761896797143432, 'y_profile_rmse_stored_units': 4.9999915063381195e-05, 'y_valid_count': 32.0, 'z_mean_pct': 4.761896797143432, 'z_max_pct': 4.761896797143432, 'z_profile_rmse_stored_units': 4.9999915063381195e-05, 'z_valid_count': 32.0, 'raw_rmse_stored_units': 2.9784156202730233e-05, 'active_sign_accuracy': 0.0, 'positive_recall': 0.0, 'negative_recall': 0.0, 'magnitude_weighted_sign_error': 1.0, 'coefficient_abs_mean_active': 0.0, 'retained_magnitude_fraction': 0.0, 'residual_rmse_normalized': 0.2978415567705157, 'n_records': 40, 'n_cases': 2}, 'coefficient_parameters': 1315, 'training_seconds_accumulated': 1.592578126999797, 'training_cases': 6, 'training_records': 192, 'monitor_records': 40, 'parent_magnitude_updated': False, 'parent_initialization_sha256': '0b0473810a12d4bf5523d5ce21c1e7d128ea5c63cb637322e42d791c417906d4', 'schedule_sha256': '6d94889a702fe34aa3485d2fca30497e83bdc45b3b2f0883adef8d08cc70709a', 'guard_relative_tolerance': 0.01, 'scope': 'DEVELOPMENT_MONITOR_SELECTION_NOT_TEST_OR_CLINICAL_ACCEPTANCE'}
+ok
+test_04_explicit_fork_preserves_parent (test_pipeline.PipelineTests.test_04_explicit_fork_preserves_parent) ... START profile: parent x=2.58408, train=192 monitor=40
+PAUSED safely. Repeat the same train command.
+Fork created, not trained: /tmp/tmpjk3zyxrk/refinement/runs.local/fork_child
+RESUME profile: next additional update=2
+UPDATE 2/4 profile: loss=2.1, x=2.58345, RMSE=2.9784703e-05, eligible=True, selected=True
+UPDATE 4/4 profile: loss=2.0999, x=2.58351, RMSE=2.9782418e-05, eligible=True, selected=False
+TRAINING COMPLETE: /tmp/tmpjk3zyxrk/refinement/runs.local/fork_child
+{'arm': 'profile', 'status': 'accepted_refinement', 'parent_updates': 384, 'additional_updates_executed': 4, 'selected_additional_step': 2, 'cumulative_updates_at_selected_state': 386, 'total_experiment_updates': 388, 'selected_monitor': {'rmse_stored_units': 2.978470312762576e-05, 'mae_stored_units': 2.5806160106611742e-05, 'negative_prediction_fraction': 0.0, 'x_mean_pct': 2.583447858181525, 'x_max_pct': 5.237488422815438, 'x_profile_rmse_stored_units': 2.9784867570935832e-05, 'x_valid_count': 32.0, 'y_mean_pct': 4.785070722750199, 'y_max_pct': 4.785479215809786, 'y_profile_rmse_stored_units': 5.024324128598434e-05, 'y_valid_count': 32.0, 'z_mean_pct': 4.784739493433013, 'z_max_pct': 4.785068990379294, 'z_profile_rmse_stored_units': 5.023976337216855e-05, 'z_valid_count': 32.0, 'raw_rmse_stored_units': 2.978470312762576e-05, 'active_sign_accuracy': 0.5, 'positive_recall': 0.0, 'negative_recall': 1.0, 'magnitude_weighted_sign_error': 0.4999998211860657, 'coefficient_abs_mean_active': 0.0024478620640664417, 'retained_magnitude_fraction': 0.0024478620640664417, 'residual_rmse_normalized': 0.29784699340405135, 'n_records': 40, 'n_cases': 2}, 'parent_monitor': {'rmse_stored_units': 2.9784156202730233e-05, 'mae_stored_units': 2.5806437406572513e-05, 'negative_prediction_fraction': 0.0, 'x_mean_pct': 2.5840805741514252, 'x_max_pct': 5.263161064136251, 'x_profile_rmse_stored_units': 2.9784156202730233e-05, 'x_valid_count': 32.0, 'y_mean_pct': 4.761896797143432, 'y_max_pct': 4.761896797143432, 'y_profile_rmse_stored_units': 4.9999915063381195e-05, 'y_valid_count': 32.0, 'z_mean_pct': 4.761896797143432, 'z_max_pct': 4.761896797143432, 'z_profile_rmse_stored_units': 4.9999915063381195e-05, 'z_valid_count': 32.0, 'raw_rmse_stored_units': 2.9784156202730233e-05, 'active_sign_accuracy': 0.0, 'positive_recall': 0.0, 'negative_recall': 0.0, 'magnitude_weighted_sign_error': 1.0, 'coefficient_abs_mean_active': 0.0, 'retained_magnitude_fraction': 0.0, 'residual_rmse_normalized': 0.2978415567705157, 'n_records': 40, 'n_cases': 2}, 'coefficient_parameters': 1315, 'training_seconds_accumulated': 1.2471021579999615, 'training_cases': 6, 'training_records': 192, 'monitor_records': 40, 'parent_magnitude_updated': False, 'parent_initialization_sha256': '0b0473810a12d4bf5523d5ce21c1e7d128ea5c63cb637322e42d791c417906d4', 'schedule_sha256': '6d94889a702fe34aa3485d2fca30497e83bdc45b3b2f0883adef8d08cc70709a', 'guard_relative_tolerance': 0.01, 'scope': 'DEVELOPMENT_MONITOR_SELECTION_NOT_TEST_OR_CLINICAL_ACCEPTANCE'}
+ok
+test_05_unapproved_environment_change_stops (test_pipeline.PipelineTests.test_05_unapproved_environment_change_stops) ... START composition: parent x=2.58408, train=192 monitor=40
+PAUSED safely. Repeat the same train command.
+ok
+test_06_selection_pointer_recovery (test_pipeline.PipelineTests.test_06_selection_pointer_recovery) ... START composition: parent x=2.58408, train=192 monitor=40
+PAUSED safely. Repeat the same train command.
+RESUME composition: next additional update=2
+UPDATE 2/4 composition: loss=1.1, x=2.58401, RMSE=2.9783706e-05, eligible=True, selected=True
+UPDATE 4/4 composition: loss=1.0999, x=2.58437, RMSE=2.9781859e-05, eligible=False, selected=False
+TRAINING COMPLETE: /tmp/tmpjk3zyxrk/refinement/runs.local/selection_recovery
+{'arm': 'composition', 'status': 'accepted_refinement', 'parent_updates': 384, 'additional_updates_executed': 4, 'selected_additional_step': 2, 'cumulative_updates_at_selected_state': 386, 'total_experiment_updates': 388, 'selected_monitor': {'rmse_stored_units': 2.978370580634123e-05, 'mae_stored_units': 2.5806155989016588e-05, 'negative_prediction_fraction': 0.0, 'x_mean_pct': 2.5840061073894383, 'x_max_pct': 5.260232299804187, 'x_profile_rmse_stored_units': 2.9783921905616225e-05, 'x_valid_count': 32.0, 'y_mean_pct': 4.764493621131213, 'y_max_pct': 4.7649014212424365, 'y_profile_rmse_stored_units': 5.002718172436681e-05, 'y_valid_count': 32.0, 'z_mean_pct': 4.764172439565279, 'z_max_pct': 4.764502282985742, 'z_profile_rmse_stored_units': 5.002380931224154e-05, 'z_valid_count': 32.0, 'raw_rmse_stored_units': 2.978370580634123e-05, 'active_sign_accuracy': 0.5, 'positive_recall': 0.0, 'negative_recall': 1.0, 'magnitude_weighted_sign_error': 0.4999998211860657, 'coefficient_abs_mean_active': 0.0002875083113802468, 'retained_magnitude_fraction': 0.0002875083113802468, 'residual_rmse_normalized': 0.29783706907895674, 'n_records': 40, 'n_cases': 2}, 'parent_monitor': {'rmse_stored_units': 2.9784156202730233e-05, 'mae_stored_units': 2.5806437406572513e-05, 'negative_prediction_fraction': 0.0, 'x_mean_pct': 2.5840805741514252, 'x_max_pct': 5.263161064136251, 'x_profile_rmse_stored_units': 2.9784156202730233e-05, 'x_valid_count': 32.0, 'y_mean_pct': 4.761896797143432, 'y_max_pct': 4.761896797143432, 'y_profile_rmse_stored_units': 4.9999915063381195e-05, 'y_valid_count': 32.0, 'z_mean_pct': 4.761896797143432, 'z_max_pct': 4.761896797143432, 'z_profile_rmse_stored_units': 4.9999915063381195e-05, 'z_valid_count': 32.0, 'raw_rmse_stored_units': 2.9784156202730233e-05, 'active_sign_accuracy': 0.0, 'positive_recall': 0.0, 'negative_recall': 0.0, 'magnitude_weighted_sign_error': 1.0, 'coefficient_abs_mean_active': 0.0, 'retained_magnitude_fraction': 0.0, 'residual_rmse_normalized': 0.2978415567705157, 'n_records': 40, 'n_cases': 2}, 'coefficient_parameters': 1315, 'training_seconds_accumulated': 1.2290173210001285, 'training_cases': 6, 'training_records': 192, 'monitor_records': 40, 'parent_magnitude_updated': False, 'parent_initialization_sha256': '0b0473810a12d4bf5523d5ce21c1e7d128ea5c63cb637322e42d791c417906d4', 'schedule_sha256': '6d94889a702fe34aa3485d2fca30497e83bdc45b3b2f0883adef8d08cc70709a', 'guard_relative_tolerance': 0.01, 'scope': 'DEVELOPMENT_MONITOR_SELECTION_NOT_TEST_OR_CLINICAL_ACCEPTANCE'}
+ok
+test_07_train_finalize_evaluate_and_compare_600 (test_pipeline.PipelineTests.test_07_train_finalize_evaluate_and_compare_600) ... START composition: parent x=2.58408, train=192 monitor=40
+UPDATE 2/4 composition: loss=1.1, x=2.58401, RMSE=2.9783706e-05, eligible=True, selected=True
+UPDATE 4/4 composition: loss=1.0999, x=2.58437, RMSE=2.9781859e-05, eligible=False, selected=False
+TRAINING COMPLETE: /tmp/tmpjk3zyxrk/refinement/runs.local/composition_seed29
+{'arm': 'composition', 'status': 'accepted_refinement', 'parent_updates': 384, 'additional_updates_executed': 4, 'selected_additional_step': 2, 'cumulative_updates_at_selected_state': 386, 'total_experiment_updates': 388, 'selected_monitor': {'rmse_stored_units': 2.978370580634123e-05, 'mae_stored_units': 2.5806155989016588e-05, 'negative_prediction_fraction': 0.0, 'x_mean_pct': 2.5840061073894383, 'x_max_pct': 5.260232299804187, 'x_profile_rmse_stored_units': 2.9783921905616225e-05, 'x_valid_count': 32.0, 'y_mean_pct': 4.764493621131213, 'y_max_pct': 4.7649014212424365, 'y_profile_rmse_stored_units': 5.002718172436681e-05, 'y_valid_count': 32.0, 'z_mean_pct': 4.764172439565279, 'z_max_pct': 4.764502282985742, 'z_profile_rmse_stored_units': 5.002380931224154e-05, 'z_valid_count': 32.0, 'raw_rmse_stored_units': 2.978370580634123e-05, 'active_sign_accuracy': 0.5, 'positive_recall': 0.0, 'negative_recall': 1.0, 'magnitude_weighted_sign_error': 0.4999998211860657, 'coefficient_abs_mean_active': 0.0002875083113802468, 'retained_magnitude_fraction': 0.0002875083113802468, 'residual_rmse_normalized': 0.29783706907895674, 'n_records': 40, 'n_cases': 2}, 'parent_monitor': {'rmse_stored_units': 2.9784156202730233e-05, 'mae_stored_units': 2.5806437406572513e-05, 'negative_prediction_fraction': 0.0, 'x_mean_pct': 2.5840805741514252, 'x_max_pct': 5.263161064136251, 'x_profile_rmse_stored_units': 2.9784156202730233e-05, 'x_valid_count': 32.0, 'y_mean_pct': 4.761896797143432, 'y_max_pct': 4.761896797143432, 'y_profile_rmse_stored_units': 4.9999915063381195e-05, 'y_valid_count': 32.0, 'z_mean_pct': 4.761896797143432, 'z_max_pct': 4.761896797143432, 'z_profile_rmse_stored_units': 4.9999915063381195e-05, 'z_valid_count': 32.0, 'raw_rmse_stored_units': 2.9784156202730233e-05, 'active_sign_accuracy': 0.0, 'positive_recall': 0.0, 'negative_recall': 0.0, 'magnitude_weighted_sign_error': 1.0, 'coefficient_abs_mean_active': 0.0, 'retained_magnitude_fraction': 0.0, 'residual_rmse_normalized': 0.2978415567705157, 'n_records': 40, 'n_cases': 2}, 'coefficient_parameters': 1315, 'training_seconds_accumulated': 1.303683280000314, 'training_cases': 6, 'training_records': 192, 'monitor_records': 40, 'parent_magnitude_updated': False, 'parent_initialization_sha256': '0b0473810a12d4bf5523d5ce21c1e7d128ea5c63cb637322e42d791c417906d4', 'schedule_sha256': '6d94889a702fe34aa3485d2fca30497e83bdc45b3b2f0883adef8d08cc70709a', 'guard_relative_tolerance': 0.01, 'scope': 'DEVELOPMENT_MONITOR_SELECTION_NOT_TEST_OR_CLINICAL_ACCEPTANCE'}
+START profile: parent x=2.58408, train=192 monitor=40
+UPDATE 2/4 profile: loss=2.1, x=2.58345, RMSE=2.9784703e-05, eligible=True, selected=True
+UPDATE 4/4 profile: loss=2.0999, x=2.58351, RMSE=2.9782418e-05, eligible=True, selected=False
+TRAINING COMPLETE: /tmp/tmpjk3zyxrk/refinement/runs.local/profile_seed29
+{'arm': 'profile', 'status': 'accepted_refinement', 'parent_updates': 384, 'additional_updates_executed': 4, 'selected_additional_step': 2, 'cumulative_updates_at_selected_state': 386, 'total_experiment_updates': 388, 'selected_monitor': {'rmse_stored_units': 2.978470312762576e-05, 'mae_stored_units': 2.5806160106611742e-05, 'negative_prediction_fraction': 0.0, 'x_mean_pct': 2.583447858181525, 'x_max_pct': 5.237488422815438, 'x_profile_rmse_stored_units': 2.9784867570935832e-05, 'x_valid_count': 32.0, 'y_mean_pct': 4.785070722750199, 'y_max_pct': 4.785479215809786, 'y_profile_rmse_stored_units': 5.024324128598434e-05, 'y_valid_count': 32.0, 'z_mean_pct': 4.784739493433013, 'z_max_pct': 4.785068990379294, 'z_profile_rmse_stored_units': 5.023976337216855e-05, 'z_valid_count': 32.0, 'raw_rmse_stored_units': 2.978470312762576e-05, 'active_sign_accuracy': 0.5, 'positive_recall': 0.0, 'negative_recall': 1.0, 'magnitude_weighted_sign_error': 0.4999998211860657, 'coefficient_abs_mean_active': 0.0024478620640664417, 'retained_magnitude_fraction': 0.0024478620640664417, 'residual_rmse_normalized': 0.29784699340405135, 'n_records': 40, 'n_cases': 2}, 'parent_monitor': {'rmse_stored_units': 2.9784156202730233e-05, 'mae_stored_units': 2.5806437406572513e-05, 'negative_prediction_fraction': 0.0, 'x_mean_pct': 2.5840805741514252, 'x_max_pct': 5.263161064136251, 'x_profile_rmse_stored_units': 2.9784156202730233e-05, 'x_valid_count': 32.0, 'y_mean_pct': 4.761896797143432, 'y_max_pct': 4.761896797143432, 'y_profile_rmse_stored_units': 4.9999915063381195e-05, 'y_valid_count': 32.0, 'z_mean_pct': 4.761896797143432, 'z_max_pct': 4.761896797143432, 'z_profile_rmse_stored_units': 4.9999915063381195e-05, 'z_valid_count': 32.0, 'raw_rmse_stored_units': 2.9784156202730233e-05, 'active_sign_accuracy': 0.0, 'positive_recall': 0.0, 'negative_recall': 0.0, 'magnitude_weighted_sign_error': 1.0, 'coefficient_abs_mean_active': 0.0, 'retained_magnitude_fraction': 0.0, 'residual_rmse_normalized': 0.2978415567705157, 'n_records': 40, 'n_cases': 2}, 'coefficient_parameters': 1315, 'training_seconds_accumulated': 1.264820815000121, 'training_cases': 6, 'training_records': 192, 'monitor_records': 40, 'parent_magnitude_updated': False, 'parent_initialization_sha256': '0b0473810a12d4bf5523d5ce21c1e7d128ea5c63cb637322e42d791c417906d4', 'schedule_sha256': '6d94889a702fe34aa3485d2fca30497e83bdc45b3b2f0883adef8d08cc70709a', 'guard_relative_tolerance': 0.01, 'scope': 'DEVELOPMENT_MONITOR_SELECTION_NOT_TEST_OR_CLINICAL_ACCEPTANCE'}
+Both selections are locked: /tmp/tmpjk3zyxrk/refinement/PAIR_FROZEN.json
+composition accepted_refinement selected extra step= 2
+profile accepted_refinement selected extra step= 2
+COEFFICIENT EVALUATION 1/600 saved/verified
+Evaluation paused safely. Repeat the same evaluate command.
+COEFFICIENT EVALUATION 1/600 saved/verified
+COEFFICIENT EVALUATION 25/600 saved/verified
+COEFFICIENT EVALUATION 50/600 saved/verified
+COEFFICIENT EVALUATION 75/600 saved/verified
+COEFFICIENT EVALUATION 100/600 saved/verified
+COEFFICIENT EVALUATION 125/600 saved/verified
+COEFFICIENT EVALUATION 150/600 saved/verified
+COEFFICIENT EVALUATION 175/600 saved/verified
+COEFFICIENT EVALUATION 200/600 saved/verified
+COEFFICIENT EVALUATION 225/600 saved/verified
+COEFFICIENT EVALUATION 250/600 saved/verified
+COEFFICIENT EVALUATION 275/600 saved/verified
+COEFFICIENT EVALUATION 300/600 saved/verified
+COEFFICIENT EVALUATION 325/600 saved/verified
+COEFFICIENT EVALUATION 350/600 saved/verified
+COEFFICIENT EVALUATION 375/600 saved/verified
+COEFFICIENT EVALUATION 400/600 saved/verified
+COEFFICIENT EVALUATION 425/600 saved/verified
+COEFFICIENT EVALUATION 450/600 saved/verified
+COEFFICIENT EVALUATION 475/600 saved/verified
+COEFFICIENT EVALUATION 500/600 saved/verified
+COEFFICIENT EVALUATION 525/600 saved/verified
+COEFFICIENT EVALUATION 550/600 saved/verified
+COEFFICIENT EVALUATION 575/600 saved/verified
+COEFFICIENT EVALUATION 600/600 saved/verified
+PAIRED EVALUATION COMPLETE: /tmp/tmpjk3zyxrk/refinement/evaluations.local/locked_pair_val600
+              method  mae_stored_units  negative_prediction_fraction  raw_rmse_stored_units  rmse_stored_units  x_max_pct  x_mean_pct  x_profile_rmse_stored_units  y_max_pct  y_mean_pct  y_profile_rmse_stored_units  z_max_pct  z_mean_pct  z_profile_rmse_stored_units  n_records  n_cases                                                       aggregation
+    composition_last          0.000026                           0.0                0.00003            0.00003   5.275599    2.584369                      0.00003   4.751309    4.749899                      0.00005   4.750244    4.749032                      0.00005      600.0      2.0 equal_case_mean_of_per_record_metrics; development_not_blind_test
+composition_selected          0.000026                           0.0                0.00003            0.00003   5.260232    2.584006                      0.00003   4.764901    4.764494                      0.00005   4.764502    4.764172                      0.00005      600.0      2.0 equal_case_mean_of_per_record_metrics; development_not_blind_test
+        profile_last          0.000026                           0.0                0.00003            0.00003   5.240675    2.583508                      0.00003   4.782829    4.781430                      0.00005   4.781765    4.780534                      0.00005      600.0      2.0 equal_case_mean_of_per_record_metrics; development_not_blind_test
+    profile_selected          0.000026                           0.0                0.00003            0.00003   5.237488    2.583448                      0.00003   4.785479    4.785071                      0.00005   4.785069    4.784739                      0.00005      600.0      2.0 equal_case_mean_of_per_record_metrics; development_not_blind_test
+PAIRED SAVED-ARRAY COMPARISON 100/600
+PAIRED SAVED-ARRAY COMPARISON 200/600
+PAIRED SAVED-ARRAY COMPARISON 300/600
+PAIRED SAVED-ARRAY COMPARISON 400/600
+PAIRED SAVED-ARRAY COMPARISON 500/600
+PAIRED SAVED-ARRAY COMPARISON 600/600
+                          method                                            display_name  rmse_stored_units  mae_stored_units  negative_prediction_fraction  x_mean_pct  x_max_pct  x_profile_rmse_stored_units  y_mean_pct  y_max_pct  y_profile_rmse_stored_units  z_mean_pct  z_max_pct  z_profile_rmse_stored_units  n_records  n_cases                                                       aggregation
+            composition_selected           Composition-supervised coefficient refinement           0.000030          0.000026                           0.0    2.584006   5.260232                     0.000030    4.764494   4.764901                     0.000050    4.764172   4.764502                     0.000050      600.0      2.0 equal_case_mean_of_per_record_metrics; development_not_blind_test
+                      parent_wfr Previous conditional WFR magnitude and grid coefficient           0.000030          0.000026                           0.0    2.584081   5.263161                     0.000030    4.761897   4.761897                     0.000050    4.761897   4.761897                     0.000050      600.0      2.0 equal_case_mean_of_per_record_metrics; development_not_blind_test
+     previous_direct_signed_flow             Previous directly learned signed correction           0.000016          0.000014                           0.0    1.421244   2.894734                     0.000016    2.619045   2.619045                     0.000027    2.619045   2.619045                     0.000027      600.0      2.0 equal_case_mean_of_per_record_metrics; development_not_blind_test
+           previous_final_system                    Previous final Practical dose system           0.000009          0.000008                           0.0    0.775223   1.578941                     0.000009    1.428571   1.428571                     0.000015    1.428571   1.428571                     0.000015      600.0      2.0 equal_case_mean_of_per_record_metrics; development_not_blind_test
+previous_positive_negative_flows    Previous separate positive/negative correction flows           0.000019          0.000017                           0.0    1.679652   3.421054                     0.000019    3.095228   3.095228                     0.000032    3.095228   3.095228                     0.000032      600.0      2.0 equal_case_mean_of_per_record_metrics; development_not_blind_test
+                profile_selected               Profile-supervised coefficient refinement           0.000030          0.000026                           0.0    2.583448   5.237488                     0.000030    4.785071   4.785479                     0.000050    4.784739   4.785069                     0.000050      600.0      2.0 equal_case_mean_of_per_record_metrics; development_not_blind_test
+     shared_calibrated_predictor                        Shared calibrated dose predictor           0.000030          0.000026                           0.0    2.584081   5.263161                     0.000030    4.761897   4.761897                     0.000050    4.761897   4.761897                     0.000050      600.0      2.0 equal_case_mean_of_per_record_metrics; development_not_blind_test
+REPORT: /tmp/tmpjk3zyxrk/refinement/comparisons.local/locked_pair/report.md
+Saved paired evaluation verified; no inference.
+ok
+test_08_frozen_record_tampering_is_rejected (test_pipeline.PipelineTests.test_08_frozen_record_tampering_is_rejected) ... ok
+test_09_changed_protocol_is_rejected (test_pipeline.PipelineTests.test_09_changed_protocol_is_rejected) ... ok
+test_10_register_does_not_overwrite (test_pipeline.PipelineTests.test_10_register_does_not_overwrite) ... ok
+
+----------------------------------------------------------------------
+Ran 43 tests in 94.982s
+
+OK
